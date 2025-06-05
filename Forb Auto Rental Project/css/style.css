@@ -47,7 +47,7 @@ header h1,
 
 .logo-img {
   height: 90px;          
-  object-fit: fill;
+  object-fit: none;
 }
 
 nav ul {
