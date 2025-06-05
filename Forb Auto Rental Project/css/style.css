@@ -46,8 +46,8 @@ header h1,
 }
 
 .logo-img {
-  height: 20px;          
-  object-fit: none;
+  height: 80px;          
+  object-fit: contain;
 }
 
 nav ul {
