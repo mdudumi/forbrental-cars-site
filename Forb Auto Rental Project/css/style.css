@@ -428,7 +428,7 @@ footer {
 .image-wrapper img,
 .about-left img {
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
   border-radius: 8px;
   display: block;
 }
