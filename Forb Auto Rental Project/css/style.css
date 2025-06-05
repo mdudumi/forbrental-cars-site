@@ -265,25 +265,27 @@ button[type="submit"]:hover {
 .booking-options {
   grid-column: span 2;
   display: flex;
-  flex-wrap: wrap; /* Ensures items wrap if there's not enough space */
-  gap: 15px; /* Maintains consistent spacing between labels */
-  justify-content: space-between; /* Distributes labels evenly */
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 .booking-options label {
-  flex: 1 1 calc(25% - 15px); /* Ensure equal width (adjust percentage as needed) */
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Align checkbox and text evenly */
-  padding: 10px; /* Add padding for better spacing */
+  gap: 8px; /* Spacing between checkbox and text */
+  padding: 8px 12px;
+  background-color: #d3d3d3;
   border: 1px solid #ccc;
   border-radius: 4px;
-  background-color: #d3d3d3;
-  box-sizing: border-box; /* Ensures padding doesn't affect width */
+  cursor: pointer;
+  flex: 1 1 200px; /* Each option has a min-width of 200px, will wrap nicely */
+  box-sizing: border-box;
 }
 
-.booking-options label input[type="checkbox"] {
-  margin-right: 10px; /* Adds spacing between checkbox and text */
+.booking-options input[type="checkbox"] {
+  transform: scale(1.2);
+  cursor: pointer;
+  margin: 0;
 }
 
 .booking-form-container button {
