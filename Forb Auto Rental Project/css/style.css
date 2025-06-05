@@ -22,6 +22,7 @@ img, input, select, textarea {
 
 /* Header & Navigation */
 header {
+  height: 50px;               /* Reduce from 70px or whatever it was */
   background-color: #555555;
   padding: 1rem 2rem;
   display: flex;
