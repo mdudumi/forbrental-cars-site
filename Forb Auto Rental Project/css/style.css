@@ -270,23 +270,23 @@ button[type="submit"]:hover {
 }
 
 .booking-options label {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 8px; /* Space between checkbox and text */
+  gap: 10px; /* Controls space between checkbox and text */
   padding: 10px 14px;
   background-color: #d3d3d3;
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 16px;
   cursor: pointer;
-  flex: 1 1 220px; /* Equal width and wraps on smaller screens */
+  flex: 1 1 200px;
   box-sizing: border-box;
 }
 
 .booking-options input[type="checkbox"] {
+  margin: 0;
   transform: scale(1.2);
-  cursor: pointer;
-  accent-color: #ff6600;
+  accent-color: #ff6600; /* Adds brand color */
 }
 
 
