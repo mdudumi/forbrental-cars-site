@@ -272,14 +272,14 @@ button[type="submit"]:hover {
 
 .booking-options label {
   display: flex;
+  justify-content: space-between; /* Label text left, checkbox right */
   align-items: center;
-  gap: 8px;
   padding: 10px 12px;
   background-color: #d3d3d3;
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 15px;
-  flex: 1 1 calc(50% - 12px); /* Two items per row on wider screens */
+  flex: 1 1 calc(25% - 12px); /* 4 per row on larger screens */
   box-sizing: border-box;
   cursor: pointer;
 }
@@ -287,6 +287,7 @@ button[type="submit"]:hover {
 .booking-options input[type="checkbox"] {
   transform: scale(1.2);
   accent-color: #ff6600;
+  margin-left: 8px;
 }
 
 .booking-form-container button {
@@ -600,8 +601,15 @@ textarea:focus {
   }
 }
 
-@media (max-width: 600px) {
+
+@media (max-width: 768px) {
   .booking-options label {
-    flex: 1 1 100%; /* Full width on small screens */
+    flex: 1 1 calc(50% - 12px); /* 2 per row on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .booking-options label {
+    flex: 1 1 100%; /* 1 per row on mobile */
   }
 }
