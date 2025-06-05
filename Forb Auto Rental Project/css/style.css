@@ -46,7 +46,7 @@ header h1,
 }
 
 .logo-img {
-  height: 100px;
+  height: 100%;               /* This makes it scale to the new header height */
   object-fit: contain;
 }
 
