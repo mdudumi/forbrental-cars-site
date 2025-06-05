@@ -31,16 +31,15 @@ header {
 }
 
 header h1,
-.logo {
-  color: #ff6600;
-  font-size: 1.8rem;
-  font-weight: 700;
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 0.5rem;
 }
 
 .logo-img {
-  height: 80px;
-  width: 100px;
-  margin-left: 0px;
+  height: 40px;
 }
 
 nav ul {
