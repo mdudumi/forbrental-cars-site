@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="booking-options">
         <label><input type="checkbox" id="snow-tires" name="snow_tires" value="15" /> Snow Tires ($15/day)</label>
         <label><input type="checkbox" id="child-seat" name="child_seat" value="10" /> Child Seat ($10/day)</label>
-        <label><input type="checkbox" id="gps" name="gps" value="12" /> GPS Nav ($12/day)</label>
+        <label><input type="checkbox" id="gps" name="gps" value="12" /> GPS Navig ($12/day)</label>
         <label><input type="checkbox" id="insurance" name="insurance" value="15" /> Insurance ($15/day)</label>
       </div>
 
