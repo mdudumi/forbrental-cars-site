@@ -274,7 +274,7 @@ button[type="submit"]:hover {
   flex: 1 1 calc(25% - 15px); /* Ensure equal width (adjust percentage as needed) */
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Align checkbox and text evenly */
+  justify-content: flex-start; /* Align checkbox and text evenly */
   padding: 10px; /* Add padding for better spacing */
   border: 1px solid #ccc;
   border-radius: 4px;
