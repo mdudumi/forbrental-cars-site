@@ -136,7 +136,7 @@ nav a.active {
   margin: 1rem 0 0.5rem;
 }
 
-.car-info h3:hover{
+.car-info:hover{
   color: #ff6600; /* Change color to orange on hover */
 }
 
