@@ -46,7 +46,8 @@ header h1,
 }
 
 .logo-img {
-  height: 80px;          
+  height: 80px; 
+  weight: 150px;
   object-fit: contain;
 }
 
