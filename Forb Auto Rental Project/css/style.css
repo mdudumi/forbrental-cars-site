@@ -375,7 +375,7 @@ footer {
   border-left: 5px solid red;
   padding-left: 1rem;
   margin-bottom: 1rem;
-  color: #111;
+  font-color: #111;
 }
 
 .tagline {
