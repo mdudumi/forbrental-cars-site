@@ -22,7 +22,7 @@ img, input, select, textarea {
 
 /* Header & Navigation */
 header {
-  height: 70px;               /* Reduce from 70px or whatever it was */
+  height: 70px;
   background-color: #555555;
   padding: 0rem 2rem;
   display: flex;
@@ -46,8 +46,8 @@ header h1,
 }
 
 .logo-img {
-  height: 80px; 
-  weight: 200px;
+  height: 60px; /* Reduced height for better scaling */
+  max-width: 150px; /* Ensure the logo scales proportionally */
   object-fit: contain;
 }
 
@@ -552,5 +552,39 @@ textarea:focus {
   .contact-container {
     padding: 20px;
     width: 95%;
+  }
+}
+
+/* Responsive Design for Mobile Screens */
+@media (max-width: 768px) {
+  header {
+    height: auto; /* Allow the header to expand if needed */
+    flex-direction: column; /* Stack items vertically */
+    padding: 1rem;
+  }
+
+  header h1,
+  .logo {
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+  }
+
+  .logo-img {
+    height: 50px; /* Scale down the logo further for smaller screens */
+  }
+
+  .logo-wrapper {
+    justify-content: center; /* Center the logo */
+    margin-bottom: 0.5rem; /* Add spacing between logo and navigation */
+  }
+
+  nav {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Center navigation links */
+    gap: 1rem; /* Add spacing between links */
+  }
+
+  nav a {
+    font-size: 1rem; /* Adjust font size of navigation links */
   }
 }
