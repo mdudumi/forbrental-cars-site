@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Volkswagen Tiguan - Details</title>
+  <link rel="stylesheet" href="css/style.css" />
+  
+</head>
+<body>
+  <header>
+    <h1>FORB AUTORENTAL</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="car-details" data-price="60">
+    <div class="left-column">
+      <img src="images/Volswagen Tiguan/car4.jpg" alt="Volkswagen Tiguan" class="main-image" id="mainImage" />
+      <div class="gallery">
+        <img src="images/Volswagen Tiguan/car4.jpg" alt="Thumb 1" onclick="changeMainImage(this.src)" />
+        <img src="images/Volswagen Tiguan/car4_2.jpg" alt="Thumb 2" onclick="changeMainImage(this.src)" />
+        <img src="images/Volswagen Tiguan/car4_3.jpg" alt="Thumb 3" onclick="changeMainImage(this.src)" />
+        <img src="images/Volswagen Tiguan/car4_4.jpg" alt="Thumb 4" onclick="changeMainImage(this.src)" />
+      </div>
+      <h2>Volkswagen Tiguan 2021 (6+1 Automatic)</h2>
+      <p><strong>Price per day:</strong> €60</p>
+      <p>The 2021 Volkswagen Tiguan combines modern design with spacious comfort and power. With a 2.0L unleaded engine and smooth automatic transmission, it delivers strong performance 	and a refined driving experience. Seating for seven makes it ideal for families or group travel, while advanced features and a premium interior ensure every ride is enjoyable. Its 	elevated stance, safety technologies, and elegant style make it a standout choice for both city cruising and road trips.</p>
+      </div>
+
+    <div class="right-column">
+      <div class="booking-form-container"></div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Rental Cars. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function changeMainImage(src) {
+      document.getElementById('mainImage').src = src;
+    }
+
+  </script>
+
+  <!-- EmailJS Script -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    emailjs.init("xwV1D8tph1k0Km_RB"); // Your EmailJS public key
+  </script>
+
+  <!-- Booking Logic -->
+  <script src="js/booking.js"></script>
+
+</body>
+</html>
+

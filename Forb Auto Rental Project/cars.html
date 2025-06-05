@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cars - Rental Cars</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    header, footer {
+      background: #000;
+      padding: 20px;
+      text-align: center;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+    }
+    nav a.active {
+      color: red;
+    }
+    main {
+      padding: 40px 20px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .car-listing {
+      display: flex;
+      flex-wrap: wrap;
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 30px;
+      gap: 20px;
+    }
+    .car-image img {
+      width: 220px;
+      height: auto;
+      border-radius: 10px;
+    }
+    .car-info {
+      flex: 2;
+    }
+    .car-info h3 {
+      margin: 0 0 10px;
+    }
+    .car-info .car-type {
+      font-weight: normal;
+      font-size: 0.9em;
+      color: #ccc;
+    }
+    .car-specs {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 20px;
+      font-size: 0.95em;
+      margin: 10px 0;
+    }
+    .location, .distance {
+      font-size: 0.85em;
+      color: #aaa;
+    }
+    .car-price {
+      flex: 1;
+      text-align: right;
+    }
+    .old-price {
+      text-decoration: line-through;
+      color: #888;
+    }
+    .new-price {
+      font-size: 1.4em;
+      color: #fff;
+      font-weight: bold;
+    }
+    .note {
+      color: #00cc66;
+      font-size: 0.9em;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 15px;
+      background: #00aa33;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Rental Cars</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cars.html">Cars</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Our Available Cars</h2>
+
+    <div class="car-listing">
+      <div class="car-image">
+        <img src="images/car1.jpg" alt="Toyota Camry" />
+      </div>
+      <div class="car-info">
+        <h3>Toyota Camry (2022) <span class="car-type">or similar midsize car</span></h3>
+        <ul class="car-specs">
+          <li>👥 5 seats</li>
+          <li>⚙️ Automatic</li>
+          <li>🧳 2 Large bags</li>
+          <li>👜 1 Small bag</li>
+          <li>🔄 Unlimited mileage</li>
+        </ul>
+        <p class="location">📍 Tirana International Airport</p>
+        <p class="distance">13.5 km from centre</p>
+      </div>
+      <div class="car-price">
+        <p class="old-price">US$165</p>
+        <p class="new-price">US$150</p>
+        <p class="note">Free cancellation</p>
+        <a href="car-toyota-camry.html" class="btn">View deal</a>
+      </div>
+    </div>
+
+    <div class="car-listing">
+      <div class="car-image">
+        <img src="images/car2.jpg" alt="Honda Civic" />
+      </div>
+      <div class="car-info">
+        <h3>Honda Civic (2021) <span class="car-type">or similar compact car</span></h3>
+        <ul class="car-specs">
+          <li>👥 5 seats</li>
+          <li>⚙️ Automatic</li>
+          <li>🧳 1 Large bag</li>
+          <li>👜 1 Small bag</li>
+          <li>🔄 Unlimited mileage</li>
+        </ul>
+        <p class="location">📍 Tirana Airport</p>
+        <p class="distance">13.5 km from centre</p>
+      </div>
+      <div class="car-price">
+        <p class="old-price">US$145</p>
+        <p class="new-price">US$135</p>
+        <p class="note">Free cancellation</p>
+        <a href="car-honda-civic.html" class="btn">View deal</a>
+      </div>
+    </div>
+
+    <div class="car-listing">
+      <div class="car-image">
+        <img src="images/car3.jpg" alt="Ford Mustang" />
+      </div>
+      <div class="car-info">
+        <h3>Ford Mustang (2020) <span class="car-type">or similar muscle car</span></h3>
+        <ul class="car-specs">
+          <li>👥 4 seats</li>
+          <li>⚙️ Automatic</li>
+          <li>🧳 1 Large bag</li>
+          <li>👜 1 Small bag</li>
+          <li>🔄 Unlimited mileage</li>
+        </ul>
+        <p class="location">📍 Tirana Downtown</p>
+        <p class="distance">2.5 km from centre</p>
+      </div>
+      <div class="car-price">
+        <p class="old-price">US$195</p>
+        <p class="new-price">US$180</p>
+        <p class="note">Free cancellation</p>
+        <a href="car-ford-mustang.html" class="btn">View deal</a>
+      </div>
+    </div>
+
+    <div class="car-listing">
+      <div class="car-image">
+        <img src="images/car4.jpg" alt="Chevrolet Equinox" />
+      </div>
+      <div class="car-info">
+        <h3>Chevrolet Equinox (2019) <span class="car-type">or similar SUV</span></h3>
+        <ul class="car-specs">
+          <li>👥 5 seats</li>
+          <li>⚙️ Automatic</li>
+          <li>🧳 3 Large bags</li>
+          <li>👜 1 Small bag</li>
+          <li>🔄 Unlimited mileage</li>
+        </ul>
+        <p class="location">📍 Tirana Intl Airport</p>
+        <p class="distance">13.5 km from centre</p>
+      </div>
+      <div class="car-price">
+        <p class="old-price">US$165</p>
+        <p class="new-price">US$155</p>
+        <p class="note">Free cancellation</p>
+        <a href="car-chevrolet-equinox.html" class="btn">View deal</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Rental Cars. All rights reserved.</p>
+  </footer>
+</body>
+</html>

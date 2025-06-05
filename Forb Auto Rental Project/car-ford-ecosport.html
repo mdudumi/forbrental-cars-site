@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ford Ecosport Titanium 2018 - Details</title>
+  <link rel="stylesheet" href="css/style.css" />
+  
+</head>
+<body>
+  <header>
+    <h1>FORB AUTORENTAL</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="car-details" data-price="50">
+    <!-- Left: Gallery + Description -->
+    <div class="left-column">
+      <img src="images/Ford Ecosport/car1.jpg" alt="Ford Ecosport Titanium 2018" class="main-image" id="mainImage" />
+      <div class="gallery">
+        <img src="images/Ford Ecosport/car1.jpg" alt="Thumb 1" onclick="changeMainImage(this.src)" />
+        <img src="images/Ford Ecosport/car1_2.jpg" alt="Thumb 2" onclick="changeMainImage(this.src)" />
+        <img src="images/Ford Ecosport/car1_3.jpg" alt="Thumb 3" onclick="changeMainImage(this.src)" />
+        <img src="images/Ford Ecosport/car1_4.jpg" alt="Thumb 4" onclick="changeMainImage(this.src)" />
+      </div>
+      <h2>Ford Ecosport Titanium 2018 (4+1 Automatic)</h2>
+      <p><strong>Price per day:</strong> €45</p>
+      <p>The 2018 Ford EcoSport Titanium offers premium features in a compact SUV frame. Its 2.0L unleaded engine delivers strong and efficient performance, ideal for both urban driving 	and weekend adventures. The automatic transmission and compact design ensure easy handling in tight spaces. Inside, it seats five comfortably and includes upscale touches like 	leather accents, a smart infotainment system, and keyless entry. Stylish, practical, and fun to drive — it’s a smart choice for those who want more in a small SUV.</p>
+
+    </div>
+
+    <!-- Right: Booking Form -->
+    <div class="right-column">
+      <div class="booking-form-container"></div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Rental Cars. All rights reserved.</p>
+  </footer>
+  <script>
+    function changeMainImage(src) {
+      document.getElementById('mainImage').src = src;
+    }
+
+
+  </script>
+
+  <!-- EmailJS Script -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    emailjs.init("xwV1D8tph1k0Km_RB"); // Your EmailJS public key
+  </script>
+
+  <!-- Booking Logic -->
+  <script src="js/booking.js"></script>
+
+</body>
+</html>

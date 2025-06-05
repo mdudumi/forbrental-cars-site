@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About - Forb Autorental</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <h1>FORB AUTORENTAL</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<div class="contact-container">
+  <h2>Contact Us</h2>
+  <div class="contact-info">
+    <p>We’d love to hear from you! Send us a message below or reach out directly.</p>
+    <p>Email: <a href="mailto:forbautorental@gmail.com">forbautorental@gmail.com</a></p>
+    <p>Phone: +355 696003336</p>
+  </div>
+
+<form id="contact-form">
+  <input type="text" name="user_name" placeholder="Your Name" required>
+  <input type="email" name="user_email" placeholder="Your Email" required>
+  <input type="text" name="subject" placeholder="Subject" required>
+  <input type="hidden" name="to_email" value="martin.dudumi@gmail.com" />
+  <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+  <div class="submit-btn">
+    <button type="submit">Send Message</button>
+  </div>
+</form>
+</div>
+
+<footer>
+  &copy; 2025 Forb Autorental. All rights reserved.
+</footer>
+
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function () {
+    emailjs.init("xwV1D8tph1k0Km_RB"); // Replace with your actual public key
+  })();
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const contactForm = document.getElementById("contact-form");
+
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      emailjs.sendForm("service_7rwv8g8", "template_d1vm54t", this)
+        .then(function () {
+          alert("Message sent successfully!");
+          contactForm.reset();
+        }, function (error) {
+          alert("Failed to send message: " + error.text);
+        });
+    });
+  });
+</script>
+
+</body>
+</html>
