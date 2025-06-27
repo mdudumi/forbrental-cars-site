@@ -118,8 +118,8 @@ nav a.active {
   transform: translateY(-10px);
   color: #ff6600;
   border-color: #ff6600;
-  box-shadow: 0 0px 30px rgba(255, 165, 0, 0.4);
-  transition: all 0.3s ease;
+  box-shadow: 0 0px 30px rgba(255, 165, 0, 0.8);
+  transition: all 0.5s ease;
 }
 
 .car-card img,
