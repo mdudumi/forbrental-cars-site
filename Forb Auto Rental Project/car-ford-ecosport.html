@@ -1,87 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title data-i18n="car.meta.title">Ford Ecosport Titanium 2018 - Details</title>
+  <title>Ford Ecosport Titanium 2018 - Details</title>
   <link rel="canonical" href="https://www.forbautorental.com/car-ford-ecosport" />
   <link rel="stylesheet" href="css/style.css" />
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17238436141"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'AW-17238436141');
-  </script>
-
-  <!-- Animations & Styles -->
-  <style>
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .car-details .left-column,
-    .car-details .right-column {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-    .visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .left-column img,
-    .left-column h2,
-    .left-column p {
-      opacity: 0;
-      animation: fadeInUp 0.8s forwards;
-    }
-    .left-column img.main-image   { animation-delay: 0.3s; }
-    .left-column .gallery img:nth-of-type(1) { animation-delay: 0.5s; }
-    .left-column .gallery img:nth-of-type(2) { animation-delay: 0.6s; }
-    .left-column .gallery img:nth-of-type(3) { animation-delay: 0.7s; }
-    .left-column .gallery img:nth-of-type(4) { animation-delay: 0.8s; }
-    .left-column h2                { animation-delay: 1.0s; }
-    .left-column p:nth-of-type(1)  { animation-delay: 1.2s; }
-    .left-column p:nth-of-type(2)  { animation-delay: 1.4s; }
-
-    #lang-switcher {
-      position: absolute;
-      top: 1rem; right: 1rem;
-      transition: transform 0.3s ease;
-    }
-    #lang-switcher:focus {
-      transform: scale(1.05);
-    }
-  </style>
+  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17238436141"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-17238436141'); </script>
 </head>
 <body>
-
   <header>
-    <a href="/" class="logo-wrapper">
-      <img src="images/Logo/logo.jpg" alt="Forb Autorental Logo" class="logo-img" />
-      <h1 class="logo">FORB AUTORENTAL</h1>
-    </a>
+     <a href="/" class="logo-wrapper">
+       <img src="images/Logo/logo.jpg" alt="Forb Autorental Logo" class="logo-img" />
+    <h1 class="logo">FORB AUTORENTAL</h1>
+  </a>
     <nav>
       <ul>
-        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
-        <li><a href="about.html" data-i18n="nav.about">About</a></li>
-        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
-    <select id="lang-switcher">
-      <option value="en">English</option>
-      <option value="sq">Shqip</option>
-      <option value="it">Italiano</option>
-      <option value="es">Español</option>
-      <option value="de">Deutsch</option>
-    </select>
   </header>
 
   <main class="car-details" data-price="50">
-    <div class="left-column" data-animate>
+    <!-- Left: Gallery + Description -->
+    <div class="left-column">
       <img src="images/Ford Ecosport/car1.jpg" alt="Ford Ecosport Titanium 2018" class="main-image" id="mainImage" />
       <div class="gallery">
         <img src="images/Ford Ecosport/car1.jpg" alt="Thumb 1" onclick="changeMainImage(this.src)" />
@@ -89,131 +34,48 @@
         <img src="images/Ford Ecosport/car1_3.jpg" alt="Thumb 3" onclick="changeMainImage(this.src)" />
         <img src="images/Ford Ecosport/car1_4.jpg" alt="Thumb 4" onclick="changeMainImage(this.src)" />
       </div>
-      <h2 data-i18n="car.title">Ford Ecosport Titanium 2018 (4+1 Automatic)</h2>
-      <p><strong data-i18n="car.label.price">Price per day:</strong> <span data-i18n="car.price">€45</span></p>
-      <p data-i18n="car.description">
-        The 2018 Ford EcoSport Titanium offers premium features in a compact SUV frame. Its 2.0L unleaded engine delivers strong and efficient performance, ideal for both urban driving and weekend adventures. The automatic transmission and compact design ensure easy handling in tight spaces. Inside, it seats five comfortably and includes upscale touches like leather accents, a smart infotainment system, and keyless entry. Stylish, practical, and fun to drive — it’s a smart choice for those who want more in a small SUV.
-      </p>
+      <h2>Ford Ecosport Titanium 2018 (4+1 Automatic)</h2>
+      <p><strong>Price per day:</strong> €45</p>
+      <p>The 2018 Ford EcoSport Titanium offers premium features in a compact SUV frame. Its 2.0L unleaded engine delivers strong and efficient performance, ideal for both urban driving 	and weekend adventures. The automatic transmission and compact design ensure easy handling in tight spaces. Inside, it seats five comfortably and includes upscale touches like 	leather accents, a smart infotainment system, and keyless entry. Stylish, practical, and fun to drive — it’s a smart choice for those who want more in a small SUV.</p>
+
     </div>
 
-    <div class="right-column" data-animate>
+    <!-- Right: Booking Form -->
+    <div class="right-column">
       <div class="booking-form-container"></div>
     </div>
   </main>
 
-  <footer>
+<footer>
     <div class="social-links">
       <a href="https://www.facebook.com/profile.php?id=61559736423625" target="_blank" rel="noopener">
-        <img src="images/Logo/facebook.png" alt="Facebook" class="social-icon" />
+        <img src="/images/Logo/facebook.png" alt="Facebook" class="social-icon" />
       </a>
-      <a href="https://www.instagram.com/forb_autorental/" target="_blank" rel="noopener">
-        <img src="images/Logo/instagram.png" alt="Instagram" class="social-icon" />
+      <a href="https://www.instagram.com/forb_autorental/?igsh=MTA2bTQ1N3F4cXk1bw%3D%3D#" target="_blank" rel="noopener">
+        <img src="/images/Logo/instagram.png" alt="Instagram" class="social-icon" />
       </a>
       <a href="https://wa.me/+355692029827?text=Hello%20Forb%20Autorental%2C%20I%20have%20a%20question%20about%20..." target="_blank" rel="noopener">
-        <img src="images/Logo/whatsapp.webp" alt="WhatsApp chat" class="social-icon" />
+      <img src="/images/Logo/whatsapp.webp" alt="WhatsApp chat" class="social-icon" />
       </a>
     </div>
-    <p data-i18n="footer.copy">© 2025 Forb Autorental. All rights reserved.</p>
-  </footer>
-
+  <p>&copy; 2025 Forb Autorental. All rights reserved.</p>
+</footer>
   <script>
-    // slide-in observer
-    document.addEventListener('DOMContentLoaded', () => {
-      const elems = document.querySelectorAll('[data-animate]');
-      const obs = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.classList.add('visible');
-            obs.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.2 });
-      elems.forEach(el => obs.observe(el));
-    });
-
-    // change gallery image
     function changeMainImage(src) {
       document.getElementById('mainImage').src = src;
     }
 
-    // Translations
-    const translations = {
-      en: {
-        "car.meta.title": "Ford Ecosport Titanium 2018 - Details",
-        "nav.home": "Home",
-        "nav.about": "About",
-        "nav.contact": "Contact",
-        "car.title": "Ford Ecosport Titanium 2018 (4+1 Automatic)",
-        "car.label.price": "Price per day:",
-        "car.price": "€45",
-        "car.description": "The 2018 Ford EcoSport Titanium offers premium features in a compact SUV frame. Its 2.0L unleaded engine delivers strong and efficient performance, ideal for both urban driving and weekend adventures. The automatic transmission and compact design ensure easy handling in tight spaces. Inside, it seats five comfortably and includes upscale touches like leather accents, a smart infotainment system, and keyless entry. Stylish, practical, and fun to drive — it’s a smart choice for those who want more in a small SUV.",
-        "footer.copy": "© 2025 Forb Autorental. All rights reserved."
-      },
-      sq: {
-        "car.meta.title": "Ford Ecosport Titanium 2018 - Detaje",
-        "nav.home": "Hyrje",
-        "nav.about": "Rreth Nesh",
-        "nav.contact": "Kontakt",
-        "car.title": "Ford Ecosport Titanium 2018 (4+1 Automatik)",
-        "car.label.price": "Çmimi për ditë:",
-        "car.price": "€45",
-        "car.description": "Ford EcoSport Titanium 2018 ofron veçori premium në një kornizë SUV kompakt. Motori 2.0L pa plumb siguron performancë të fortë dhe efikase, ideal për ngasje në qytet dhe aventura fundjave. Transmetimi automatik dhe dizajni kompakt garantojnë manovrim të lehtë në hapësira të ngushta. Brenda, ulen komod pesë persona dhe përfshin detaje luksi si aksente lëkure, sistem inteligjent infotainment dhe hyrje pa çelës. Elegant, praktik dhe i këndshëm për t’u drejtuar — zgjidhje e zgjuar për ata që duan më shumë në një SUV të vogël.",
-        "footer.copy": "© 2025 Forb Autorental. Të gjitha të drejtat e rezervuara."
-      },
-      it: {
-        "car.meta.title": "Ford Ecosport Titanium 2018 - Dettagli",
-        "nav.home": "Home",
-        "nav.about": "Chi Siamo",
-        "nav.contact": "Contatti",
-        "car.title": "Ford Ecosport Titanium 2018 (4+1 Automatico)",
-        "car.label.price": "Prezzo al giorno:",
-        "car.price": "€45",
-        "car.description": "La Ford EcoSport Titanium 2018 offre caratteristiche premium in un telaio SUV compatto. Il motore 2.0L a benzina garantisce prestazioni potenti ed efficienti, ideale sia per la guida urbana che per le avventure del fine settimana. Il cambio automatico e il design compatto assicurano una manovrabilità facile negli spazi ristretti. All’interno, ospita comodamente cinque persone e include dettagli di pregio come finiture in pelle, sistema di infotainment intelligente e accesso senza chiave. Elegante, pratico e divertente da guidare — è una scelta intelligente per chi vuole di più in un piccolo SUV.",
-        "footer.copy": "© 2025 Forb Autorental. Tutti i diritti riservati."
-      },
-      es: {
-        "car.meta.title": "Ford Ecosport Titanium 2018 - Detalles",
-        "nav.home": "Inicio",
-        "nav.about": "Nosotros",
-        "nav.contact": "Contacto",
-        "car.title": "Ford Ecosport Titanium 2018 (4+1 Automático)",
-        "car.label.price": "Precio por día:",
-        "car.price": "€45",
-        "car.description": "El Ford EcoSport Titanium 2018 ofrece características premium en un SUV compacto. Su motor 2.0L sin plomo brinda un rendimiento sólido y eficiente, ideal tanto para la conducción urbana como para aventuras de fin de semana. La transmisión automática y el diseño compacto aseguran un manejo fácil en espacios reducidos. En el interior, acomoda cómodamente a cinco personas e incluye detalles de lujo como acentos de cuero, un sistema de infoentretenimiento inteligente y acceso sin llave. Elegante, práctico y divertido de conducir: es una opción inteligente para quienes quieren más en un SUV pequeño.",
-        "footer.copy": "© 2025 Forb Autorental. Todos los derechos reservados."
-      },
-      de: {
-        "car.meta.title": "Ford Ecosport Titanium 2018 - Details",
-        "nav.home": "Startseite",
-        "nav.about": "Über Uns",
-        "nav.contact": "Kontakt",
-        "car.title": "Ford Ecosport Titanium 2018 (4+1 Automatik)",
-        "car.label.price": "Preis pro Tag:",
-        "car.price": "€45",
-        "car.description": "Der Ford EcoSport Titanium 2018 bietet Premium-Funktionen in einem kompakten SUV-Rahmen. Sein 2,0-L-Benzinmotor liefert starke und effiziente Leistung, ideal für den Stadtverkehr und Wochenendabenteuer. Das Automatikgetriebe und das kompakte Design sorgen für einfache Handhabung auf engem Raum. Innen bietet er bequem Platz für fünf Personen und umfasst hochwertige Details wie Lederausstattung, ein intelligentes Infotainment-System und schlüssellosen Zugang. Stilvoll, praktisch und spaßig zu fahren – eine kluge Wahl für alle, die mehr wollen in einem kleinen SUV.",
-        "footer.copy": "© 2025 Forb Autorental. Alle Rechte vorbehalten."
-      }
-    };
 
-    function setLanguage(lang) {
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n'),
-              txt = translations[lang]?.[key];
-        if (!txt) return;
-        if (el.tagName === 'TITLE' || txt.includes('<strong>') || txt.includes('<br>')) {
-          el.innerHTML = txt;
-        } else {
-          el.innerText = txt;
-        }
-      });
-    }
+  </script>
 
-    document.getElementById('lang-switcher')
-      .addEventListener('change', e => setLanguage(e.target.value));
-    setLanguage('en');
+  <!-- EmailJS Script -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    emailjs.init("xwV1D8tph1k0Km_RB"); // Your EmailJS public key
   </script>
 
   <!-- Booking Logic -->
   <script src="js/booking.js"></script>
+
 </body>
 </html>
