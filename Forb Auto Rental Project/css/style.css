@@ -555,59 +555,7 @@ textarea:focus {
   height: 100%;
   object-fit: contain;
 }
-/* Modal overlay */
-.modal {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  z-index: 2000;
-}
 
-/* Hidden by default */
-.modal.hidden {
-  display: none;
-}
-
-.modal-content {
-  background: #fff;
-  border-radius: 8px;
-  padding: 2rem;
-  max-width: 400px;
-  width: 100%;
-  text-align: center;
-  position: relative;
-}
-.modal-close {
-  position: absolute;
-  top: 0.5rem;
-  right: 1rem;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-#newsletter-form input {
-  width: calc(100% - 20px);
-  padding: 0.5rem 10px;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-#newsletter-form button {
-  background: #ff6600;
-  color: #fff;
-  border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 4px;
-  cursor: pointer;
-}
-#newsletter-form button:hover {
-  background: #e85d00;
-}
 /* Responsive Fixes */
 @media (max-width: 768px) {
   .car-details {
