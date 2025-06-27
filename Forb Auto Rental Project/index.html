@@ -11,6 +11,48 @@
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Animation Styles -->
+  <style>
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero h1,
+    .hero p {
+      opacity: 0;
+      animation: fadeInUp 0.8s forwards;
+    }
+    .hero h1 { animation-delay: 0.3s; }
+    .hero p:nth-of-type(1) { animation-delay: 0.6s; }
+    .hero p:nth-of-type(2) { animation-delay: 0.9s; }
+    .hero p:nth-of-type(3) { animation-delay: 1.2s; }
+    .hero p:nth-of-type(4) { animation-delay: 1.5s; }
+
+    .car-card {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .car-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .btn {
+      transition: transform 0.3s ease;
+    }
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    #lang-switcher {
+      transition: transform 0.3s ease;
+    }
+    #lang-switcher:focus {
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -45,54 +87,53 @@
 
     <section id="car-gallery">
       <!-- Car 1 -->
-      <div class="car-card">
+      <div class="car-card" data-animate>
         <img src="images/Ford Ecosport/car1.jpg" alt="Ford Ecosport Titanium 2018">
         <h3 data-i18n="car1.name">Ford Ecosport Titanium</h3>
         <ul class="specs">
- <p><span class="icon">⛽</span> Unleaded</p>
-    <p><span class="icon">⚙️</span> Automatic</p>
-    <p><span class="icon">👤</span> 5 seats</p>
-    <p><span class="icon">📅</span> 2018</p>
-
+          <p><span class="icon">⛽</span> Unleaded</p>
+          <p><span class="icon">⚙️</span> Automatic</p>
+          <p><span class="icon">👤</span> 5 seats</p>
+          <p><span class="icon">📅</span> 2018</p>
         </ul>
         <p class="price" data-i18n="car1.price">€35/day</p>
         <a href="car-ford-ecosport.html?model=ecosport" class="btn btn-secondary" data-i18n="buttons.details">View Details</a>
       </div>
       <!-- Car 2 -->
-      <div class="car-card">
+      <div class="car-card" data-animate>
         <img src="images/Ford Fiesta/car2.jpg" alt="Ford Fiesta 2019">
         <h3 data-i18n="car2.name">Ford Fiesta</h3>
         <ul class="specs">
-           <p><span class="icon">⛽</span> Unleaded</p>
-    <p><span class="icon">⚙️</span> Automatic</p>
-    <p><span class="icon">👤</span> 5 seats</p>
-    <p><span class="icon">📅</span> 2019</p>
+          <p><span class="icon">⛽</span> Unleaded</p>
+          <p><span class="icon">⚙️</span> Automatic</p>
+          <p><span class="icon">👤</span> 5 seats</p>
+          <p><span class="icon">📅</span> 2019</p>
         </ul>
         <p class="price" data-i18n="car2.price">€35/day</p>
         <a href="car-ford-fiesta.html?model=ecosport" class="btn btn-secondary" data-i18n="buttons.details">View Details</a>
       </div>
       <!-- Car 3 -->
-      <div class="car-card">
+      <div class="car-card" data-animate>
         <img src="images/Ford Ecosport SE/car3.jpg" alt="Ford Ecosport SE 2021">
         <h3 data-i18n="car3.name">Ford Ecosport SE</h3>
         <ul class="specs">
           <p><span class="icon">⛽</span> Unleaded</p>
-    <p><span class="icon">⚙️</span> Automatic</p>
-    <p><span class="icon">👤</span> 5 seats</p>
-    <p><span class="icon">📅</span> 2021</p>
+          <p><span class="icon">⚙️</span> Automatic</p>
+          <p><span class="icon">👤</span> 5 seats</p>
+          <p><span class="icon">📅</span> 2021</p>
         </ul>
         <p class="price" data-i18n="car3.price">€45/day</p>
         <a href="car-ford-ecosportse.html?model=ecosport" class="btn btn-secondary" data-i18n="buttons.details">View Details</a>
       </div>
       <!-- Car 4 -->
-      <div class="car-card">
+      <div class="car-card" data-animate>
         <img src="images/volswagen Tiguan/car4.jpg" alt="Volkswagen Tiguan 2021">
         <h3 data-i18n="car4.name">Volkswagen Tiguan</h3>
         <ul class="specs">
           <p><span class="icon">⛽</span> Unleaded</p>
-    <p><span class="icon">⚙️</span> Automatic</p>
-    <p><span class="icon">👤</span> 7 seats</p>
-    <p><span class="icon">📅</span> 2021</p>
+          <p><span class="icon">⚙️</span> Automatic</p>
+          <p><span class="icon">👤</span> 7 seats</p>
+          <p><span class="icon">📅</span> 2021</p>
         </ul>
         <p class="price" data-i18n="car4.price">€60/day</p>
         <a href="car-volswagen-tiguan.html?model=ecosport" class="btn btn-secondary" data-i18n="buttons.details">View Details</a>
@@ -133,7 +174,22 @@
     <p data-i18n="footer.copy">© 2025 Forb Autorental. All rights reserved.</p>
   </footer>
 
+  <!-- Scroll & Language Switcher Scripts -->
   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Animate car cards on scroll
+      const cards = document.querySelectorAll('[data-animate]');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      cards.forEach(card => observer.observe(card));
+
+      // Language switcher
     const translations = {
       en: {
         "meta.title": "Car Rentals in Tirana – Affordable Rates | Forb Autorental",
@@ -321,21 +377,17 @@
         "footer.copy": "© 2025 Forb Autorental. Alle Rechte vorbehalten."
       }
     };
-
-    function setLanguage(lang) {
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        const txt = translations[lang][key];
-        if (txt) el.innerText = txt;
-      });
-    }
-
-    document.getElementById('lang-switcher')
-      .addEventListener('change', e => setLanguage(e.target.value));
-
-    // default
-    setLanguage('en');
+      function setLanguage(lang) {
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          const txt = translations[lang][key];
+          if (txt) el.innerText = txt;
+        });
+      }
+      document.getElementById('lang-switcher')
+        .addEventListener('change', e => setLanguage(e.target.value));
+      setLanguage('en');
+    });
   </script>
 </body>
 </html>
-
