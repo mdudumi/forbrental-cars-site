@@ -4,7 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title data-i18n="meta.title">Car Rentals in Tirana – Affordable Rates | Forb Autorental</title>
-  <link rel="canonical" href="https://forbautorental.com/" />
+    {% include "_seo_head.html" with {
+    baseUrl: "https://forbautorental.com",
+    langPath: lang == "en" ? "" : "/" + lang
+  } %}
   <meta name="keywords" content="Tourism, makina me qera, makina me qera ne tirane,ford ecosport,makina me qera 7 vende ne tirane,makina me qera 30 euro,makina me qera ne lushnje,makina me qera ne aeroport,makina me qera rinas tirana albania,makina me qera ne berat,makina me qera tirane albania,jepet me qera makina tiguan me cmim ditor duke filluar nga 55 euro" />
   <meta name="description" content="Forb Autorental—affordable, reliable car rentals in Tirana. Choose from compact cars to SUVs. Book online now!" data-i18n="meta.description" />
   <link rel="stylesheet" href="css/style.css" />
