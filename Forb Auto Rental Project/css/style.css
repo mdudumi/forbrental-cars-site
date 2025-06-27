@@ -22,6 +22,9 @@ img, input, select, textarea {
 
 /* Header & Navigation */
 header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;               /* keep it above other content */
   height: 70px;
   background-color: #555555;
   padding: 0rem 2rem;
@@ -38,22 +41,12 @@ header h1,
   font-weight: 700;
 }
 
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;               /* keep it above other content */
-  background-color: #fff;      /* match your site’s background */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transition: background-color 0.3s, box-shadow 0.3s;
-}
 
 /* Optional: shrink header slightly on scroll */
 header.shrink {
   padding: 0.5rem 1rem;
 }
-header {
-  padding: 1rem 1.5rem;
-}
+
 .logo-wrapper {
   display: flex;
   align-items: center;
