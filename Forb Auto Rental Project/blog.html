@@ -167,19 +167,20 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.5.2/glide.min.js"></script>
   <script>
-    // full translations object (English + your fills)
-    document.addEventListener('DOMContentLoaded', () => {
-      // Animate car cards on scroll
-      const cards = document.querySelectorAll('[data-animate]');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
+        document.addEventListener('DOMContentLoaded', () => {
+      // initialize all gallery carousels
+      document.querySelectorAll('.glide.gallery').forEach(carousel => {
+        new Glide(carousel, {
+          type: 'carousel',
+          perView: 3,
+          gap: 10,
+          breakpoints: {
+            800:  { perView: 1 },
+            1200: { perView: 2 }
           }
-        });
-      }, { threshold: 0.2 });
-      cards.forEach(card => observer.observe(card));
+        }).mount();
+      });
+    // full translations object (English + your fills)
     const translations = {
       en: {
         "meta.blogTitle": "Albania Travel & Car Rentals Blog | Forb Autorental",
@@ -284,30 +285,6 @@
         "footer.copy": "© 2025 Forb Autorental. Alle Rechte vorbehalten."
       }
     };
-
-    function applyTranslations(lang) {
-      document.documentElement.lang = lang;
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (translations[lang] && translations[lang][key]) {
-          el.innerText = translations[lang][key];
-        }
-      });
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      // initialize all gallery carousels
-      document.querySelectorAll('.glide.gallery').forEach(carousel => {
-        new Glide(carousel, {
-          type: 'carousel',
-          perView: 3,
-          gap: 10,
-          breakpoints: {
-            800:  { perView: 1 },
-            1200: { perView: 2 }
-          }
-        }).mount();
-      });
 
  function setLanguage(lang) {
         document.querySelectorAll('[data-i18n]').forEach(el => {
