@@ -10,7 +10,7 @@ body {
   /* three-color gradient: dark → mid-gray → white */
   background: linear-gradient(
     135deg,
-    #000000 0%,
+    #000000 25%,
     #888888 50%,
     #ffffff 100%
   );
