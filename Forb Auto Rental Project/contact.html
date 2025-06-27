@@ -3,84 +3,164 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About - Forb Autorental</title>
+  <title data-i18n="meta.title">Contact Us – Forb Autorental</title>
   <link rel="stylesheet" href="css/style.css" />
-  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17238436141"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-17238436141'); </script>
 </head>
 <body>
 
   <!-- Header -->
   <header>
-     <a href="/" class="logo-wrapper">
-       <img src="images/Logo/logo.jpg" alt="Forb Autorental Logo" class="logo-img" />
-    <h1 class="logo">FORB AUTORENTAL</h1>
-  </a>
+    <a href="/" class="logo-wrapper">
+      <img src="images/Logo/logo.jpg" alt="Forb Autorental Logo" class="logo-img" />
+      <h1 class="logo">FORB AUTORENTAL</h1>
+    </a>
     <nav>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+        <li><a href="about.html" data-i18n="nav.about">About</a></li>
+        <li><a href="contact.html" class="active" data-i18n="nav.contact">Contact</a></li>
       </ul>
     </nav>
+    <select id="lang-switcher">
+      <option value="en">English</option>
+      <option value="sq">Shqip</option>
+      <option value="it">Italiano</option>
+      <option value="es">Español</option>
+      <option value="de">Deutsch</option>
+    </select>
   </header>
 
-<div class="contact-container">
-  <h2>Contact Us</h2>
-  <div class="contact-info">
-    <p>We’d love to hear from you! Send us a message below or reach out directly.</p>
-    <p>Email: <a href="mailto:forbautorental@gmail.com">forbautorental@gmail.com</a></p>
-    <p>Phone: +355692029827</p>
+  <div class="contact-container">
+    <h2 data-i18n="contact.title">Contact Us</h2>
+    <div class="contact-info">
+      <p data-i18n="contact.intro">We’d love to hear from you! Send us a message below or reach out directly.</p>
+      <p>Email: <a href="mailto:forbautorental@gmail.com">forbautorental@gmail.com</a></p>
+      <p data-i18n="contact.phone">Phone: +355692029827</p>
+    </div>
+
+    <form id="contact-form">
+      <input type="text" name="user_name" placeholder="" data-i18n-placeholder="form.name" required>
+      <input type="email" name="user_email" placeholder="" data-i18n-placeholder="form.email" required>
+      <input type="text" name="subject" placeholder="" data-i18n-placeholder="form.subject" required>
+      <input type="hidden" name="to_email" value="martin.dudumi@gmail.com" />
+      <textarea name="message" rows="5" placeholder="" data-i18n-placeholder="form.message" required></textarea>
+      <div class="submit-btn">
+        <button type="submit" data-i18n="form.submit">Send Message</button>
+      </div>
+    </form>
   </div>
 
-<form id="contact-form">
-  <input type="text" name="user_name" placeholder="Your Name" required>
-  <input type="email" name="user_email" placeholder="Your Email" required>
-  <input type="text" name="subject" placeholder="Subject" required>
-  <input type="hidden" name="to_email" value="martin.dudumi@gmail.com" />
-  <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-  <div class="submit-btn">
-    <button type="submit">Send Message</button>
-  </div>
-</form>
-</div>
-
-<footer>
+  <footer>
     <div class="social-links">
       <a href="https://www.facebook.com/profile.php?id=61559736423625" target="_blank" rel="noopener">
-        <img src="/images/Logo/facebook.png" alt="Facebook" class="social-icon" />
+        <img src="images/Logo/facebook.png" alt="Facebook" class="social-icon" />
       </a>
-      <a href="https://www.instagram.com/forb_autorental/?igsh=MTA2bTQ1N3F4cXk1bw%3D%3D#" target="_blank" rel="noopener">
-        <img src="/images/Logo/instagram.png" alt="Instagram" class="social-icon" />
+      <a href="https://www.instagram.com/forb_autorental/" target="_blank" rel="noopener">
+        <img src="images/Logo/instagram.png" alt="Instagram" class="social-icon" />
       </a>
-      <a href="https://wa.me/+355692029827?text=Hello%20Forb%20Autorental%2C%20I%20have%20a%20question%20about%20..." target="_blank" rel="noopener">
-      <img src="/images/Logo/whatsapp.webp" alt="WhatsApp chat" class="social-icon" />
+      <a href="https://wa.me/+355692029827" target="_blank" rel="noopener">
+        <img src="images/Logo/whatsapp.webp" alt="WhatsApp chat" class="social-icon" />
       </a>
     </div>
-  <p>&copy; 2025 Forb Autorental. All rights reserved.</p>
-</footer>
+    <p data-i18n="footer.copy">© 2025 Forb Autorental. All rights reserved.</p>
+  </footer>
 
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-  (function () {
-    emailjs.init("xwV1D8tph1k0Km_RB"); // Replace with your actual public key
-  })();
+  <!-- i18n Script -->
+  <script>
+    const translations = {
+      en: {
+        "meta.title": "Contact Us – Forb Autorental",
+        "nav.home": "Home",
+        "nav.about": "About",
+        "nav.contact": "Contact",
+        "contact.title": "Contact Us",
+        "contact.intro": "We’d love to hear from you! Send us a message below or reach out directly.",
+        "contact.phone": "Phone: +355692029827",
+        "form.name": "Your Name",
+        "form.email": "Your Email",
+        "form.subject": "Subject",
+        "form.message": "Your Message",
+        "form.submit": "Send Message",
+        "footer.copy": "© 2025 Forb Autorental. All rights reserved."
+      },
+      sq: {
+        "meta.title": "Na Kontaktoni – Forb Autorental",
+        "nav.home": "Hyrje",
+        "nav.about": "Rreth Nesh",
+        "nav.contact": "Kontakt",
+        "contact.title": "Na Kontaktoni",
+        "contact.intro": "Na pëlqen të dëgjojmë nga ju! Dërgoni një mesazh më poshtë ose na kontaktoni drejtpërdrejt.",
+        "contact.phone": "Telefoni: +355692029827",
+        "form.name": "Emri Juaj",
+        "form.email": "Email-i Juaj",
+        "form.subject": "Subjekti",
+        "form.message": "Mesazhi Juaj",
+        "form.submit": "Dërgo Mesazh",
+        "footer.copy": "© 2025 Forb Autorental. Të gjitha të drejtat e rezervuara."
+      },
+      it: {
+        "meta.title": "Contattaci – Forb Autorental",
+        "nav.home": "Home",
+        "nav.about": "Chi Siamo",
+        "nav.contact": "Contatti",
+        "contact.title": "Contattaci",
+        "contact.intro": "Ci piacerebbe sentirti! Inviaci un messaggio qui sotto o contattaci direttamente.",
+        "contact.phone": "Telefono: +355692029827",
+        "form.name": "Il tuo nome",
+        "form.email": "La tua email",
+        "form.subject": "Oggetto",
+        "form.message": "Il tuo messaggio",
+        "form.submit": "Invia Messaggio",
+        "footer.copy": "© 2025 Forb Autorental. Tutti i diritti riservati."
+      },
+      es: {
+        "meta.title": "Contáctanos – Forb Autorental",
+        "nav.home": "Inicio",
+        "nav.about": "Nosotros",
+        "nav.contact": "Contacto",
+        "contact.title": "Contáctanos",
+        "contact.intro": "¡Nos encantaría saber de ti! Envíanos un mensaje abajo o contáctanos directamente.",
+        "contact.phone": "Teléfono: +355692029827",
+        "form.name": "Tu Nombre",
+        "form.email": "Tu Email",
+        "form.subject": "Asunto",
+        "form.message": "Tu Mensaje",
+        "form.submit": "Enviar Mensaje",
+        "footer.copy": "© 2025 Forb Autorental. Todos los derechos reservados."
+      },
+      de: {
+        "meta.title": "Kontakt – Forb Autorental",
+        "nav.home": "Startseite",
+        "nav.about": "Über Uns",
+        "nav.contact": "Kontakt",
+        "contact.title": "Kontakt",
+        "contact.intro": "Wir würden gerne von Ihnen hören! Senden Sie uns unten eine Nachricht oder kontaktieren Sie uns direkt.",
+        "contact.phone": "Telefon: +355692029827",
+        "form.name": "Ihr Name",
+        "form.email": "Ihre Email",
+        "form.subject": "Betreff",
+        "form.message": "Ihre Nachricht",
+        "form.submit": "Nachricht Senden",
+        "footer.copy": "© 2025 Forb Autorental. Alle Rechte vorbehalten."
+      }
+    };
 
-  document.addEventListener("DOMContentLoaded", function () {
-    const contactForm = document.getElementById("contact-form");
+    function setLanguage(lang) {
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        el.innerText = translations[lang][key] || el.innerText;
+      });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        el.placeholder = translations[lang][key] || el.placeholder;
+      });
+    }
 
-    contactForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      emailjs.sendForm("service_7rwv8g8", "template_d1vm54t", this)
-        .then(function () {
-          alert("Message sent successfully!");
-          contactForm.reset();
-        }, function (error) {
-          alert("Failed to send message: " + error.text);
-        });
-    });
-  });
-</script>
+    document.getElementById('lang-switcher')
+      .addEventListener('change', e => setLanguage(e.target.value));
+    setLanguage('en');
+  </script>
 
 </body>
 </html>
