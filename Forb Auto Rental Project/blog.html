@@ -168,6 +168,18 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.5.2/glide.min.js"></script>
   <script>
     // full translations object (English + your fills)
+    document.addEventListener('DOMContentLoaded', () => {
+      // Animate car cards on scroll
+      const cards = document.querySelectorAll('[data-animate]');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      cards.forEach(card => observer.observe(card));
     const translations = {
       en: {
         "meta.blogTitle": "Albania Travel & Car Rentals Blog | Forb Autorental",
