@@ -52,27 +52,27 @@
   </style>
 </head>
 <body>
-  <header>
-    <a href="/" class="logo-wrapper">
-      <img src="images/Logo/logo.jpg" alt="Logo" style="height:40px; vertical-align:middle;">
-      <span style="font-size:1.25rem; margin-left:.5rem;">FORB AUTORENTAL</span>
-    </a>
-    <nav>
-      <ul>
-        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
-        <li><a href="about.html" data-i18n="nav.about">About</a></li>
-        <li><a href="blog.html" class="active" data-i18n="nav.blog">Blog</a></li>
-        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
-      </ul>
-    </nav>
-    <select id="lang-switcher">
-      <option value="en">English</option>
-      <option value="sq">Shqip</option>
-      <option value="it">Italiano</option>
-      <option value="es">Español</option>
-      <option value="de">Deutsch</option>
-    </select>
-  </header>
+<header>
+  <a href="/" class="logo-wrapper">
+    <img src="images/Logo/logo.jpg" alt="Forb Autorental Logo" class="logo-img" />
+    <span class="logo">FORB AUTORENTAL</span>
+  </a>
+  <nav>
+    <ul>
+      <li><a href="index.html"           data-i18n="nav.home">Home</a></li>
+      <li><a href="about.html"           data-i18n="nav.about">About</a></li>
+      <li><a href="blog.html" class="active" data-i18n="nav.blog">Blog</a></li>
+      <li><a href="contact.html"         data-i18n="nav.contact">Contact</a></li>
+    </ul>
+  </nav>
+  <select id="lang-switcher">
+    <option value="en">English</option>
+    <option value="sq">Shqip</option>
+    <option value="it">Italiano</option>
+    <option value="es">Español</option>
+    <option value="de">Deutsch</option>
+  </select>
+</header>
 
   <main>
     <section class="hero">
@@ -320,5 +320,11 @@
     setLanguage(switcher.value);
   });
   </script>
+  <script>
+  window.addEventListener('scroll', () => {
+    document.querySelector('header')
+            .classList.toggle('shrink', window.scrollY > 50);
+  });
+</script>
 </body>
 </html>
