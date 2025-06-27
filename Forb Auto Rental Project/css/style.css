@@ -229,7 +229,11 @@ button[type="submit"]:hover {
   font-weight: 600;
   color: #333;
 }
-
+.review .rating {
+  font-size: 1rem;
+  color: #ffba00;
+  margin-top: 0.25rem;
+}
 /* Booking Form */
 .booking-form-container {
   display: flex;
