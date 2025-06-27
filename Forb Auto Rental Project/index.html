@@ -240,23 +240,13 @@
 </script>
     </section>
 
-    <section class="reviews">
-      <h2 data-i18n="reviews.title">Customer Reviews</h2>
-      <div class="review-grid">
-        <div class="review">
-          <p data-i18n="reviews.r1.text">"Fantastic service and clean vehicles!"</p>
-          <span data-i18n="reviews.r1.author">- Gerti L.</span>
-        </div>
-        <div class="review">
-          <p data-i18n="reviews.r2.text">"Great selection of cars and easy booking process."</p>
-          <span data-i18n="reviews.r2.author">- Martin D.</span>
-        </div>
-        <div class="review">
-          <p data-i18n="reviews.r3.text">"Affordable rates and friendly staff. Highly recommend!"</p>
-          <span data-i18n="reviews.r3.author">- Bledi A.</span>
-        </div>
-      </div>
-    </section>
+<section class="reviews">
+  <h2 data-i18n="reviews.title">Customer Reviews</h2>
+  <div id="reviews-container" class="review-grid">
+    <!-- Reviews will be injected here -->
+  </div>
+</section>
+    
   </main>
 
   <footer>
@@ -581,5 +571,42 @@
     }
   ]
 }
+    <script
+  src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"
+  async defer>
+</script>
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const placeId = 'ChIJW3kMHIe7GhMRur71RPOFOMM'; // ← your business's Google Place ID
+  const reviewsContainer = document.getElementById('reviews-container');
+
+  function renderReview(r) {
+    const div = document.createElement('div');
+    div.className = 'review';
+    div.innerHTML = `
+      <p>"${r.text}"</p>
+      <span>– ${r.author_name}</span>
+      <div class="rating">${'★'.repeat(r.rating)}${'☆'.repeat(5 - r.rating)}</div>
+    `;
+    return div;
+  }
+
+  function initReviews() {
+    const service = new google.maps.places.PlacesService(document.createElement('div'));
+    service.getDetails({ placeId, fields: ['reviews'] }, (place, status) => {
+      if (status === google.maps.places.PlacesServiceStatus.OK && place.reviews) {
+        // Show up to 5 most recent reviews
+        place.reviews.slice(0,5).forEach(r => {
+          reviewsContainer.appendChild(renderReview(r));
+        });
+      } else {
+        reviewsContainer.innerText = 'Unable to load reviews at this time.';
+      }
+    });
+  }
+
+  // Wait until Maps API is ready
+  window.initMap = initReviews;
+</script>
 </body>
 </html>
