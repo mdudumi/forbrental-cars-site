@@ -11,21 +11,23 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.5.2/css/glide.core.min.css" />
   <!-- Your main CSS -->
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .glide { width:100%; max-width:1200px; margin:40px auto; }
+    .glide__slides img { width:100%; height:auto; object-fit:cover; border-radius:8px; }
+    .glide__bullets { display:flex; justify-content:center; margin-top:10px; }
+    .glide__bullet { width:10px; height:10px; background:#ccc; border-radius:50%; margin:0 5px; cursor:pointer; border:none; }
+    .glide__bullet--active { background:#333; }
+  </style>
 </head>
 <body>
   <header>
-    <a href="/" class="logo-wrapper">
-      <img src="images/Logo/logo.jpg" alt="Forb Autorental Logo" class="logo-img" />
-      <h1 class="logo">FORB AUTORENTAL</h1>
-    </a>
-    <nav>
-      <ul>
-        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
-        <li><a href="about.html" data-i18n="nav.about">About</a></li>
-        <li><a href="blog.html" class="active" data-i18n="nav.blog">Blog</a></li>
-        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
-      </ul>
-    </nav>
+    <a href="/" class="logo-wrapper"><img src="images/Logo/logo.jpg" alt="Logo" class="logo-img" /><h1 class="logo">FORB AUTORENTAL</h1></a>
+    <nav><ul>
+      <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+      <li><a href="about.html" data-i18n="nav.about">About</a></li>
+      <li><a href="blog.html" class="active" data-i18n="nav.blog">Blog</a></li>
+      <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+    </ul></nav>
     <select id="lang-switcher">
       <option value="en">English</option>
       <option value="sq">Shqip</option>
@@ -34,83 +36,65 @@
       <option value="de">Deutsch</option>
     </select>
   </header>
-
   <main>
-    <!-- Hero -->
     <section class="hero">
       <h1 data-i18n="blog.heroTitle">Explore Albania: Cars, Driving & Culture</h1>
       <p data-i18n="blog.heroSub">Your go-to source for detailed guides on renting cars, navigating Albanian roads safely, and uncovering the rich history and unique curiosities of Albania—from Tirana’s bustling streets to the ancient ruins of Butrint.</p>
     </section>
-
-    <!-- Renting Cars -->
     <section class="post" id="renting-cars">
       <h2 data-i18n="blog.section1.title">Renting Cars in Albania</h2>
-      <div class="glide slider">
-        <div class="glide__track" data-glide-el="track">
-          <ul class="glide__slides">
-            <li class="glide__slide"><img src="images/Blog/Rent/office.jpg" alt="Rent office" /></li>
-            <li class="glide__slide"><img src="images/Blog/Rent/key.jpg" alt="Key handover" /></li>
-            <li class="glide__slide"><img src="images/Blog/Rent/car.jpg" alt="Car inspection" /></li>
-          </ul>
-        </div>
-      </div>
-      <p data-i18n="blog.section1.intro">Whether you’re touching down at Tirana International Airport or picking up in the city center, understanding local rental practices ensures a smooth start to your journey.</p>
-      <p data-i18n="blog.section1.details">Most agencies require a valid driver’s license (issued at least one year prior), passport or ID card, and a credit card for the security deposit. Optional insurance packages range from basic third-party coverage to comprehensive collision damage waivers—choose based on your comfort level and itinerary.</p>
+      <div class="glide"><div class="glide__track" data-glide-el="track"><ul class="glide__slides">
+        <li class="glide__slide"><img src="images/Blog/Rent/office.jpg" alt="Rent office" /></li>
+        <li class="glide__slide"><img src="images/Blog/Rent/key.jpg" alt="Key handover" /></li>
+        <li class="glide__slide"><img src="images/Blog/Rent/car.jpg" alt="Car inspection" /></li>
+      </ul></div>
+      <div class="glide__bullets" data-glide-el="controls[nav]"><button class="glide__bullet" data-glide-dir="=0"></button><button class="glide__bullet" data-glide-dir="=1"></button><button class="glide__bullet" data-glide-dir="=2"></button></div></div>
+      <p data-i18n="blog.section1.intro"></p>
+      <p data-i18n="blog.section1.details"></p>
       <ul>
-        <li data-i18n="blog.section1.point1">Book early during summer (June–August) to secure best rates.</li>
-        <li data-i18n="blog.section1.point2">Check fuel policy: full-to-full is most transparent.</li>
-        <li data-i18n="blog.section1.point3">Inspect vehicle for scratches or dents before signing.</li>
+        <li data-i18n="blog.section1.point1"></li>
+        <li data-i18n="blog.section1.point2"></li>
+        <li data-i18n="blog.section1.point3"></li>
       </ul>
     </section>
-
-    <!-- Driving Tips -->
     <section class="post" id="driving-tips">
       <h2 data-i18n="blog.section2.title">Driving in Albania</h2>
-      <div class="gallery">
-        <img src="images/Blog/Albania/road.jpg" alt="Scenic road" />
-        <img src="images/Blog/Albania/mountain.jpg" alt="Mountain pass" />
-        <img src="images/Blog/Albania/coast.jpg" alt="Coastal highway" />
-      </div>
-      <p data-i18n="blog.section2.intro">Albania offers a diverse driving experience: coastal highways, mountain passes, and urban traffic. Know the rules and best practices to stay safe.</p>
+      <div class="glide"><div class="glide__track" data-glide-el="track"><ul class="glide__slides">
+        <li class="glide__slide"><img src="images/Blog/Albania/road.jpg" alt="Scenic road" /></li>
+        <li class="glide__slide"><img src="images/Blog/Albania/mountain.jpg" alt="Mountain pass" /></li>
+        <li class="glide__slide"><img src="images/Blog/Albania/coast.jpg" alt="Coastal highway" /></li>
+      </ul></div>
+      <div class="glide__bullets" data-glide-el="controls[nav]"><button class="glide__bullet" data-glide-dir="=0"></button><button class="glide__bullet" data-glide-dir="=1"></button><button class="glide__bullet" data-glide-dir="=2"></button></div></div>
+      <p data-i18n="blog.section2.intro"></p>
       <ul>
-        <li data-i18n="blog.section2.point1">Road Conditions: Major routes are paved but rural roads can be uneven—drive slower on backcountry roads.</li>
-        <li data-i18n="blog.section2.point2">Signage: Most signs follow European norms but watch for local directional markers in Albanian.</li>
-        <li data-i18n="blog.section2.point3">Speed Limits: 50 km/h in cities, 80 km/h on open roads, 110 km/h on highways—speed cameras are common near towns.</li>
-        <li data-i18n="blog.section2.point4">Mountain Safety: Always carry water, blankets, and a physical map; network coverage can be spotty.</li>
+        <li data-i18n="blog.section2.point1"></li>
+        <li data-i18n="blog.section2.point2"></li>
+        <li data-i18n="blog.section2.point3"></li>
+        <li data-i18n="blog.section2.point4"></li>
       </ul>
     </section>
-
-    <!-- Culture & History -->
     <section class="post" id="culture-history">
       <h2 data-i18n="blog.section3.title">Discover Albania: History & Curiosities</h2>
-      <div class="gallery">
-        <img src="images/Blog/History/butrint.jpg" alt="Butrint ruins" />
-        <img src="images/Blog/History/dance.jpg" alt="Traditional dance" />
-        <img src="images/Blog/History/kruja.jpg" alt="Local market" />
-      </div>
-      <p data-i18n="blog.section3.intro">Albania blends millennia of history with warm hospitality. From UNESCO World Heritage sites to modern urban hubs, there’s so much to explore.</p>
-      <p data-i18n="blog.section3.text1"><strong>Ancient Roots:</strong> Visit Butrint, an archaeological site founded by the Greeks in the 8th century BC, then expanded by Romans and Byzantines.</p>
-      <p data-i18n="blog.section3.text2"><strong>Cultural Gems:</strong> Experience a live iso-polyphonic concert in the Gjirokastër Old Town or browse Skanderbeg Square’s lively cafes in Tirana.</p>
-      <p data-i18n="blog.section3.text3"><strong>Local Curiosities:</strong> Albanians have a custom called Besa—an oath of honor—reflecting deep-rooted traditions of hospitality and trust.</p>
+      <div class="glide"><div class="glide__track" data-glide-el="track"><ul class="glide__slides">
+        <li class="glide__slide"><img src="images/Blog/History/butrint.jpg" alt="Butrint ruins" /></li>
+        <li class="glide__slide"><img src="images/Blog/History/dance.jpg" alt="Traditional dance" /></li>
+        <li class="glide__slide"><img src="images/Blog/History/kruja.jpg" alt="Local market" /></li>
+      </ul></div>
+      <div class="glide__bullets" data-glide-el="controls[nav]"><button class="glide__bullet" data-glide-dir="=0"></button><button class="glide__bullet" data-glide-dir="=1"></button><button class="glide__bullet" data-glide-dir="=2"></button></div></div>
+      <p data-i18n="blog.section3.intro"></p>
+      <p data-i18n="blog.section3.text1"></p>
+      <p data-i18n="blog.section3.text2"></p>
+      <p data-i18n="blog.section3.text3"></p>
     </section>
   </main>
-
- <footer>
+  <footer>
     <div class="social-links">
-      <a href="https://www.facebook.com/profile.php?id=61559736423625" target="_blank" rel="noopener">
-        <img src="images/Logo/facebook.png" alt="Facebook" class="social-icon" />
-      </a>
-      <a href="https://www.instagram.com/forb_autorental/" target="_blank" rel="noopener">
-        <img src="images/Logo/instagram.png" alt="Instagram" class="social-icon" />
-      </a>
-      <a href="https://wa.me/+355692029827" target="_blank" rel="noopener">
-        <img src="images/Logo/whatsapp.webp" alt="WhatsApp chat" class="social-icon" />
-      </a>
+      <a href="https://facebook.com" target="_blank" rel="noopener"><i class="fab fa-facebook fa-2x"></i></a>
+      <a href="https://instagram.com" target="_blank" rel="noopener"><i class="fab fa-instagram fa-2x"></i></a>
+      <a href="https://wa.me" target="_blank" rel="noopener"><i class="fab fa-whatsapp fa-2x"></i></a>
     </div>
-    <p data-i18n="footer.copy">© 2025 Forb Autorental. All rights reserved.</p>
+    <p data-i18n="footer.copy"></p>
   </footer>
-
-  <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.5.2/glide.min.js"></script>
   <script>
     const translations = {
@@ -217,28 +201,18 @@
         "footer.copy": "© 2025 Forb Autorental. Alle Rechte vorbehalten."
       }
     };
-        // initialize slider
-    document.addEventListener('DOMContentLoaded', () => {
-      new Glide('.glide', { type: 'carousel', perView: 1, autoplay: 4000 }).mount();
-
-      // language switcher
-      const switcher = document.getElementById('lang-switcher');
-      switcher.addEventListener('change', e => {
-        const lang = e.target.value;
-        // update html lang attribute
-        document.documentElement.lang = lang;
-        // swap all data-i18n keys
-        document.querySelectorAll('[data-i18n]').forEach(el => {
-          const key = el.getAttribute('data-i18n');
-          if (translations[lang][key]) {
-            el.innerText = translations[lang][key];
-          }
-        });
+    function applyTranslations(lang) {
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) el.innerText = translations[lang][key];
       });
-
-      // set default
-      switcher.value = 'en';
-      switcher.dispatchEvent(new Event('change'));
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.glide').forEach(glideEl => new Glide(glideEl,{type:'carousel',perView:1,autoplay:4000}).mount());
+      const switcher=document.getElementById('lang-switcher');
+      switcher.addEventListener('change',e=>applyTranslations(e.target.value));
+      applyTranslations('en'); switcher.value='en';
     });
   </script>
 </body>
