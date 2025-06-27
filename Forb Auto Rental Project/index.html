@@ -572,46 +572,55 @@
   ]
 }
   </script>      <!-- <-- THIS line was missing -->
-  <!-- 1) Define initMap at top‐level, _before_ you load the API -->
-  <script>
-    // this must run as soon as the browser parses it, so it's on window
-    window.initMap = function() {
-      console.log('✅ initMap called');
-      const placeId = 'ChIJW3kMHIe7GhMRur71RPOFOMM';  // your real Place ID
-      const container = document.getElementById('reviews-container');
-      container.innerHTML = '<p>Loading reviews…</p>';
+<!-- define initMap first -->
+<script>
+  window.initMap = function() {
+    console.log('✅ initMap called');
+    // now `google` will be available
+    const placeId = 'ChIJW3kMHIe7GhMRur71RPOFOMM';
+    const container = document.getElementById('reviews-container');
+    container.innerHTML = '<p>Loading reviews…</p>';
 
-      const service = new google.maps.places.PlacesService(document.createElement('div'));
-      service.getDetails({ placeId, fields: ['reviews'] }, (place, status) => {
+    const service = new google.maps.places.PlacesService(
+      document.createElement('div')
+    );
+    service.getDetails(
+      { placeId, fields: ['reviews'] },
+      (place, status) => {
         container.innerHTML = '';
-        if (status === google.maps.places.PlacesServiceStatus.OK && place.reviews) {
-          place.reviews.slice(0,5).forEach(r => {
+        if (
+          status ===
+            google.maps.places.PlacesServiceStatus.OK &&
+          place.reviews
+        ) {
+          place.reviews.slice(0, 5).forEach((r) => {
             const div = document.createElement('div');
             div.className = 'review';
             div.innerHTML = `
               <p>"${r.text}"</p>
               <span>– ${r.author_name}</span>
-              <div class="rating">${'★'.repeat(r.rating)}${'☆'.repeat(5 - r.rating)}</div>
+              <div class="rating">${
+                '★'.repeat(r.rating) +
+                '☆'.repeat(5 - r.rating)
+              }</div>
             `;
             container.appendChild(div);
           });
         } else {
-          container.innerHTML = '<p>No reviews available.</p>';
+          container.innerHTML =
+            '<p>No reviews available.</p>';
           console.error('PlacesService failed:', status);
         }
-      });
-    };
-  </script>
+      }
+    );
+  };
+</script>
 
-  <!-- 2) THEN load the Maps+Places API with your key & callback=initMap -->
-  <script
-    src="https://maps.googleapis.com/maps/api/js?
-         key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg
-         &libraries=places
-         &callback=initMap
-         &v=weekly"
-    async defer>
-  </script>
+<!-- then load the API; no line breaks in the URL, and only `defer` -->
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&libraries=places&callback=initMap&v=weekly"
+  defer
+></script>
 
   <!-- 3) Finally, your page-ready scripts -->
   <script>
