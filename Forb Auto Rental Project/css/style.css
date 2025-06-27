@@ -519,32 +519,6 @@ textarea:focus {
   background-color: #e25500;
 }
 
-/* FOOTER
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.site-footer {
-  background: #f8f8f8;
-  padding: 2rem 0;
-}
-
-.site-footer__inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.site-footer__social a {
-  margin-left: 0.75rem;
-  font-size: 1.5rem;
-  color: inherit; /* inherit text color, or override as needed */
-}
-
-.site-footer__social a:hover {
-  opacity: 0.8;
-}
-
-
 /* Responsive Fixes */
 @media (max-width: 768px) {
   .car-details {
