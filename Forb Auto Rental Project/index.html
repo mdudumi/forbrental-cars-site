@@ -23,7 +23,9 @@
     .background-slider .slide.active { opacity:1; }
     .background-slider .slide img {
       width:100%; height:100%; object-fit:cover;
+      filter: contrast(1.2);
     }
+
     /* TRANSPARENT HEADER */
     header {
       position: relative;
@@ -38,12 +40,19 @@
       position: relative;
       z-index: 2;
     }
+    header a, header select, header nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
     /* HERO TEXT */
     .hero {
       position:relative; color:#fff;
       text-align:center; padding:4rem 1rem;
     }
-    .hero h1 {
+    .hero h1,
+    .hero p {
       position:relative; z-index:1;
       margin:0.5rem 0;
       display:inline-block;
@@ -51,22 +60,64 @@
       padding:0.5rem 1rem;
       border-radius:0.5rem;
     }
-    .hero p {
-      position:relative; z-index:1;
-      margin:0.5rem 0;
+
+    /* CAR GALLERY */
+    #car-gallery {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      padding:2rem 1rem;
     }
-    /* TRANSPARENT CAR CARDS */
     .car-card {
       background: rgba(255,255,255,0.8);
       backdrop-filter: blur(5px);
       border-radius: 0.5rem;
       overflow: hidden;
       margin:1rem;
+      width:260px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform .3s;
+    }
+    .car-card:hover {
+      transform: translateY(-5px);
     }
     .car-card img {
-      opacity:0.9;
+      width:100%; height:160px; object-fit:cover;
+      filter: contrast(1.2);
     }
-    .specs p { margin:0.2em 0; }
+    .car-card h3 {
+      margin:0.5rem; color:#333;
+    }
+    .car-card .specs {
+      list-style:none; padding:0 0.5rem; color:#555;
+    }
+    .car-card .specs p {
+      margin:0.3rem 0;
+    }
+    .car-card .price {
+      margin:0.5rem; font-weight:bold;
+    }
+    .btn-secondary {
+      display:block; text-align:center;
+      margin:0.5rem auto 1rem;
+      padding:0.5rem 1rem;
+      background:#007BFF; color:#fff;
+      text-decoration:none; border-radius:0.25rem;
+    }
+
+    /* FOOTER */
+    footer {
+      padding:2rem 1rem; text-align:center;
+      background: rgba(0,0,0,0.4); color:#fff;
+      position:relative; z-index:1;
+    }
+    .social-links a {
+      margin:0 0.5rem; display:inline-block;
+    }
+    .social-icon {
+      width:32px; height:32px;
+      filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
+      border-radius:50%; background: rgba(255,255,255,0.8);
+      padding:4px;
+    }
   </style>
 </head>
 <body>
@@ -121,9 +172,59 @@
         <p class="price" data-i18n="car1.price">€35/day</p>
         <a href="car-ford-ecosport.html?model=ecosport" class="btn btn-secondary" data-i18n="buttons.details">View Details</a>
       </div>
-      <!-- Repeat similarly structured car-card blocks for cars 2, 3, 4 -->
+      <div class="car-card">
+        <img src="images/Ford Fiesta/car2.jpg" alt="Ford Fiesta 2019">
+        <h3 data-i18n="car2.name">Ford Fiesta</h3>
+        <ul class="specs">
+          <p><span class="icon">⛽</span> <span data-i18n="specs.fuel">Unleaded</span></p>
+          <p><span class="icon">⚙️</span> <span data-i18n="specs.transmission">Automatic</span></p>
+          <p><span class="icon">👤</span> <span data-i18n="specs.seats">5 seats</span></p>
+          <p><span class="icon">📅</span> <span data-i18n="specs.year2">2019</span></p>
+        </ul>
+        <p class="price" data-i18n="car2.price">€35/day</p>
+        <a href="car-ford-fiesta.html?model=ecosport" class="btn btn-secondary" data-i18n="buttons.details">View Details</a>
+      </div>
+      <div class="car-card">
+        <img src="images/Ford Ecosport SE/car3.jpg" alt="Ford Ecosport SE 2021">
+        <h3 data-i18n="car3.name">Ford Ecosport SE</h3>
+        <ul class="specs">
+          <p><span class="icon">⛽</span> <span data-i18n="specs.fuel">Unleaded</span></p>
+          <p><span class="icon">⚙️</span> <span data-i18n="specs.transmission">Automatic</span></p>
+          <p><span class="icon">👤</span> <span data-i18n="specs.seats">5 seats</span></p>
+          <p><span class="icon">📅</span> <span data-i18n="specs.year3">2021</span></p>
+        </ul>
+        <p class="price" data-i18n="car3.price">€45/day</p>
+        <a href="car-ford-ecosportse.html?model=ecosport" class="btn btn-secondary" data-i18n="buttons.details">View Details</a>
+      </div>
+      <div class="car-card">
+        <img src="images/volswagen Tiguan/car4.jpg" alt="Volkswagen Tiguan 2021">
+        <h3 data-i18n="car4.name">Volkswagen Tiguan</h3>
+        <ul class="specs">
+          <p><span class="icon">⛽</span> <span data-i18n="specs.fuel">Unleaded</span></p>
+          <p><span class="icon">⚙️</span> <span data-i18n="specs.transmission">Automatic</span></p>
+          <p><span class="icon">👤</span> <span data-i18n="specs.seats7">7 seats</span></p>
+          <p><span class="icon">📅</span> <span data-i18n="specs.year4">2021</span></p>
+        </ul>
+        <p class="price" data-i18n="car4.price">€60/day</p>
+        <a href="car-volswagen-tiguan.html?model=ecosport" class="btn btn-secondary" data-i18n="buttons.details">View Details</a>
+      </div>
     </section>
   </main>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://www.facebook.com/profile.php?id=61559736423625" target="_blank" rel="noopener">
+        <img src="images/Logo/facebook.png" alt="Facebook" class="social-icon" />
+      </a>
+      <a href="https://www.instagram.com/forb_autorental/" target="_blank" rel="noopener">
+        <img src="images/Logo/instagram.png" alt="Instagram" class="social-icon" />
+      </a>
+      <a href="https://wa.me/+355692029827" target="_blank" rel="noopener">
+        <img src="images/Logo/whatsapp.webp" alt="WhatsApp chat" class="social-icon" />
+      </a>
+    </div>
+    <p data-i18n="footer.copy">© 2025 Forb Autorental. All rights reserved.</p>
+  </footer>
 
   <script>
     const translations = {
@@ -137,8 +238,13 @@
         "hero.sub3":"24/7 roadside assistance, and flexible pick-up/drop-off locations in Tirana, Rinas Airport, and beyond.",
         "hero.sub4":"Book online in seconds and experience worry-free travel across Albania.",
         "car1.name":"Ford Ecosport Titanium","car1.price":"€35/day",
-        "specs.fuel":"Unleaded","specs.transmission":"Automatic","specs.seats":"5 seats","specs.year1":"2018",
-        "buttons.details":"View Details"
+        "car2.name":"Ford Fiesta","car2.price":"€35/day",
+        "car3.name":"Ford Ecosport SE","car3.price":"€45/day",
+        "car4.name":"Volkswagen Tiguan","car4.price":"€60/day",
+        "specs.fuel":"Unleaded","specs.transmission":"Automatic","specs.seats":"5 seats","specs.seats7":"7 seats",
+        "specs.year1":"2018","specs.year2":"2019","specs.year3":"2021","specs.year4":"2021",
+        "buttons.details":"View Details",
+        "footer.copy":"© 2025 Forb Autorental. All rights reserved."
       },
       sq: {
         "meta.title":"Makina me qira në Tiranë – Çmime të Përballueshme | Forb Autorental",
@@ -150,8 +256,11 @@
         "hero.sub3":"ndihmë 24/7 në rrugë, dhe lokacione fleksibile marrjeje/dorëzimi në Tiranë, Aeroportin e Rinas-it dhe më gjerë.",
         "hero.sub4":"Rezervoni online tani dhe përjetoni një udhëtim pa shqetësime në gjithë Shqipërinë.",
         "car1.name":"Ford Ecosport Titanium","car1.price":"€35/ditë",
-        "specs.fuel":"Benzinë","specs.transmission":"Automatik","specs.seats":"5 vende","specs.year1":"2018",
-        "buttons.details":"Shiko Detajet"
+        "car2.name":"Ford Fiesta","car2.price":"€35/ditë",
+        "car3.name":"Ford Ecosport SE","car3.price":"€45/ditë",
+        "car4.name":"Volkswagen Tiguan","car4.price":"€60/ditë",
+        "buttons.details":"Shiko Detajet",
+        "footer.copy":"© 2025 Forb Autorental. Të gjitha të drejtat e rezervuara."
       },
       it: {
         "meta.title":"Noleggio Auto a Tirana – Tariffe Convenienti | Forb Autorental",
@@ -162,9 +271,8 @@
         "hero.sub2":"Che tu abbia bisogno di un’utilitaria per la città o di un SUV spazioso per esplorare la campagna, Forb Autorental offre prezzi trasparenti,",
         "hero.sub3":"assistenza stradale 24/7 e punti di ritiro/consegna flessibili a Tirana, Aeroporto di Rinas e oltre.",
         "hero.sub4":"Prenota online in pochi secondi e vivi un viaggio senza pensieri in tutta l’Albania.",
-        "car1.name":"Ford Ecosport Titanium","car1.price":"€35/giorno",
-        "specs.fuel":"Benzina","specs.transmission":"Automatico","specs.seats":"5 posti","specs.year1":"2018",
-        "buttons.details":"Dettagli"
+        "buttons.details":"Dettagli",
+        "footer.copy":"© 2025 Forb Autorental. Tutti i diritti riservati."
       },
       es: {
         "meta.title":"Alquiler de Coches en Tirana – Tarifas Asequibles | Forb Autorental",
@@ -175,9 +283,8 @@
         "hero.sub2":"Ya necesites un coche compacto para la ciudad o un SUV espacioso para explorar el campo, Forb Autorental ofrece precios transparentes,",
         "hero.sub3":"asistencia en carretera 24/7 y recogida/devolución flexibles en Tirana, Aeropuerto de Rinas y más allá.",
         "hero.sub4":"Reserva online en segundos y disfruta de un viaje sin preocupaciones por toda Albania.",
-        "car1.name":"Ford Ecosport Titanium","car1.price":"€35/día",
-        "specs.fuel":"Sin plomo","specs.transmission":"Automático","specs.seats":"5 plazas","specs.year1":"2018",
-        "buttons.details":"Ver Detalles"
+        "buttons.details":"Ver Detalles",
+        "footer.copy":"© 2025 Forb Autorental. Todos los derechos reservados."
       },
       de: {
         "meta.title":"Autovermietung in Tirana – Bezahlbare Preise | Forb Autorental",
@@ -188,9 +295,8 @@
         "hero.sub2":"Egal, ob Sie einen Kompaktwagen für die Stadt oder einen geräumigen SUV für die Erkundung der Landschaft benötigen, Forb Autorental bietet transparente Preise,",
         "hero.sub3":"24/7 Pannenhilfe und flexible Abhol-/Rückgabeorte in Tirana, Flughafen Rinas und darüber hinaus.",
         "hero.sub4":"Buchen Sie online in Sekunden und genießen Sie sorgenfreies Reisen durch ganz Albanien.",
-        "car1.name":"Ford Ecosport Titanium","car1.price":"€35/Tag",
-        "specs.fuel":"Bleifrei","specs.transmission":"Automatik","specs.seats":"5 Sitze","specs.year1":"2018",
-        "buttons.details":"Details Anzeigen"
+        "buttons.details":"Details Anzeigen",
+        "footer.copy":"© 2025 Forb Autorental. Alle Rechte vorbehalten."
       }
     };
 
@@ -202,7 +308,10 @@
       });
     }
 
-    document.getElementById('lang-switcher').addEventListener('change', e => setLanguage(e.target.value));
+    document.getElementById('lang-switcher')
+      .addEventListener('change', e => setLanguage(e.target.value));
+
+    // default to English
     setLanguage('en');
 
     // Background slider auto-scroll
