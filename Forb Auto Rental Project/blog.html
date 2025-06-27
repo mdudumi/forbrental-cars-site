@@ -8,41 +8,38 @@
 
   <!-- FontAwesome for arrows -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
   <!-- Your main CSS -->
   <link rel="stylesheet" href="css/style.css" />
 
-  <!-- Gallery styles -->
   <style>
-    .image-gallery { max-width: 800px; margin: 2rem auto; }
-    .gallery-main { position: relative; }
+    /* Gallery styles */
+    .image-gallery { max-width:800px; margin:2rem auto; }
+    .gallery-main { position:relative; }
     .gallery-main img {
-      width: 100%; height: auto;
-      border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      display: block;
+      width:100%; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1);
+      display:block;
     }
     .thumb-nav {
-      position: absolute; top: 50%; transform: translateY(-50%);
-      background: rgba(0,0,0,0.5); color: #fff;
-      border: none; padding: 0.5rem; border-radius: 50%;
-      cursor: pointer; z-index: 2;
+      position:absolute; top:50%; transform:translateY(-50%);
+      background:rgba(0,0,0,0.5); color:#fff;
+      border:none; padding:0.5rem; border-radius:50%; cursor:pointer;
+      z-index:2;
     }
-    .thumb-prev { left: 10px; }
-    .thumb-next { right: 10px; }
-    .thumb-nav i { font-size: 1rem; }
-
+    .thumb-prev { left:10px; }
+    .thumb-next { right:10px; }
+    .thumb-nav i { font-size:1rem; }
     .gallery-thumbs {
-      display: flex; justify-content: center; margin-top: 0.75rem;
+      display:flex; justify-content:center; margin-top:.75rem;
     }
     .gallery-thumbs img {
-      width: 100px; height: 60px; object-fit: cover;
-      margin: 0 0.5rem; cursor: pointer;
-      border: 2px solid transparent; border-radius: 4px;
-      transition: border-color 0.2s;
+      width:100px; height:60px; object-fit:cover;
+      margin:0 .5rem; cursor:pointer;
+      border:2px solid transparent; border-radius:4px;
+      transition:border-color .2s;
     }
     .gallery-thumbs img:hover,
     .gallery-thumbs img.active {
-      border-color: #007bff;
+      border-color:#007bff;
     }
   </style>
 </head>
@@ -164,67 +161,61 @@
 
   <footer>
     <div class="social-links">
-      <a href="https://www.facebook.com/profile.php?id=61559736423625" target="_blank" rel="noopener">
-        <img src="images/Logo/facebook.png" alt="Facebook" class="social-icon" />
-      </a>
-      <a href="https://www.instagram.com/forb_autorental/" target="_blank" rel="noopener">
-        <img src="images/Logo/instagram.png" alt="Instagram" class="social-icon" />
-      </a>
-      <a href="https://wa.me/+355692029827" target="_blank" rel="noopener">
-        <img src="images/Logo/whatsapp.webp" alt="WhatsApp chat" class="social-icon" />
-      </a>
+      <a href="#" target="_blank"><img src="images/Logo/facebook.png" alt="Facebook" class="social-icon"></a>
+      <a href="#" target="_blank"><img src="images/Logo/instagram.png" alt="Instagram" class="social-icon"></a>
+      <a href="#" target="_blank"><img src="images/Logo/whatsapp.webp" alt="WhatsApp" class="social-icon"></a>
     </div>
     <p data-i18n="footer.copy">© 2025 Forb Autorental. All rights reserved.</p>
   </footer>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Wire up each gallery
-      document.querySelectorAll('.image-gallery').forEach(galleryEl => {
-        const mainImg = galleryEl.querySelector('.gallery-main img');
-        const thumbs  = Array.from(galleryEl.querySelectorAll('.gallery-thumbs img'));
-        let idx = 0;
-        function show(i) {
-          idx = (i + thumbs.length) % thumbs.length;
-          const thumb = thumbs[idx];
-          mainImg.src = thumb.src;
-          mainImg.alt = thumb.alt;
-          thumbs.forEach(t => t.classList.remove('active'));
-          thumb.classList.add('active');
-        }
-        show(0);
-        galleryEl.querySelector('.thumb-prev').addEventListener('click', () => show(idx - 1));
-        galleryEl.querySelector('.thumb-next').addEventListener('click', () => show(idx + 1));
-        thumbs.forEach((t,i)=> t.addEventListener('click',()=> show(i)));
-      });
+  document.addEventListener('DOMContentLoaded', () => {
+    // --- Gallery wiring ---
+    document.querySelectorAll('.image-gallery').forEach(galleryEl => {
+      const mainImg = galleryEl.querySelector('.gallery-main img');
+      const thumbs  = Array.from(galleryEl.querySelectorAll('.gallery-thumbs img'));
+      let idx = 0;
+      function show(i) {
+        idx = (i + thumbs.length) % thumbs.length;
+        const t = thumbs[idx];
+        mainImg.src = t.src;
+        mainImg.alt = t.alt;
+        thumbs.forEach(x => x.classList.remove('active'));
+        t.classList.add('active');
+      }
+      show(0);
+      galleryEl.querySelector('.thumb-prev').addEventListener('click', ()=>show(idx-1));
+      galleryEl.querySelector('.thumb-next').addEventListener('click', ()=>show(idx+1));
+      thumbs.forEach((t,i)=> t.addEventListener('click',()=>show(i)));
+    });
 
-      // Full translations
-      const translations = {
-        en: {
-          "meta.blogTitle":"Albania Travel & Car Rentals Blog | Forb Autorental",
-          "nav.home":"Home","nav.about":"About","nav.blog":"Blog","nav.contact":"Contact",
-          "blog.heroTitle":"Explore Albania: Cars, Driving & Culture",
-          "blog.heroSub":"Your go-to source for detailed guides on renting cars, navigating Albanian roads safely, and uncovering the rich history and unique curiosities of Albania—from Tirana’s bustling streets to the ancient ruins of Butrint.",
-          "blog.section1.title":"Renting Cars in Albania",
-          "blog.section1.intro":"Whether you’re arriving at Tirana International Airport or picking up your vehicle in the city center, understanding local rental procedures will ensure a smooth start to your journey.",
-          "blog.section1.details":"Most agencies require a valid driver’s license (held for at least one year), a passport or national ID, and a credit card for the security deposit. Insurance packages range from basic third-party coverage to comprehensive collision damage waivers—choose according to your comfort level and itinerary.",
-          "blog.section1.point1":"Book early during summer (June–August) to secure the best rates.",
-          "blog.section1.point2":"Opt for a full-to-full fuel policy—it’s the most transparent option.",
-          "blog.section1.point3":"Inspect the vehicle carefully for any scratches or dents before signing.",
-          "blog.section2.title":"Driving in Albania",
-          "blog.section2.intro":"Albania offers a diverse driving experience: coastal highways, mountain passes, and urban traffic. Familiarize yourself with the rules and best practices to stay safe.",
-          "blog.section2.point1":"Road Conditions: Major routes are paved, but rural roads may be uneven—reduce speed on backcountry stretches.",
-          "blog.section2.point2":"Signage: Most follow European norms, though local directional markers appear in Albanian.",
-          "blog.section2.point3":"Speed Limits: 50 km/h in cities, 80 km/h on open roads, 110 km/h on highways—speed cameras are common near towns.",
-          "blog.section2.point4":"Mountain Safety: Always carry water, blankets, and a physical map; mobile coverage can be spotty.",
-          "blog.section3.title":"Discover Albania: History & Curiosities",
-          "blog.section3.intro":"Albania blends millennia of history with warm hospitality. From UNESCO World Heritage sites to modern urban hubs, there is so much to explore.",
-          "blog.section3.text1":"Ancient Roots: Visit Butrint, an archaeological site founded by the Greeks in the 8th century BC, then expanded by Romans and Byzantines.",
-          "blog.section3.text2":"Cultural Gems: Experience a live iso-polyphonic concert in the Gjirokastër Old Town or browse Skanderbeg Square’s lively cafes in Tirana.",
-          "blog.section3.text3":"Local Curiosities: Albanians have a custom called Besa—an oath of honor—reflecting deep-rooted traditions of hospitality and trust.",
-          "footer.copy":"© 2025 Forb Autorental. All rights reserved."
-        },
-        sq: {
+    // --- Translations ---
+    const translations = {
+      en: {
+        "meta.blogTitle":"Albania Travel & Car Rentals Blog | Forb Autorental",
+        "nav.home":"Home","nav.about":"About","nav.blog":"Blog","nav.contact":"Contact",
+        "blog.heroTitle":"Explore Albania: Cars, Driving & Culture",
+        "blog.heroSub":"Your go-to source for detailed guides on renting cars, navigating Albanian roads safely, and uncovering the rich history and unique curiosities of Albania—from Tirana’s bustling streets to the ancient ruins of Butrint.",
+        "blog.section1.title":"Renting Cars in Albania",
+        "blog.section1.intro":"Whether you’re arriving at Tirana International Airport or picking up your vehicle in the city center, understanding local rental procedures will ensure a smooth start to your journey.",
+        "blog.section1.details":"Most agencies require a valid driver’s license (held for at least one year), a passport or national ID, and a credit card for the security deposit. Insurance packages range from basic third-party coverage to comprehensive collision damage waivers—choose according to your comfort level and itinerary.",
+        "blog.section1.point1":"Book early during summer (June–August) to secure the best rates.",
+        "blog.section1.point2":"Opt for a full-to-full fuel policy—it’s the most transparent option.",
+        "blog.section1.point3":"Inspect the vehicle carefully for any scratches or dents before signing.",
+        "blog.section2.title":"Driving in Albania",
+        "blog.section2.intro":"Albania offers a diverse driving experience: coastal highways, mountain passes, and urban traffic. Familiarize yourself with the rules and best practices to stay safe.",
+        "blog.section2.point1":"Road Conditions: Major routes are paved, but rural roads may be uneven—reduce speed on backcountry stretches.",
+        "blog.section2.point2":"Signage: Most follow European norms, though local directional markers appear in Albanian.",
+        "blog.section2.point3":"Speed Limits: 50 km/h in cities, 80 km/h on open roads, 110 km/h on highways—speed cameras are common near towns.",
+        "blog.section2.point4":"Mountain Safety: Always carry water, blankets, and a physical map; mobile coverage can be spotty.",
+        "blog.section3.title":"Discover Albania: History & Curiosities",
+        "blog.section3.intro":"Albania blends millennia of history with warm hospitality. From UNESCO World Heritage sites to modern urban hubs, there is so much to explore.",
+        "blog.section3.text1":"Ancient Roots: Visit Butrint, an archaeological site founded by the Greeks in the 8th century BC, then expanded by Romans and Byzantines.",
+        "blog.section3.text2":"Cultural Gems: Experience a live iso-polyphonic concert in the Gjirokastër Old Town or browse Skanderbeg Square’s lively cafes in Tirana.",
+        "blog.section3.text3":"Local Curiosities: Albanians have a custom called Besa—an oath of honor—reflecting deep-rooted traditions of hospitality and trust.",
+        "footer.copy":"© 2025 Forb Autorental. All rights reserved."
+      },
+      sq: {
           "meta.blogTitle":"Blog Udhëtimi & Qira Makinash në Shqipëri | Forb Autorental",
           "nav.home":"Hyrje","nav.about":"Rreth Nesh","nav.blog":"Blog","nav.contact":"Kontakt",
           "blog.heroTitle":"Zbulo Shqipërinë: Makinat, Ngasja & Kultura",
@@ -257,8 +248,7 @@
           "blog.section1.intro":"Che tu arrivi all'Aeroporto Internazionale di Tirana o ritiri in centro città, comprendere le pratiche di noleggio locali garantisce un inizio di viaggio senza intoppi.",
           "blog.section1.details":"La maggior parte delle agenzie richiede patente valida (rilasciata da almeno un anno), passaporto o carta d'identità e carta di credito per il deposito cauzionale. I pacchetti assicurativi opzionali vanno dalla copertura di base a esoneri completi per danni—scegli in base al tuo itinerario.",
           "blog.section1.point1":"Prenota in anticipo durante l'estate (giugno–agosto) per tariffe migliori.",
-          "blog.section1.point2":"Controlla la politi
-          "blog.section1.point2":"Controlla la politica del carburante: pieno a pieno è la più trasparente.",
+           "blog.section1.point2":"Controlla la politica del carburante: pieno a pieno è la più trasparente.",
           "blog.section1.point3":"Verifica graffi o ammaccature prima di firmare il contratto.",
           "blog.section2.title":"Guida in Albania",
           "blog.section2.intro":"L'Albania offre un'esperienza di guida diversificata: autostrade costiere, passi montani e traffico urbano. Conosci le regole per viaggiare in sicurezza.",
@@ -336,6 +326,23 @@
       switcher.addEventListener('change', e => setLanguage(e.target.value));
       setLanguage(switcher.value || 'en');
     });
+  </script>
+</body>
+</html>
+
+    function setLanguage(lang) {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          el.innerText = translations[lang][key];
+        }
+      });
+    }
+
+    const switcher = document.getElementById('lang-switcher');
+    switcher.addEventListener('change', e => setLanguage(e.target.value));
+    setLanguage(switcher.value || 'en');
+  });
   </script>
 </body>
 </html>
