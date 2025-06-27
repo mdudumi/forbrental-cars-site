@@ -7,7 +7,13 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #e0e0e0;
+  /* three-color gradient: dark → mid-gray → white */
+  background: linear-gradient(
+    135deg,
+    #000000 0%,
+    #888888 50%,
+    #ffffff 100%
+  );
   color: #333;
   line-height: 1.6;
   min-height: 100vh;
