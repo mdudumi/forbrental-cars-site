@@ -11,17 +11,7 @@
   <meta property="og:url"         content="https://forbautorental.com/" />
   <meta property="og:type"        content="website" />
   <link rel="stylesheet" href="css/style.css" />
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17238436141"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'AW-17238436141');
-  </script>
-
-  <!-- Font Awesome -->
+  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17238436141"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-17238436141'); </script>
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -29,15 +19,14 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
-
 </head>
 <body>
-  <!-- Header -->
+  <!-- Header (no background image) -->
   <header>
-    <a href="/" class="logo-wrapper">
-      <img src="images/Logo/logo.jpg" alt="Forb Autorental Logo" class="logo-img" />
-      <h1 class="logo">FORB AUTORENTAL</h1>
-    </a>
+     <a href="/" class="logo-wrapper">
+       <img src="images/Logo/logo.jpg" alt="Forb Autorental Logo" class="logo-img" />
+    <h1 class="logo">FORB AUTORENTAL</h1>
+  </a>
     <nav>
       <ul>
         <li><a href="index.html" class="active">Home</a></li>
@@ -47,19 +36,16 @@
     </nav>
   </header>
 
-  <!-- Main content -->
+  <!-- Main section with background image -->
   <main class="main-content">
-    <!-- Hero -->
     <section class="hero">
       <h2>Welcome to Our Car Rental Service</h2>
       <p>Find the perfect car for your journey.</p>
     </section>
 
-    <!-- Car gallery -->
     <section id="car-gallery">
-      <!-- repeat each .car-link as needed -->
       <a href="car-ford-ecosport.html" class="car-link">
-        <img src="images/Ford Ecosport/car1.jpg" alt="Ford Ecosport Titanium" />
+        <img src="images/Ford Ecosport/car1.jpg" alt="ford-ecosport" />
         <div class="car-info">
           <h3>Ford Ecosport Titanium</h3>
           <p>Type of Fuel: Unleaded</p>
@@ -69,10 +55,41 @@
           <p>Price per day: €45</p>
         </div>
       </a>
-      <!-- …other cars… -->
+      <a href="car-ford-fiesta.html" class="car-link">
+        <img src="images/Ford Fiesta/car2.jpg" alt="ford-fiesta" />
+        <div class="car-info">
+          <h3>Ford Fiesta</h3>
+          <p>Type of Fuel: Unleaded</p>
+          <p>Gearbox: Automatic</p>
+          <p>Capacity: 4+1</p>
+          <p>Year: 2019</p>
+          <p>Price per day: €35</p>
+        </div>
+      </a>
+      <a href="car-ford-ecosportse.html" class="car-link">
+        <img src="images/Ford Ecosport SE/car3.jpg" alt="Ford Ecosport SE" />
+        <div class="car-info">
+          <h3>Ford Ecosport SE</h3>
+          <p>Type of Fuel: Unleaded</p>
+          <p>Gearbox: Automatic</p>
+          <p>Capacity: 4+1</p>
+          <p>Year: 2021</p>
+          <p>Price per day: €45</p>
+        </div>
+      </a>
+      <a href="car-volswagen-tiguan.html" class="car-link">
+        <img src="images/Volswagen Tiguan/car4.jpg" alt="Volswagen Tiguan" />
+        <div class="car-info">
+          <h3>Volkswagen Tiguan</h3>
+          <p>Type of Fuel: Unleaded</p>
+          <p>Gearbox: Automatic</p>
+          <p>Capacity: 6+1</p>
+          <p>Year: 2021</p>
+          <p>Price per day: €60</p>
+        </div>
+      </a>
     </section>
 
-    <!-- Reviews -->
     <section class="reviews">
       <h2>Customer Reviews</h2>
       <div class="review-grid">
@@ -80,22 +97,40 @@
           <p>"Fantastic service and clean vehicles!"</p>
           <span>- Gerti L.</span>
         </div>
-        <!-- …other reviews… -->
+        <div class="review">
+          <p>"Great selection of cars and easy booking process."</p>
+          <span>- Martin D.</span>
+        </div>
+        <div class="review">
+          <p>"Affordable rates and friendly staff. Highly recommend!"</p>
+          <span>- Bledi A.</span>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer with social icons -->
+  <!-- Footer (no background image) -->
   <footer>
-    <p>© 2025 Forb Autorental. All rights reserved.</p>
-    <div class="social-links">
-      <a href="https://www.facebook.com/YourPage" target="_blank" aria-label="Facebook">
-        <i class="fab fa-facebook-square"></i>
-      </a>
-      <a href="https://www.instagram.com/YourProfile" target="_blank" aria-label="Instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
-    </div>
-  </footer>
+    <footer style="text-align:center; padding:2rem 0; background:#f8f8f8;">
+  <p>&copy; 2025 Forb Autorental. All rights reserved.</p>
+  <div class="social-links" style="margin-top:0.5rem;">
+    <a href="https://www.facebook.com/yourpage" target="_blank" aria-label="Facebook" style="margin:0 0.5rem; color:#4267B2; font-size:1.5rem;">
+      <i class="fab fa-facebook-square"></i>
+    </a>
+    <a href="https://www.instagram.com/yourprofile" target="_blank" aria-label="Instagram" style="margin:0 0.5rem; color:#E1306C; font-size:1.5rem;">
+      <i class="fab fa-instagram"></i>
+    </a>
+  </div>
+<footer style="text-align:center; padding:2rem 0; background:#f8f8f8;">
+  <p>&copy; 2025 Forb Autorental. All rights reserved.</p>
+  <div class="social-links" style="margin-top:0.5rem;">
+    <a href="https://www.facebook.com/yourpage" target="_blank" aria-label="Facebook" style="margin:0 0.5rem; color:#4267B2; font-size:1.5rem;">
+      <i class="fab fa-facebook-square"></i>
+    </a>
+    <a href="https://www.instagram.com/yourprofile" target="_blank" aria-label="Instagram" style="margin:0 0.5rem; color:#E1306C; font-size:1.5rem;">
+      <i class="fab fa-instagram"></i>
+    </a>
+  </div>
+</footer>
 </body>
 </html>
