@@ -3,70 +3,220 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About - Forb Autorental</title>
+  <title data-i18n="about.meta.title">About - Forb Autorental</title>
   <link rel="stylesheet" href="css/style.css" />
-	<!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17238436141"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-17238436141'); </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17238436141"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'AW-17238436141');
+  </script>
+
+  <!-- Animation Styles -->
+  <style>
+    /* Fade-in for headings & paragraphs */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .about-left h2,
+    .about-left p,
+    .about-right h3,
+    .about-right p {
+      opacity: 0;
+      animation: fadeInUp 0.8s forwards;
+    }
+    .about-left h2 { animation-delay: 0.3s; }
+    .about-left h2.highlight { animation-delay: 0.5s; }
+    .about-left p      { animation-delay: 0.7s; }
+    .about-right h3    { animation-delay: 0.9s; }
+    .about-right p     { animation-delay: 1.1s; }
+
+    /* Slide-in on scroll for the two halves */
+    .about-left, .about-right {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .about-left.visible, .about-right.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Language switcher focus */
+    #lang-switcher {
+      transition: transform 0.3s ease;
+    }
+    #lang-switcher:focus {
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 <body>
 
   <!-- Header -->
   <header>
-     <a href="/" class="logo-wrapper">
-       <img src="images/Logo/logo.jpg" alt="Forb Autorental Logo" class="logo-img" />
-    <h1 class="logo">FORB AUTORENTAL</h1>
-  </a>
+    <a href="/" class="logo-wrapper">
+      <img src="images/Logo/logo.jpg" alt="Forb Autorental Logo" class="logo-img" />
+      <h1 class="logo">FORB AUTORENTAL</h1>
+    </a>
     <nav>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+        <li><a href="about.html" class="active" data-i18n="nav.about">About</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
       </ul>
     </nav>
+    <select id="lang-switcher">
+      <option value="en">English</option>
+      <option value="sq">Shqip</option>
+      <option value="it">Italiano</option>
+      <option value="es">Español</option>
+      <option value="de">Deutsch</option>
+    </select>
   </header>
 
-<div class="about-container">
-  <div class="about-left">
-    <h2>YOU NEED</h2>
-    <h2 class="highlight">RENTAL CARS?</h2>
-    <p>
-      Our Company Ensures That Great Customer Service Is A Top Priority.<br>
-      And Beyond That, We Go The Extra Mile To Deliver Premium Car Rentals At The Best Value.
-    </p>
-	<div class="image-wrapper">
-  		<img src="images/Splash/about.jpg" alt="Orange Car" />
-	</div>
-  </div>
+  <div class="about-container">
+    <div class="about-left" data-animate>
+      <h2 data-i18n="about.you_need">YOU NEED</h2>
+      <h2 class="highlight" data-i18n="about.rental_cars">RENTAL CARS?</h2>
+      <p data-i18n="about.description">
+        Our Company Ensures That Great Customer Service Is A Top Priority.<br>
+        And Beyond That, We Go The Extra Mile To Deliver Premium Car Rentals At The Best Value.
+      </p>
+      <div class="image-wrapper">
+        <img src="images/Splash/about.jpg" alt="Orange Car" />
+      </div>
+    </div>
 
-  <div class="about-right">
-    <h3>ABOUT US</h3>
-    <p>
-      Forb Autorental, based in Tirana, is committed to offering the latest car models at competitive prices,
-      with a strong focus on customer satisfaction and quality service.<br><br>
-      We serve Rinas Airport, Tirana City Center, and locations across Albania — offering vehicles like Tiguan (6+1),
-      Fords (4+1), and more, all backed by 24/7 support and full insurance coverage.<br><br>
-      Our offerings go beyond rentals: professional drivers, tour packages, airport services, and even business
-      partnerships in Airbnb, real estate, legal, and HR sectors.<br><br>
-      Whether for a day, a month, or a long-term lease — we’re here to make your journey smooth, safe, and stylish.
-    </p>
+    <div class="about-right" data-animate>
+      <h3 data-i18n="about.us.title">ABOUT US</h3>
+      <p data-i18n="about.us.text">
+        Forb Autorental, based in Tirana, is committed to offering the latest car models at competitive prices,
+        with a strong focus on customer satisfaction and quality service.<br><br>
+        We serve Rinas Airport, Tirana City Center, and locations across Albania — offering vehicles like Tiguan (6+1),
+        Fords (4+1), and more, all backed by 24/7 support and full insurance coverage.<br><br>
+        Our offerings go beyond rentals: professional drivers, tour packages, airport services, and even business
+        partnerships in Airbnb, real estate, legal, and HR sectors.<br><br>
+        Whether for a day, a month, or a long-term lease — we’re here to make your journey smooth, safe, and stylish.
+      </p>
+    </div>
   </div>
-</div>
-
 
   <!-- Footer -->
-<footer>
+  <footer>
     <div class="social-links">
       <a href="https://www.facebook.com/profile.php?id=61559736423625" target="_blank" rel="noopener">
-        <img src="/images/Logo/facebook.png" alt="Facebook" class="social-icon" />
+        <img src="images/Logo/facebook.png" alt="Facebook" class="social-icon" />
       </a>
-      <a href="https://www.instagram.com/forb_autorental/?igsh=MTA2bTQ1N3F4cXk1bw%3D%3D#" target="_blank" rel="noopener">
-        <img src="/images/Logo/instagram.png" alt="Instagram" class="social-icon" />
+      <a href="https://www.instagram.com/forb_autorental/" target="_blank" rel="noopener">
+        <img src="images/Logo/instagram.png" alt="Instagram" class="social-icon" />
       </a>
       <a href="https://wa.me/+355692029827?text=Hello%20Forb%20Autorental%2C%20I%20have%20a%20question%20about%20..." target="_blank" rel="noopener">
-      <img src="/images/Logo/whatsapp.webp" alt="WhatsApp chat" class="social-icon" />
+        <img src="images/Logo/whatsapp.webp" alt="WhatsApp chat" class="social-icon" />
       </a>
     </div>
-  <p>&copy; 2025 Forb Autorental. All rights reserved.</p>
-</footer>
+    <p data-i18n="footer.copy">© 2025 Forb Autorental. All rights reserved.</p>
+  </footer>
 
+  <script>
+    // IntersectionObserver for slide-ins
+    document.addEventListener('DOMContentLoaded', () => {
+      const elems = document.querySelectorAll('[data-animate]');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      elems.forEach(el => observer.observe(el));
+    });
+
+    // Translations object (same as before)...
+    const translations = {
+      en: {
+        "about.meta.title": "About - Forb Autorental",
+        "nav.home": "Home",
+        "nav.about": "About",
+        "nav.contact": "Contact",
+        "about.you_need": "YOU NEED",
+        "about.rental_cars": "RENTAL CARS?",
+        "about.description": "Our Company Ensures That Great Customer Service Is A Top Priority.<br>And Beyond That, We Go The Extra Mile To Deliver Premium Car Rentals At The Best Value.",
+        "about.us.title": "ABOUT US",
+        "about.us.text": "Forb Autorental, based in Tirana, is committed to offering the latest car models at competitive prices, with a strong focus on customer satisfaction and quality service.<br><br>We serve Rinas Airport, Tirana City Center, and locations across Albania — offering vehicles like Tiguan (6+1), Fords (4+1), and more, all backed by 24/7 support and full insurance coverage.<br><br>Our offerings go beyond rentals: professional drivers, tour packages, airport services, and even business partnerships in Airbnb, real estate, legal, and HR sectors.<br><br>Whether for a day, a month, or a long-term lease — we’re here to make your journey smooth, safe, and stylish.",
+        "footer.copy": "© 2025 Forb Autorental. All rights reserved."
+      },
+      sq: {
+        "about.meta.title": "Rreth Nesh - Forb Autorental",
+        "nav.home": "Hyrje",
+        "nav.about": "Rreth Nesh",
+        "nav.contact": "Kontakt",
+        "about.you_need": "KE NEVOJË",
+        "about.rental_cars": "MAKINA ME QIRA?",
+        "about.description": "Kompania Ynë Siguron Se Shërbimi i Klientit Është Prioritet Kryesor.<br>Dhe Përtej Këtij, Ne Bëjmë Përpjekjen Ekstra Për Të Ofruar Qira Automjetesh Premium Me Vlerë Maksimale.",
+        "about.us.title": "RRETH NESH",
+        "about.us.text": "Forb Autorental, me bazë në Tiranë, është i përkushtuar për të ofruar modelet më të fundit të makinave me çmime konkurruese, me një fokus të fortë në kënaqësinë e klientit dhe shërbim të cilësisë së lartë.<br><br>Ne shërbejmë Aeroportin e Rinasit, Qendrën e Tiranës dhe lokacione në të gjithë Shqipërinë — duke ofruar mjete si Tiguan (6+1), Ford (4+1), dhe më shumë, të gjitha të mbështetura nga ndihma 24/7 dhe mbulim i plotë sigurimi.<br><br>Ofertat tona shkojnë përtej qirave: shoferë profesionistë, paketa turi, shërbime aeroportuale, dhe madje partneritete biznesi në Airbnb, pasuri të paluajtshme, ligjor, dhe burime njerëzore.<br><br>Qoftë për një ditë, një muaj, apo një kontratë afatgjatë — ne jemi këtu për t’ju bërë udhëtimin tuaj të qetë, të sigurt, dhe me stil.",
+        "footer.copy": "© 2025 Forb Autorental. Të gjitha të drejtat e rezervuara."
+      },
+      it: {
+        "about.meta.title": "Chi Siamo - Forb Autorental",
+        "nav.home": "Home",
+        "nav.about": "Chi Siamo",
+        "nav.contact": "Contatti",
+        "about.you_need": "HAI BISOGNO DI",
+        "about.rental_cars": "AUTO A NOLEGGIO?",
+        "about.description": "La Nostra Azienda Garantisce Che un Ottimo Servizio Clienti Sia Una Priorità Assoluta.<br>E Oltre A Ciò, Facciamo Uno Sforzo Extra Per Offrire Noleggi Auto Premium Al Massimo Valore.",
+        "about.us.title": "CHI SIAMO",
+        "about.us.text": "Forb Autorental, con sede a Tirana, si impegna a offrire i modelli di auto più recenti a prezzi competitivi, con un forte focus sulla soddisfazione del cliente e servizio di qualità.<br><br>Serviamo l’Aeroporto di Rinas, il Centro di Tirana e molte altre località in Albania — offrendo veicoli come Tiguan (6+1), Ford (4+1) e altro, tutti supportati da assistenza 24/7 e copertura assicurativa completa.<br><br>Le nostre offerte vanno oltre il noleggio: autisti professionisti, pacchetti tour, servizi aeroportuali e persino partnership commerciali in Airbnb, immobiliare, legale e risorse umane.<br><br>Sia per un giorno, un mese o un contratto a lungo termine — siamo qui per rendere il tuo viaggio fluido, sicuro ed elegante.",
+        "footer.copy": "© 2025 Forb Autorental. Tutti i diritti riservati."
+      },
+      es: {
+        "about.meta.title": "Nosotros - Forb Autorental",
+        "nav.home": "Inicio",
+        "nav.about": "Nosotros",
+        "nav.contact": "Contacto",
+        "about.you_need": "¿NECESITAS",
+        "about.rental_cars": "COCHES DE ALQUILER?",
+        "about.description": "Nuestra Compañía Asegura Que Un Gran Servicio Al Cliente Sea Una Prioridad Máxima.<br>Y Además De Eso, Hacemos El Esfuerzo Extra Para Ofrecer Alquileres De Coches Premium Al Mejor Valor.",
+        "about.us.title": "SOBRE NOSOTROS",
+        "about.us.text": "Forb Autorental, con sede en Tirana, se compromete a ofrecer los últimos modelos de coches a precios competitivos, con un fuerte enfoque en la satisfacción del cliente y la calidad del servicio.<br><br>Servimos el Aeropuerto de Rinas, el Centro de Tirana y ubicaciones por toda Albania — ofreciendo vehículos como Tiguan (6+1), Ford (4+1) y más, todos respaldados por asistencia 24/7 y cobertura de seguro completa.<br><br>Nuestras ofertas van más allá del alquiler: conductores profesionales, paquetes turísticos, servicios aeroportuarios e incluso asociaciones comerciales en Airbnb, bienes raíces, legal y RRHH.<br><br>Ya sea por un día, un mes o un contrato a largo plazo — estamos aquí para que tu viaje sea fluido, seguro y con estilo.",
+        "footer.copy": "© 2025 Forb Autorental. Todos los derechos reservados."
+      },
+      de: {
+        "about.meta.title": "Über Uns - Forb Autorental",
+        "nav.home": "Startseite",
+        "nav.about": "Über Uns",
+        "nav.contact": "Kontakt",
+        "about.you_need": "BRAUCHEN SIE",
+        "about.rental_cars": "MIETWAGEN?",
+        "about.description": "Unser Unternehmen Stellt Sicher, Dass Hervorragender Kundenservice Höchste Priorität Hat.<br>Und Darüber Hinaus Gehen Wir Die Extrameile, Um Premium-Autovermietungen Zum Besten Preis-Leistungs-Verhältnis Zu Liefern.",
+        "about.us.title": "ÜBER UNS",
+        "about.us.text": "Forb Autorental, mit Sitz in Tirana, verpflichtet sich, die neuesten Automodelle zu wettbewerbsfähigen Preisen anzubieten, mit starkem Fokus auf Kundenzufriedenheit und qualitativ hochwertigen Service.<br><br>Wir bedienen den Flughafen Rinas, das Zentrum von Tirana und Standorte in ganz Albanien — und bieten Fahrzeuge wie Tiguan (6+1), Ford (4+1) und mehr, alle unterstützt durch 24/7-Pannenhilfe und vollständige Versicherung.<br><br>Unser Angebot geht über Vermietungen hinaus: professionelle Fahrer, Tourpakete, Flughafendienste und sogar Geschäftskooperationen in Airbnb, Immobilien, Recht und Personalwesen.<br><br>Ob für einen Tag, einen Monat oder einen Langzeitvertrag — wir sind hier, um Ihre Reise reibungslos, sicher und stilvoll zu gestalten.",
+        "footer.copy": "© 2025 Forb Autorental. Alle Rechte vorbehalten."
+      }
+    };
+
+    function setLanguage(lang) {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n'),
+              txt = translations[lang]?.[key];
+        if (!txt) return;
+        if (el.tagName === 'TITLE' || txt.includes('<br>')) {
+          el.innerHTML = txt;
+        } else {
+          el.innerText = txt;
+        }
+      });
+    }
+
+    document.getElementById('lang-switcher')
+      .addEventListener('change', e => setLanguage(e.target.value));
+    setLanguage('en');
+  </script>
 </body>
 </html>
+
