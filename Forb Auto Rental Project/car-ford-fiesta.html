@@ -3,37 +3,59 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ford Fiesta - Details</title>
+  <title data-i18n="meta.title">Ford Fiesta 2019 - Details</title>
   <link rel="stylesheet" href="css/style.css" />
-  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17238436141"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-17238436141'); </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17238436141"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17238436141');
+  </script>
 </head>
 <body>
   <header>
-     <a href="/" class="logo-wrapper">
-       <img src="images/Logo/logo.jpg" alt="Forb Autorental Logo" class="logo-img" />
-    <h1 class="logo">FORB AUTORENTAL</h1>
-  </a>
+    <a href="/" class="logo-wrapper">
+      <img src="images/Logo/logo.jpg" alt="Forb Autorental Logo" class="logo-img" />
+      <h1 class="logo">FORB AUTORENTAL</h1>
+    </a>
     <nav>
       <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html" class="active" data-i18n="nav.home">Home</a></li>
+        <li><a href="about.html" data-i18n="nav.about">About</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
       </ul>
     </nav>
+    <select id="lang-switcher">
+      <option value="en">English</option>
+      <option value="sq">Shqip</option>
+      <option value="it">Italiano</option>
+      <option value="es">Español</option>
+      <option value="de">Deutsch</option>
+    </select>
   </header>
 
   <main class="car-details" data-price="35">
     <div class="left-column">
-      <img src="images/Ford Fiesta/car2.jpg" alt="Ford Fiesta" class="main-image" id="mainImage" />
+      <img src="images/Ford Fiesta/car2.jpg"
+           alt="Ford Fiesta 2019"
+           class="main-image"
+           id="mainImage" />
       <div class="gallery">
-        <img src="images/Ford Fiesta/car2.jpg" onclick="changeMainImage(this.src)" />
-        <img src="images/Ford Fiesta/car2_2.jpg" onclick="changeMainImage(this.src)" />
-        <img src="images/Ford Fiesta/car2_3.jpg" onclick="changeMainImage(this.src)" />
-        <img src="images/Ford Fiesta/car2_4.jpg" onclick="changeMainImage(this.src)" />
+        <img src="images/Ford Fiesta/car2.jpg"   alt="Thumb 1" onclick="changeMainImage(this.src)" />
+        <img src="images/Ford Fiesta/car2_2.jpg" alt="Thumb 2" onclick="changeMainImage(this.src)" />
+        <img src="images/Ford Fiesta/car2_3.jpg" alt="Thumb 3" onclick="changeMainImage(this.src)" />
+        <img src="images/Ford Fiesta/car2_4.jpg" alt="Thumb 4" onclick="changeMainImage(this.src)" />
       </div>
-      <h2>Ford Fiesta 2019 (4+1 Automatic)</h2>
-      <p><strong>Price per day:</strong> €35</p>
-      <p>The Ford Fiesta 2019 is the ideal blend of comfort, style, and practicality — perfect for both city driving and weekend getaways. With seating for 5 passengers, an automatic transmission, and a responsive 1.6L engine, it delivers a smooth and efficient ride. Its compact size makes parking easy, while the modern interior offers advanced connectivity, air conditioning, and ample luggage space. Whether you're navigating narrow streets or hitting the open road, the Fiesta makes every trip enjoyable.</p>
+      <h2 data-i18n="car.title">Ford Fiesta 2019 (4+1 Automatic)</h2>
+      <p>
+        <strong data-i18n="car.price.label">Price per day:</strong>
+        <span data-i18n="car.price">€35</span>
+      </p>
+      <p data-i18n="car.description">
+        The Ford Fiesta 2019 is the ideal blend of comfort, style, and practicality — perfect for both city driving and weekend getaways. With seating for 5 passengers, an automatic transmission, and a responsive 1.6L engine, it delivers a smooth and efficient ride. Its compact size makes parking easy, while the modern interior offers advanced connectivity, air conditioning, and ample luggage space. Whether you're navigating narrow streets or hitting the open road, the Fiesta makes every trip enjoyable.
+      </p>
     </div>
 
     <div class="right-column">
@@ -41,20 +63,20 @@
     </div>
   </main>
 
-<footer>
+  <footer>
     <div class="social-links">
       <a href="https://www.facebook.com/profile.php?id=61559736423625" target="_blank" rel="noopener">
         <img src="/images/Logo/facebook.png" alt="Facebook" class="social-icon" />
       </a>
-      <a href="https://www.instagram.com/forb_autorental/?igsh=MTA2bTQ1N3F4cXk1bw%3D%3D#" target="_blank" rel="noopener">
+      <a href="https://www.instagram.com/forb_autorental/" target="_blank" rel="noopener">
         <img src="/images/Logo/instagram.png" alt="Instagram" class="social-icon" />
       </a>
-      <a href="https://wa.me/+355692029827?text=Hello%20Forb%20Autorental%2C%20I%20have%20a%20question%20about%20..." target="_blank" rel="noopener">
-      <img src="/images/Logo/whatsapp.webp" alt="WhatsApp chat" class="social-icon" />
+      <a href="https://wa.me/+355692029827" target="_blank" rel="noopener">
+        <img src="/images/Logo/whatsapp.webp" alt="WhatsApp chat" class="social-icon" />
       </a>
     </div>
-  <p>&copy; 2025 Forb Autorental. All rights reserved.</p>
-</footer>
+    <p data-i18n="footer.copy">© 2025 Forb Autorental. All rights reserved.</p>
+  </footer>
 
   <script>
     function changeMainImage(src) {
@@ -62,13 +84,82 @@
     }
   </script>
 
-  <!-- EmailJS Script -->
+  <!-- EmailJS & Booking Scripts -->
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-  <script>
-    emailjs.init("xwV1D8tph1k0Km_RB"); // Your EmailJS public key
-  </script>
-
-  <!-- Booking Logic -->
+  <script> emailjs.init("xwV1D8tph1k0Km_RB"); </script>
   <script src="js/booking.js"></script>
+
+  <!-- i18n Script -->
+  <script>
+    const translations = {
+      en: {
+        "meta.title": "Ford Fiesta 2019 - Details",
+        "nav.home": "Home",
+        "nav.about": "About",
+        "nav.contact": "Contact",
+        "car.title": "Ford Fiesta 2019 (4+1 Automatic)",
+        "car.price.label": "Price per day:",
+        "car.price": "€35",
+        "car.description": "The Ford Fiesta 2019 is the ideal blend of comfort, style, and practicality — perfect for both city driving and weekend getaways. With seating for 5 passengers, an automatic transmission, and a responsive 1.6L engine, it delivers a smooth and efficient ride. Its compact size makes parking easy, while the modern interior offers advanced connectivity, air conditioning, and ample luggage space. Whether you're navigating narrow streets or hitting the open road, the Fiesta makes every trip enjoyable.",
+        "footer.copy": "© 2025 Forb Autorental. All rights reserved."
+      },
+      sq: {
+        "meta.title": "Ford Fiesta 2019 - Detajet",
+        "nav.home": "Hyrje",
+        "nav.about": "Rreth Nesh",
+        "nav.contact": "Kontakt",
+        "car.title": "Ford Fiesta 2019 (4+1 Automatik)",
+        "car.price.label": "Çmimi për ditë:",
+        "car.price": "€35",
+        "car.description": "Ford Fiesta 2019 është kombinimi ideal i komoditetit, stilit dhe praktikës — perfekt për drejtimin në qytet dhe arratisjet e fundjavës. Me vend për 5 pasagjerë, transmision automatik dhe motor 1.6L, ofron një udhëtim të qetë dhe efikas. Madhësia kompakte e bën parkimin të lehtë, ndërsa brendësia moderne ofron lidhje avangardë, kondicioner dhe hapësirë të bollshme për bagazhet. Qoftë duke naviguar rrugica të ngushta apo në autostradë, Fiesta e bën çdo udhëtim të këndshëm.",
+        "footer.copy": "© 2025 Forb Autorental. Të gjitha të drejtat e rezervuara."
+      },
+      it: {
+        "meta.title": "Ford Fiesta 2019 - Dettagli",
+        "nav.home": "Home",
+        "nav.about": "Chi Siamo",
+        "nav.contact": "Contatti",
+        "car.title": "Ford Fiesta 2019 (4+1 Automatico)",
+        "car.price.label": "Prezzo al giorno:",
+        "car.price": "€35",
+        "car.description": "La Ford Fiesta 2019 è la combinazione ideale di comfort, stile e praticità — perfetta sia per la guida in città che per le gite del fine settimana. Con 5 posti, cambio automatico e un reattivo motore 1.6L, offre un viaggio fluido ed efficiente. Le dimensioni compatte rendono il parcheggio facile, mentre l’abitacolo moderno offre connettività avanzata, aria condizionata e ampio spazio per i bagagli. Che tu stia navigando per strade strette o viaggiando in autostrada, la Fiesta rende ogni viaggio piacevole.",
+        "footer.copy": "© 2025 Forb Autorental. Tutti i diritti riservati."
+      },
+      es: {
+        "meta.title": "Ford Fiesta 2019 - Detalles",
+        "nav.home": "Inicio",
+        "nav.about": "Nosotros",
+        "nav.contact": "Contacto",
+        "car.title": "Ford Fiesta 2019 (4+1 Automático)",
+        "car.price.label": "Precio por día:",
+        "car.price": "€35",
+        "car.description": "El Ford Fiesta 2019 es la combinación ideal de comodidad, estilo y practicidad — perfecto tanto para la conducción en ciudad como para escapadas de fin de semana. Con espacio para 5 pasajeros, transmisión automática y un motor 1.6L ágil, ofrece un viaje suave y eficiente. Su tamaño compacto facilita el estacionamiento, mientras que el interior moderno brinda conectividad avanzada, aire acondicionado y amplio espacio para equipaje. Ya sea navegando por calles estrechas o en la carretera, la Fiesta hace que cada viaje sea agradable.",
+        "footer.copy": "© 2025 Forb Autorental. Todos los derechos reservados."
+      },
+      de: {
+        "meta.title": "Ford Fiesta 2019 - Details",
+        "nav.home": "Startseite",
+        "nav.about": "Über Uns",
+        "nav.contact": "Kontakt",
+        "car.title": "Ford Fiesta 2019 (4+1 Automatik)",
+        "car.price.label": "Preis pro Tag:",
+        "car.price": "€35",
+        "car.description": "Der Ford Fiesta 2019 ist die ideale Kombination aus Komfort, Stil und Praktikabilität — perfekt für Stadtfahrten und Wochenendabenteuer. Mit Platz für 5 Passagiere, Automatikgetriebe und einem reaktionsschnellen 1.6L-Motor bietet er eine ruhige und effiziente Fahrt. Seine kompakte Größe erleichtert das Parken, während das moderne Interieur fortschrittliche Konnektivität, Klimaanlage und reichlich Gepäckraum bietet. Egal, ob Sie enge Gassen navigieren oder auf der Autobahn unterwegs sind, der Fiesta macht jede Fahrt angenehm.",
+        "footer.copy": "© 2025 Forb Autorental. Alle Rechte vorbehalten."
+      }
+    };
+
+    function setLanguage(lang) {
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        el.innerText = translations[lang][key] || el.innerText;
+      });
+    }
+
+    document.getElementById('lang-switcher')
+      .addEventListener('change', e => setLanguage(e.target.value));
+    setLanguage('en');
+  </script>
 </body>
 </html>
