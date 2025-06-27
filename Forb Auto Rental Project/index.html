@@ -12,30 +12,46 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- Animation & Fleet Styles -->
+  <!-- Animation Styles -->
   <style>
-    @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    .hero h1, .hero p { opacity: 0; animation: fadeInUp 0.8s forwards; }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero h1,
+    .hero p {
+      opacity: 0;
+      animation: fadeInUp 0.8s forwards;
+    }
     .hero h1 { animation-delay: 0.3s; }
     .hero p:nth-of-type(1) { animation-delay: 0.6s; }
     .hero p:nth-of-type(2) { animation-delay: 0.9s; }
     .hero p:nth-of-type(3) { animation-delay: 1.2s; }
     .hero p:nth-of-type(4) { animation-delay: 1.5s; }
 
-    .car-card { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
-    .car-card.visible { opacity: 1; transform: translateY(0); }
-    .btn { transition: transform 0.3s ease; }
-    .btn:hover { transform: scale(1.05); }
-    #lang-switcher { transition: transform 0.3s ease; }
-    #lang-switcher:focus { transform: scale(1.05); }
+    .car-card {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .car-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-    /* Fleet Filters & Grid */
-    .fleet-filters { display: flex; flex-wrap: wrap; gap: 1rem; margin: 2rem 0; }
-    .fleet-filters label { display: flex; flex-direction: column; font-size: 0.9rem; }
-    .fleet-filters select { padding: 0.5rem; margin-top: 0.25rem; border-radius: 0.25rem; border: 1px solid #ccc; }
-    .fleet-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 2rem; }
-    .fleet-grid .car-card { border: 1px solid #e0e0e0; border-radius: 0.75rem; overflow: hidden; display: flex; flex-direction: column; background: #fff; transition: transform 0.2s, box-shadow 0.2s; }
-    .fleet-grid .car-card:hover { transform: translateY(-4px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .btn {
+      transition: transform 0.3s ease;
+    }
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    #lang-switcher {
+      transition: transform 0.3s ease;
+    }
+    #lang-switcher:focus {
+      transform: scale(1.05);
+    }
   </style>
 </head>
 <body>
@@ -48,7 +64,7 @@
       <ul>
         <li><a href="index.html" class="active" data-i18n="nav.home">Home</a></li>
         <li><a href="about.html" data-i18n="nav.about">About</a></li>
-        <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+        <li><a href="blog.html"  data-i18n="nav.blog">Blog</a></li>
         <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
       </ul>
     </nav>
@@ -60,6 +76,7 @@
       <option value="de">Deutsch</option>
     </select>
   </header>
+
   <main class="main-content">
     <section class="hero">
       <h1 data-i18n="hero.title">Car Rental Service in Albania</h1>
@@ -69,89 +86,55 @@
       <p data-i18n="hero.sub4">Book online in seconds and experience worry-free travel across Albania.</p>
     </section>
 
-    <!-- Fleet Filters -->
-    <section class="fleet-filters">
-      <label>
-        Size:
-        <select id="filter-size">
-          <option value="all">All</option>
-          <option value="compact">Compact</option>
-          <option value="sedan">Sedan</option>
-          <option value="suv">SUV</option>
-          <option value="van">Van</option>
-        </select>
-      </label>
-      <label>
-        Seating:
-        <select id="filter-seating">
-          <option value="all">All</option>
-          <option value="2">2 seats</option>
-          <option value="4">4 seats</option>
-          <option value="5">5 seats</option>
-          <option value="7">7+ seats</option>
-        </select>
-      </label>
-      <label>
-        Price:
-        <select id="filter-price">
-          <option value="all">All</option>
-          <option value="0-30">€0–€30/day</option>
-          <option value="31-60">€31–€60/day</option>
-          <option value="61+">€61+/day</option>
-        </select>
-      </label>
-    </section>
-
-    <!-- Fleet Grid -->
-    <section id="fleet-grid" class="fleet-grid">
+    <section id="car-gallery">
       <!-- Car 1 -->
-      <div class="car-card" data-animate data-size="compact" data-seating="5" data-price="35">
+      <div class="car-card" data-animate>
         <img src="images/Ford Ecosport/car1.jpg" alt="Ford Ecosport Titanium 2018">
         <h3 data-i18n="car1.name">Ford Ecosport Titanium</h3>
         <ul class="specs">
-          <li><span class="icon">⛽</span> Unleaded</li>
-          <li><span class="icon">⚙️</span> Automatic</li>
-          <li><span class="icon">👤</span> 5 seats</li>
-          <li><span class="icon">📅</span> 2018</li>
+          <p><span class="icon">⛽</span> Unleaded</p>
+          <p><span class="icon">⚙️</span> Automatic</p>
+          <p><span class="icon">👤</span> 5 seats</p>
+          <p><span class="icon">📅</span> 2018</p>
         </ul>
         <p class="price" data-i18n="car1.price">€35/day</p>
         <a href="car-ford-ecosport.html?model=ecosport" class="btn btn-secondary" data-i18n="buttons.details">View Details</a>
       </div>
       <!-- Car 2 -->
-      <div class="car-card" data-animate data-size="compact" data-seating="5" data-price="35">
+      <div class="car-card" data-animate>
         <img src="images/Ford Fiesta/car2.jpg" alt="Ford Fiesta 2019">
         <h3 data-i18n="car2.name">Ford Fiesta</h3>
         <ul class="specs">
-          <li><span class="icon">⛽</span> Unleaded</li>
-          <li><span class="icon">⚙️</span> Automatic</li>
-          <li><span class="icon">👤</span> 5 seats</li>
-          <li><span class="icon">📅</span> 2019</li>
+          <p><span class="icon">⛽</span> Unleaded</p>
+          <p><span class="icon">⚙️</span> Automatic</p>
+          <p><span class="icon">👤</span> 5 seats</p>
+          <p><span class="icon">📅</span> 2019</p>
         </ul>
         <p class="price" data-i18n="car2.price">€35/day</p>
         <a href="car-ford-fiesta.html?model=ecosport" class="btn btn-secondary" data-i18n="buttons.details">View Details</a>
       </div>
       <!-- Car 3 -->
-      <div class="car-card" data-animate data-size="compact" data-seating="5" data-price="45">
+      <div class="car-card" data-animate>
         <img src="images/Ford Ecosport SE/car3.jpg" alt="Ford Ecosport SE 2021">
         <h3 data-i18n="car3.name">Ford Ecosport SE</h3>
         <ul class="specs">
-          <li><span class="icon">⛽</span> Unleaded</li>
-          <li><span class="icon">⚙️</span> Automatic</li>
-          <li><span class="icon">👤</span> 5 seats</li>
-          <li><span class="icon">📅</span> 2021</li>
+          <p><span class="icon">⛽</span> Unleaded</p>
+          <p><span class="icon">⚙️</span> Automatic</p>
+          <p><span class="icon">👤</span> 5 seats</p>
+          <p><span class="icon">📅</span> 2021</p>
         </ul>
         <p class="price" data-i18n="car3.price">€45/day</p>
         <a href="car-ford-ecosportse.html?model=ecosport" class="btn btn-secondary" data-i18n="buttons.details">View Details</a>
       </div>
       <!-- Car 4 -->
-      <div class="car-card" data-animate data-size="suv" data-seating="7" data-price="60">
+      <div class="car-card" data-animate>
         <img src="images/volswagen Tiguan/car4.jpg" alt="Volkswagen Tiguan 2021">
         <h3 data-i18n="car4.name">Volkswagen Tiguan</h3>
         <ul class="specs">
-          <li><span class="icon">⛽</span> Unleaded</li>
-          <li><span class="icon">⚙️</span> Automatic</li>
-          <li><span class="icon">👤</span> 7 seats</li>
-          <li><span class="icon">📅</span> 2021</li>
+          <p><span class="icon">⛽</span> Unleaded</p>
+          <p><span class="icon">⚙️</span> Automatic</p>
+          <p><span class="icon">👤</span> 7 seats</p>
+          <p><span class="icon">📅</span> 2021</p>
         </ul>
         <p class="price" data-i18n="car4.price">€60/day</p>
         <a href="car-volswagen-tiguan.html?model=ecosport" class="btn btn-secondary" data-i18n="buttons.details">View Details</a>
@@ -192,7 +175,7 @@
     <p data-i18n="footer.copy">© 2025 Forb Autorental. All rights reserved.</p>
   </footer>
 
-  <!-- Scroll, Language Switcher & Filter Scripts -->
+  <!-- Scroll & Language Switcher Scripts -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       // Animate car cards on scroll
@@ -207,207 +190,203 @@
       }, { threshold: 0.2 });
       cards.forEach(card => observer.observe(card));
 
-      // Fleet filtering setup
-      const sizeFilter    = document.getElementById('filter-size');
-      const seatingFilter = document.getElementById('filter-seating');
-      const priceFilter   = document.getElementById('filter-price');
-      const grid          = document.getElementById('fleet-grid');
-      const fleetCards    = Array.from(grid.querySelectorAll('.car-card'));
-
-      function applyFilters() {
-        const sizeVal  = sizeFilter.value;
-        const seatVal  = seatingFilter.value;
-        const priceVal = priceFilter.value;
-
-        fleetCards.forEach(card => {
-          const sz    = card.dataset.size;
-          const seats = parseInt(card.dataset.seating, 10);
-          const pr    = parseInt(card.dataset.price, 10);
-
-          const okSize  = sizeVal === 'all' || sz === sizeVal;
-          const okSeat  = seatVal === 'all'
-                        || (seatVal==='7' ? seats >= 7 : seats === +seatVal);
-          let okPrice = true;
-          if (priceVal !== 'all') {
-            const [min, max] = priceVal.split('-').map(Number);
-            okPrice = max ? (pr >= min && pr <= max) : (pr >= min);
-          }
-
-          card.style.display = (okSize && okSeat && okPrice) ? '' : 'none';
-        });
-      }
-
-      [sizeFilter, seatingFilter, priceFilter].forEach(el =>
-        el.addEventListener('change', applyFilters)
-      );
-
       // Language switcher
-      const translations = {
-        en: {
-          "meta.title": "Car Rentals in Tirana – Affordable Rates | Forb Autorental",
-          "meta.description": "Forb Autorental—affordable, reliable car rentals in Tirana. Choose from compact cars to SUVs. Book online now!",
-          "nav.home": "Home",
-          "nav.about": "About",
-          "nav.blog": "Blog",
-          "nav.contact": "Contact",
-          "hero.title": "Car Rental Service in Albania",
-          "hero.sub1": "Our Car Rental Service in Albania is designed to make your trip seamless and enjoyable.",
-          "hero.sub2": "Whether you need a compact car for city driving or a spacious SUV for exploring the countryside, Forb Autorental delivers transparent pricing,",
-          "hero.sub3": "24/7 roadside assistance, and flexible pick-up/drop-off locations in Tirana, Rinas Airport, and beyond.",
-          "hero.sub4": "Book online in seconds and experience worry-free travel across Albania.",
-          "car1.name": "Ford Ecosport Titanium",
-          "car1.price": "€35/day",
-          "car2.name": "Ford Fiesta",
-          "car2.price": "€35/day",
-          "car3.name": "Ford Ecosport SE",
-          "car3.price": "€45/day",
-          "car4.name": "Volkswagen Tiguan",
-          "car4.price": "€60/day",
-          "buttons.details": "View Details",
-          "reviews.title": "Customer Reviews",
-          "reviews.r1.text": "\"Fantastic service and clean vehicles!\"",
-          "reviews.r1.author": "- Gerti L.",
-          "reviews.r2.text": "\"Great selection of cars and easy booking process.\"",
-          "reviews.r2.author": "- Martin D.",
-          "reviews.r3.text": "\"Affordable rates and friendly staff. Highly recommend!\"",
-          "reviews.r3.author": "- Bledi A.",
-          "footer.copy": "© 2025 Forb Autorental. All rights reserved."
-        },
-        sq: {
-          "meta.title": "Makina me qira në Tiranë – Çmime të Përballueshme | Forb Autorental",
-          "meta.description": "Forb Autorental—qira makinash e përballueshme dhe e besueshme në Tiranë. Zgjidh mes makinave kompakte dhe SUV-ve. Rezervo tani online!",
-          "nav.home": "Hyrje",
-          "nav.about": "Rreth Nesh",
-          "nav.blog": "Blog",
-          "nav.contact": "Kontakt",
-          "hero.title": "Makina me qira në Shqipëri",
-          "hero.sub1": "Shërbimi ynë i dhënies së makinave me qira në Shqipëri është krijuar për t’ju bërë udhëtimin sa më të lehtë dhe të këndshëm.",
-          "hero.sub2": "Nëse ju nevojitet një makinë kompakte për lëvizje në qytet apo një SUV i gjerë për të eksploruar zonat rurale, Forb Autorental ofron çmime të arsyeshme,",
-          "hero.sub3": "ndihmë 24/7 në rrugë, dhe lokacione fleksibile marrjeje/dorëzimi në Tiranë, Aeroportin e Rinas-it dhe më gjerë.",
-          "hero.sub4": "Rezervoni online tani dhe përjetoni një udhëtim pa shqetësime në gjithë Shqipërinë.",
-          "car1.name": "Ford Ecosport Titanium",
-          "car1.price": "€35/ditë",
-          "car2.name": "Ford Fiesta",
-          "car2.price": "€35/ditë",
-          "car3.name": "Ford Ecosport SE",
-          "car3.price": "€45/ditë",
-          "car4.name": "Volkswagen Tiguan",
-          "car4.price": "€60/ditë",
-          "buttons.details": "Shiko Detajet",
-          "reviews.title": "Vlerësimet e Klientëve",
-          "reviews.r1.text": "\"Shërbim fantastik dhe makina të pastra!\"",
-          "reviews.r1.author": "- Gerti L.",
-          "reviews.r2.text": "\"Zgjedhje e shkëlqyer makinash dhe proces rezervimi i lehtë.\"",
-          "reviews.r2.author": "- Martin D.",
-          "reviews.r3.text": "\"Çmime të përballueshme dhe staf mikpritës. E rekomandoj fuqishëm!\"",
-          "reviews.r3.author": "- Bledi A.",
-          "footer.copy": "© 2025 Forb Autorental. Të gjitha të drejtat e rezervuara."
-        },
-        it: {
-          "meta.title": "Noleggio Auto a Tirana – Tariffe Convenienti | Forb Autorental",
-          "meta.description": "Forb Autorental—noleggio auto economico e affidabile a Tirana. Scegli tra utilitarie e SUV. Prenota online ora!",
-          "nav.home": "Home",
-          "nav.about": "Chi Siamo",
-          "nav.blog": "Blog",
-          "nav.contact": "Contatti",
-          "hero.title": "Servizio di Noleggio Auto in Albania",
-          "hero.sub1": "Il nostro servizio di noleggio auto in Albania è pensato per rendere il tuo viaggio semplice e piacevole.",
-          "hero.sub2": "Che tu abbia bisogno di un’utilitaria per la città o di un SUV spazioso per esplorare la campagna, Forb Autorental offre prezzi trasparenti,",
-          "hero.sub3": "assistenza stradale 24/7 e punti di ritiro/consegna flessibili a Tirana, Aeroporto di Rinas e oltre.",
-          "hero.sub4": "Prenota online in pochi secondi e vivi un viaggio senza pensieri in tutta l’Albania.",
-          "car1.name": "Ford Ecosport Titanium",
-          "car1.price": "€35/giorno",
-          "car2.name": "Ford Fiesta",
-          "car2.price": "€35/giorno",
-          "car3.name": "Ford Ecosport SE",
-          "car3.price": "€45/giorno",
-          "car4.name": "Volkswagen Tiguan",
-          "car4.price": "€60/giorno",
-          "buttons.details": "Dettagli",
-          "reviews.title": "Recensioni dei Clienti",
-          "reviews.r1.text": "\"Servizio fantastico e veicoli puliti!\"",
-          "reviews.r1.author": "- Gerti L.",
-          "reviews.r2.text": "\"Ottima scelta di auto e processo di prenotazione semplice.\"",
-          "reviews.r2.author": "- Martin D.",
-          "reviews.r3.text": "\"Tariffe convenienti e personale cordiale. Consigliatissimo!\"",
-          "reviews.r3.author": "- Bledi A.",
-          "footer.copy": "© 2025 Forb Autorental. Tutti i diritti riservati."
-        },
-        es: {
-          "meta.title": "Alquiler de Coches en Tirana – Tarifas Asequibles | Forb Autorental",
-          "meta.description": "Forb Autorental—alquiler de coches económico y fiable en Tirana. Elige entre compactos y SUV. ¡Reserva online ahora!",
-          "nav.home": "Inicio",
-          "nav.about": "Nosotros",
-          "nav.blog": "Blog",
-          "nav.contact": "Contacto",
-          "hero.title": "Servicio de Alquiler de Coches en Albania",
-          "hero.sub1": "Nuestro servicio de alquiler de coches en Albania está diseñado para que tu viaje sea fluido y agradable.",
-          "hero.sub2": "Ya necesites un coche compacto para la ciudad o un SUV espacioso para explorar el campo, Forb Autorental ofrece precios transparentes,",
-          "hero.sub3": "asistencia en carretera 24/7 y recogida/devolución flexibles en Tirana, Aeropuerto de Rinas y más allá.",
-          "hero.sub4": "Reserva online en segundos y disfruta de un viaje sin preocupaciones por toda Albania.",
-          "car1.name": "Ford Ecosport Titanium",
-          "car1.price": "€35/día",
-          "car2.name": "Ford Fiesta",
-          "car2.price": "€35/día",
-          "car3.name": "Ford Ecosport SE",
-          "car3.price": "€45/día",
-          "car4.name": "Volkswagen Tiguan",
-          "car4.price": "€60/día",
-          "buttons.details": "Ver Detalles",
-          "reviews.title": "Opiniones de Clientes",
-          "reviews.r1.text": "\"¡Servicio fantástico y vehículos limpios!\"",
-          "reviews.r1.author": "- Gerti L.",
-          "reviews.r2.text": "\"Gran selección de coches y proceso de reserva fácil.\"",
-          "reviews.r2.author": "- Martin D.",
-          "reviews.r3.text": "\"Tarifas asequibles y personal amable. ¡Muy recomendable!\"",
-          "reviews.r3.author": "- Bledi A.",
-          "footer.copy": "© 2025 Forb Autorental. Todos los derechos reservados."
-        },
-        de: {
-          "meta.title": "Autovermietung in Tirana – Bezahlbare Preise | Forb Autorental",
-          "meta.description": "Forb Autorental—günstige und zuverlässige Autovermietung in Tirana. Wählen Sie zwischen Kompaktwagen und SUVs. Jetzt online buchen!",
-          "nav.home": "Startseite",
-          "nav.about": "Über Uns",
-          "nav.blog": "Blog",
-          "nav.contact": "Kontakt",
-          "hero.title": "Autovermietung in Albanien",
-          "hero.sub1": "Unser Autovermietungsdienst in Albanien ist darauf ausgelegt, Ihre Reise nahtlos und angenehm zu gestalten.",
-          "hero.sub2": "Egal, ob Sie einen Kompaktwagen für die Stadt oder einen geräumigen SUV für die Erkundung der Landschaft benötigen, Forb Autorental bietet transparente Preise,",
-          "hero.sub3": "24/7 Pannenhilfe und flexible Abhol-/Rückgabeorte in Tirana, Flughafen Rinas und darüber hinaus.",
-          "hero.sub4": "Buchen Sie online in Sekunden und genießen Sie sorgenfreies Reisen durch ganz Albanien.",
-          "car1.name": "Ford Ecosport Titanium",
-          "car1.price": "€35/Tag",
-          "car2.name": "Ford Fiesta",
-          "car2.price": "€35/Tag",
-          "car3.name": "Ford Ecosport SE",
-          "car3.price": "€45/Tag",
-          "car4.name": "Volkswagen Tiguan",
-          "car4.price": "€60/Tag",
-          "buttons.details": "Details Anzeigen",
-          "reviews.title": "Kundenbewertungen",
-          "reviews.r1.text": "\"Fantastischer Service und saubere Fahrzeuge!\"",
-          "reviews.r1.author": "- Gerti L.",
-          "reviews.r2.text": "\"Große Auswahl an Autos und einfacher Buchungsprozess.\"",
-          "reviews.r2.author": "- Martin D.",
-          "reviews.r3.text": "\"Bezahlbare Preise und freundliches Personal. Sehr zu empfehlen!\"",
-          "reviews.r3.author": "- Bledi A.",
-          "footer.copy": "© 2025 Forb Autorental. Alle Rechte vorbehalten."
-        }
-      };
-
+    const translations = {
+      en: {
+        "meta.title": "Car Rentals in Tirana – Affordable Rates | Forb Autorental",
+        "meta.description": "Forb Autorental—affordable, reliable car rentals in Tirana. Choose from compact cars to SUVs. Book online now!",
+        "nav.home": "Home",
+        "nav.about": "About",
+        "nav.contact": "Contact",
+        "hero.title": "Car Rental Service in Albania",
+        "hero.sub1": "Our Car Rental Service in Albania is designed to make your trip seamless and enjoyable.",
+        "hero.sub2": "Whether you need a compact car for city driving or a spacious SUV for exploring the countryside, Forb Autorental delivers transparent pricing,",
+        "hero.sub3": "24/7 roadside assistance, and flexible pick-up/drop-off locations in Tirana, Rinas Airport, and beyond.",
+        "hero.sub4": "Book online in seconds and experience worry-free travel across Albania.",
+        "car1.name": "Ford Ecosport Titanium",
+        "car1.price": "€35/day",
+        "car2.name": "Ford Fiesta",
+        "car2.price": "€35/day",
+        "car3.name": "Ford Ecosport SE",
+        "car3.price": "€45/day",
+        "car4.name": "Volkswagen Tiguan",
+        "car4.price": "€60/day",
+        "specs.fuel": "Unleaded",
+        "specs.transmission": "Automatic",
+        "specs.seats": "5 seats",
+        "specs.seats7": "7 seats",
+        "specs.year1": "2018",
+        "specs.year2": "2019",
+        "specs.year3": "2021",
+        "specs.year4": "2021",
+        "buttons.details": "View Details",
+        "reviews.title": "Customer Reviews",
+        "reviews.r1.text": "\"Fantastic service and clean vehicles!\"",
+        "reviews.r1.author": "- Gerti L.",
+        "reviews.r2.text": "\"Great selection of cars and easy booking process.\"",
+        "reviews.r2.author": "- Martin D.",
+        "reviews.r3.text": "\"Affordable rates and friendly staff. Highly recommend!\"",
+        "reviews.r3.author": "- Bledi A.",
+        "footer.copy": "© 2025 Forb Autorental. All rights reserved."
+      },
+      sq: {
+        "meta.title": "Makina me qira në Tiranë – Çmime të Përballueshme | Forb Autorental",
+        "meta.description": "Forb Autorental—qira makinash e përballueshme dhe e besueshme në Tiranë. Zgjidh mes makinave kompakte dhe SUV-ve. Rezervo tani online!",
+        "nav.home": "Hyrje",
+        "nav.about": "Rreth Nesh",
+        "nav.contact": "Kontakt",
+        "hero.title": "Makina me qira në Shqipëri",
+        "hero.sub1": "Shërbimi ynë i dhënies së makinave me qira në Shqipëri është krijuar për t’ju bërë udhëtimin sa më të lehtë dhe të këndshëm.",
+        "hero.sub2": "Nëse ju nevojitet një makinë kompakte për lëvizje në qytet apo një SUV i gjerë për të eksploruar zonat rurale, Forb Autorental ofron çmime të arsyeshme,",
+        "hero.sub3": "ndihmë 24/7 në rrugë, dhe lokacione fleksibile marrjeje/dorëzimi në Tiranë, Aeroportin e Rinas-it dhe më gjerë.",
+        "hero.sub4": "Rezervoni online tani dhe përjetoni një udhëtim pa shqetësime në gjithë Shqipërinë.",
+        "car1.name": "Ford Ecosport Titanium",
+        "car1.price": "€35/ditë",
+        "car2.name": "Ford Fiesta",
+        "car2.price": "€35/ditë",
+        "car3.name": "Ford Ecosport SE",
+        "car3.price": "€45/ditë",
+        "car4.name": "Volkswagen Tiguan",
+        "car4.price": "€60/ditë",
+        "specs.fuel": "Benzinë",
+        "specs.transmission": "Automatik",
+        "specs.seats": "5 vende",
+        "specs.seats7": "7 vende",
+        "specs.year1": "2018",
+        "specs.year2": "2019",
+        "specs.year3": "2021",
+        "specs.year4": "2021",
+        "buttons.details": "Shiko Detajet",
+        "reviews.title": "Vlerësimet e Klientëve",
+        "reviews.r1.text": "\"Shërbim fantastik dhe makina të pastra!\"",  
+        "reviews.r1.author": "- Gerti L.",
+        "reviews.r2.text": "\"Zgjedhje e shkëlqyer makinash dhe proces rezervimi i lehtë.\"",
+        "reviews.r2.author": "- Martin D.",
+        "reviews.r3.text": "\"Çmime të përballueshme dhe staf mikpritës. E rekomandoj fuqishëm!\"",
+        "reviews.r3.author": "- Bledi A.",
+        "footer.copy": "© 2025 Forb Autorental. Të gjitha të drejtat e rezervuara."
+      },
+      it: {
+        "meta.title": "Noleggio Auto a Tirana – Tariffe Convenienti | Forb Autorental",
+        "meta.description": "Forb Autorental—noleggio auto economico e affidabile a Tirana. Scegli tra utilitarie e SUV. Prenota online ora!",
+        "nav.home": "Home",
+        "nav.about": "Chi Siamo",
+        "nav.contact": "Contatti",
+        "hero.title": "Servizio di Noleggio Auto in Albania",
+        "hero.sub1": "Il nostro servizio di noleggio auto in Albania è pensato per rendere il tuo viaggio semplice e piacevole.",
+        "hero.sub2": "Che tu abbia bisogno di un’utilitaria per la città o di un SUV spazioso per esplorare la campagna, Forb Autorental offre prezzi trasparenti,",
+        "hero.sub3": "assistenza stradale 24/7 e punti di ritiro/consegna flessibili a Tirana, Aeroporto di Rinas e oltre.",
+        "hero.sub4": "Prenota online in pochi secondi e vivi un viaggio senza pensieri in tutta l’Albania.",
+        "car1.name": "Ford Ecosport Titanium",
+        "car1.price": "€35/giorno",
+        "car2.name": "Ford Fiesta",
+        "car2.price": "€35/giorno",
+        "car3.name": "Ford Ecosport SE",
+        "car3.price": "€45/giorno",
+        "car4.name": "Volkswagen Tiguan",
+        "car4.price": "€60/giorno",
+        "specs.fuel": "Benzina",
+        "specs.transmission": "Automatico",
+        "specs.seats": "5 posti",
+        "specs.seats7": "7 posti",
+        "specs.year1": "2018",
+        "specs.year2": "2019",
+        "specs.year3": "2021",
+        "specs.year4": "2021",
+        "buttons.details": "Dettagli",
+        "reviews.title": "Recensioni dei Clienti",
+        "reviews.r1.text": "\"Servizio fantastico e veicoli puliti!\"",
+        "reviews.r1.author": "- Gerti L.",
+        "reviews.r2.text": "\"Ottima scelta di auto e processo di prenotazione semplice.\"",
+        "reviews.r2.author": "- Martin D.",
+        "reviews.r3.text": "\"Tariffe convenienti e personale cordiale. Consigliatissimo!\"",
+        "reviews.r3.author": "- Bledi A.",
+        "footer.copy": "© 2025 Forb Autorental. Tutti i diritti riservati."
+      },
+      es: {
+        "meta.title": "Alquiler de Coches en Tirana – Tarifas Asequibles | Forb Autorental",
+        "meta.description": "Forb Autorental—alquiler de coches económico y fiable en Tirana. Elige entre compactos y SUV. ¡Reserva online ahora!",
+        "nav.home": "Inicio",
+        "nav.about": "Nosotros",
+        "nav.contact": "Contacto",
+        "hero.title": "Servicio de Alquiler de Coches en Albania",
+        "hero.sub1": "Nuestro servicio de alquiler de coches en Albania está diseñado para que tu viaje sea fluido y agradable.",
+        "hero.sub2": "Ya necesites un coche compacto para la ciudad o un SUV espacioso para explorar el campo, Forb Autorental ofrece precios transparentes,",
+        "hero.sub3": "asistencia en carretera 24/7 y recogida/devolución flexibles en Tirana, Aeropuerto de Rinas y más allá.",
+        "hero.sub4": "Reserva online en segundos y disfruta de un viaje sin preocupaciones por toda Albania.",
+        "car1.name": "Ford Ecosport Titanium",
+        "car1.price": "€35/día",
+        "car2.name": "Ford Fiesta",
+        "car2.price": "€35/día",
+        "car3.name": "Ford Ecosport SE",
+        "car3.price": "€45/día",
+        "car4.name": "Volkswagen Tiguan",
+        "car4.price": "€60/día",
+        "specs.fuel": "Sin plomo",
+        "specs.transmission": "Automático",
+        "specs.seats": "5 plazas",
+        "specs.seats7": "7 plazas",
+        "specs.year1": "2018",
+        "specs.year2": "2019",
+        "specs.year3": "2021",
+        "specs.year4": "2021",
+        "buttons.details": "Ver Detalles",
+        "reviews.title": "Opiniones de Clientes",
+        "reviews.r1.text": "\"¡Servicio fantástico y vehículos limpios!\"",
+        "reviews.r1.author": "- Gerti L.",
+        "reviews.r2.text": "\"Gran selección de coches y proceso de reserva fácil.\"",
+        "reviews.r2.author": "- Martin D.",
+        "reviews.r3.text": "\"Tarifas asequibles y personal amable. ¡Muy recomendable!\"",
+        "reviews.r3.author": "- Bledi A.",
+        "footer.copy": "© 2025 Forb Autorental. Todos los derechos reservados."
+      },
+      de: {
+        "meta.title": "Autovermietung in Tirana – Bezahlbare Preise | Forb Autorental",
+        "meta.description": "Forb Autorental—günstige und zuverlässige Autovermietung in Tirana. Wählen Sie zwischen Kompaktwagen und SUVs. Jetzt online buchen!",
+        "nav.home": "Startseite",
+        "nav.about": "Über Uns",
+        "nav.contact": "Kontakt",
+        "hero.title": "Autovermietung in Albanien",
+        "hero.sub1": "Unser Autovermietungsdienst in Albanien ist darauf ausgelegt, Ihre Reise nahtlos und angenehm zu gestalten.",
+        "hero.sub2": "Egal, ob Sie einen Kompaktwagen für die Stadt oder einen geräumigen SUV für die Erkundung der Landschaft benötigen, Forb Autorental bietet transparente Preise,",
+        "hero.sub3": "24/7 Pannenhilfe und flexible Abhol-/Rückgabeorte in Tirana, Flughafen Rinas und darüber hinaus.",
+        "hero.sub4": "Buchen Sie online in Sekunden und genießen Sie sorgenfreies Reisen durch ganz Albanien.",
+        "car1.name": "Ford Ecosport Titanium",
+        "car1.price": "€35/Tag",
+        "car2.name": "Ford Fiesta",
+        "car2.price": "€35/Tag",
+        "car3.name": "Ford Ecosport SE",
+        "car3.price": "€45/Tag",
+        "car4.name": "Volkswagen Tiguan",
+        "car4.price": "€60/Tag",
+        "specs.fuel": "Bleifrei",
+        "specs.transmission": "Automatik",
+        "specs.seats": "5 Sitze",
+        "specs.seats7": "7 Sitze",
+        "specs.year1": "2018",
+        "specs.year2": "2019",
+        "specs.year3": "2021",
+        "specs.year4": "2021",
+        "buttons.details": "Details Anzeigen",
+        "reviews.title": "Kundenbewertungen",
+        "reviews.r1.text": "\"Fantastischer Service und saubere Fahrzeuge!\"",
+        "reviews.r1.author": "- Gerti L.",
+        "reviews.r2.text": "\"Große Auswahl an Autos und einfacher Buchungsprozess.\"",
+        "reviews.r2.author": "- Martin D.",
+        "reviews.r3.text": "\"Bezahlbare Preise und freundliches Personal. Sehr zu empfehlen!\"",
+        "reviews.r3.author": "- Bledi A.",
+        "footer.copy": "© 2025 Forb Autorental. Alle Rechte vorbehalten."
+      }
+    };
       function setLanguage(lang) {
         document.querySelectorAll('[data-i18n]').forEach(el => {
           const key = el.getAttribute('data-i18n');
-          if (translations[lang] && translations[lang][key]) {
-            el.innerText = translations[lang][key];
-          }
+          const txt = translations[lang][key];
+          if (txt) el.innerText = txt;
         });
       }
-
       document.getElementById('lang-switcher')
         .addEventListener('change', e => setLanguage(e.target.value));
-
-      // set initial language
       setLanguage('en');
     });
   </script>
