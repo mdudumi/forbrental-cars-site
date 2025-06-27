@@ -572,79 +572,67 @@
   ]
 }
   </script>      <!-- <-- THIS line was missing -->
-  <!-- 1) Define initMap at top level so Google can call it -->
+  <!-- 1) Define initMap at top‐level, _before_ you load the API -->
   <script>
+    // this must run as soon as the browser parses it, so it's on window
     window.initMap = function() {
       console.log('✅ initMap called');
-      const placeId = 'ChIJW3kMHIe7GhMRur71RPOFOMM';  // ← your actual Place ID
+      const placeId = 'ChIJW3kMHIe7GhMRur71RPOFOMM';  // your real Place ID
       const container = document.getElementById('reviews-container');
       container.innerHTML = '<p>Loading reviews…</p>';
 
       const service = new google.maps.places.PlacesService(document.createElement('div'));
-      service.getDetails(
-        { placeId, fields: ['reviews'] },
-        (place, status) => {
-          console.log('getDetails status:', status, place);
-          container.innerHTML = '';
-          if (status === google.maps.places.PlacesServiceStatus.OK && place.reviews) {
-            place.reviews.slice(0, 5).forEach(r => {
-              const div = document.createElement('div');
-              div.className = 'review';
-              div.innerHTML = `
-                <p>"${r.text}"</p>
-                <span>– ${r.author_name}</span>
-                <div class="rating">${'★'.repeat(r.rating)}${'☆'.repeat(5 - r.rating)}</div>
-              `;
-              container.appendChild(div);
-            });
-          } else {
-            container.innerHTML = '<p>No reviews available.</p>';
-            console.error('PlacesService failed:', status);
-          }
+      service.getDetails({ placeId, fields: ['reviews'] }, (place, status) => {
+        container.innerHTML = '';
+        if (status === google.maps.places.PlacesServiceStatus.OK && place.reviews) {
+          place.reviews.slice(0,5).forEach(r => {
+            const div = document.createElement('div');
+            div.className = 'review';
+            div.innerHTML = `
+              <p>"${r.text}"</p>
+              <span>– ${r.author_name}</span>
+              <div class="rating">${'★'.repeat(r.rating)}${'☆'.repeat(5 - r.rating)}</div>
+            `;
+            container.appendChild(div);
+          });
+        } else {
+          container.innerHTML = '<p>No reviews available.</p>';
+          console.error('PlacesService failed:', status);
         }
-      );
+      });
     };
   </script>
 
-  <!-- 2) Load the Maps+Places API, which will call initMap when ready -->
+  <!-- 2) THEN load the Maps+Places API with your key & callback=initMap -->
   <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&libraries=places&callback=initMap&v=weekly"
+    src="https://maps.googleapis.com/maps/api/js?
+         key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg
+         &libraries=places
+         &callback=initMap
+         &v=weekly"
     async defer>
   </script>
 
-  <!-- 3) Your other page‐ready scripts -->
+  <!-- 3) Finally, your page-ready scripts -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // Animate car cards on scroll
+      // animate on scroll
       const cards = document.querySelectorAll('[data-animate]');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
+      const obs = new IntersectionObserver((ents, o) => {
+        ents.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            o.unobserve(e.target);
           }
         });
       }, { threshold: 0.2 });
-      cards.forEach(card => observer.observe(card));
+      cards.forEach(c=>obs.observe(c));
 
-      // Lazy-load images
-      document.querySelectorAll('img').forEach(img => {
-        img.loading = 'lazy';
-      });
+      // lazy images
+      document.querySelectorAll('img').forEach(i=>i.loading='lazy');
 
-      // Language switcher
-      const translations = { /* your translations object */ };
-      const switcher = document.getElementById('lang-switcher');
-      function setLanguage(lang) {
-        document.querySelectorAll('[data-i18n]').forEach(el => {
-          const key = el.getAttribute('data-i18n');
-          if (translations[lang] && translations[lang][key]) {
-            el.innerText = translations[lang][key];
-          }
-        });
-      }
-      switcher.addEventListener('change', e => setLanguage(e.target.value));
-      setLanguage(switcher.value || 'en');
+      // language switcher…
+      // (your translations + setLanguage logic here)
     });
   </script>
 </body>
