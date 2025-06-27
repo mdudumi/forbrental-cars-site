@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- HOME -->
+  <url>
+    <loc>https://forbautorental.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forbautorental.com/"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://forbautorental.com/sq/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://forbautorental.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://forbautorental.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://forbautorental.com/de/"/>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- ABOUT -->
+  <url>
+    <loc>https://forbautorental.com/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forbautorental.com/about.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://forbautorental.com/sq/about.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://forbautorental.com/it/about.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://forbautorental.com/es/about.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://forbautorental.com/de/about.html"/>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- BLOG -->
+  <url>
+    <loc>https://forbautorental.com/blog.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forbautorental.com/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://forbautorental.com/sq/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://forbautorental.com/it/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://forbautorental.com/es/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://forbautorental.com/de/blog.html"/>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- CONTACT -->
+  <url>
+    <loc>https://forbautorental.com/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forbautorental.com/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://forbautorental.com/sq/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://forbautorental.com/it/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://forbautorental.com/es/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://forbautorental.com/de/contact.html"/>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- CAR 1: Ford Ecosport Titanium -->
+  <url>
+    <loc>https://forbautorental.com/car-ford-ecosport.html?model=ecosport</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forbautorental.com/car-ford-ecosport.html?model=ecosport"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://forbautorental.com/sq/car-ford-ecosport.html?model=ecosport"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://forbautorental.com/it/car-ford-ecosport.html?model=ecosport"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://forbautorental.com/es/car-ford-ecosport.html?model=ecosport"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://forbautorental.com/de/car-ford-ecosport.html?model=ecosport"/>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- CAR 2: Ford Fiesta -->
+  <url>
+    <loc>https://forbautorental.com/car-ford-fiesta.html?model=fiesta</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forbautorental.com/car-ford-fiesta.html?model=fiesta"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://forbautorental.com/sq/car-ford-fiesta.html?model=fiesta"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://forbautorental.com/it/car-ford-fiesta.html?model=fiesta"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://forbautorental.com/es/car-ford-fiesta.html?model=fiesta"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://forbautorental.com/de/car-ford-fiesta.html?model=fiesta"/>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- CAR 3: Ford Ecosport SE -->
+  <url>
+    <loc>https://forbautorental.com/car-ford-ecosportse.html?model=ecosportse</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forbautorental.com/car-ford-ecosportse.html?model=ecosportse"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://forbautorental.com/sq/car-ford-ecosportse.html?model=ecosportse"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://forbautorental.com/it/car-ford-ecosportse.html?model=ecosportse"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://forbautorental.com/es/car-ford-ecosportse.html?model=ecosportse"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://forbautorental.com/de/car-ford-ecosportse.html?model=ecosportse"/>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- CAR 4: Volkswagen Tiguan -->
+  <url>
+    <loc>https://forbautorental.com/car-volswagen-tiguan.html?model=tiguan-2021</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forbautorental.com/car-volswagen-tiguan.html?model=tiguan-2021"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://forbautorental.com/sq/car-volswagen-tiguan.html?model=tiguan-2021"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://forbautorental.com/it/car-volswagen-tiguan.html?model=tiguan-2021"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://forbautorental.com/es/car-volswagen-tiguan.html?model=tiguan-2021"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://forbautorental.com/de/car-volswagen-tiguan.html?model=tiguan-2021"/>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
