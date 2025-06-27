@@ -581,48 +581,5 @@
     }
   ]
 }
-</script>
-  <!-- Newsletter Modal -->
-<div id="newsletter-modal" class="modal hidden">
-  <div class="modal-content">
-    <button class="modal-close" aria-label="Close">&times;</button>
-    <h2>Get 15% Off Your First Rental!</h2>
-    <p>Subscribe to our newsletter for exclusive deals and travel tips.</p>
-    <form id="newsletter-form">
-      <input type="email" id="newsletter-email" placeholder="Your email address" required>
-      <button type="submit">Subscribe</button>
-    </form>
-  </div>
-</div>
-  <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const modal = document.getElementById('newsletter-modal');
-    const closeBtn = modal.querySelector('.modal-close');
-    const form = document.getElementById('newsletter-form');
-
-    // Show modal after 10 seconds
-    setTimeout(() => modal.classList.remove('hidden'), 10000);
-
-    // Close handlers
-    closeBtn.addEventListener('click', () => modal.classList.add('hidden'));
-    modal.addEventListener('click', e => {
-      if (e.target === modal) modal.classList.add('hidden');
-    });
-
-    // Form submission (example: integrate with Mailchimp or your backend)
-    form.addEventListener('submit', async e => {
-      e.preventDefault();
-      const email = document.getElementById('newsletter-email').value;
-      // TODO: replace with real AJAX to your mailing list endpoint
-      await fetch('https://your-backend.com/api/subscribe', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({ email })
-      });
-      alert('Thanks! Check your inbox for a 15% discount code.');
-      modal.classList.add('hidden');
-    });
-  });
-</script>
 </body>
 </html>
