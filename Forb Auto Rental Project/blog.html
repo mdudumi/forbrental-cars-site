@@ -4,7 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title data-i18n="meta.blogTitle">Albania Travel & Car Rentals Blog | Forb Autorental</title>
-  <link rel="canonical" href="https://forbautorental.com/blog" />
+  {% include "_seo_head.html" with {
+    baseUrl: "https://forbautorental.com",
+    langPath: lang == "en" ? "" : "/" + lang
+  } %}
 
   <!-- FontAwesome for arrows -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
