@@ -6,7 +6,7 @@
   <title data-i18n="meta.blogTitle">Albania Travel & Car Rentals Blog | Forb Autorental</title>
   <link rel="canonical" href="https://forbautorental.com/blog" />
 
-  <!-- FontAwesome -->
+  <!-- FontAwesome for arrows -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <!-- Your main CSS -->
@@ -15,10 +15,22 @@
   <!-- Gallery styles -->
   <style>
     .image-gallery { max-width: 800px; margin: 2rem auto; }
+    .gallery-main { position: relative; }
     .gallery-main img {
       width: 100%; height: auto;
       border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      display: block;
     }
+    .thumb-nav {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: rgba(0,0,0,0.5); color: #fff;
+      border: none; padding: 0.5rem; border-radius: 50%;
+      cursor: pointer; z-index: 2;
+    }
+    .thumb-prev { left: 10px; }
+    .thumb-next { right: 10px; }
+    .thumb-nav i { font-size: 1rem; }
+
     .gallery-thumbs {
       display: flex; justify-content: center; margin-top: 0.75rem;
     }
@@ -72,7 +84,9 @@
       <h2 data-i18n="blog.section1.title">Renting Cars in Albania</h2>
       <div class="image-gallery">
         <div class="gallery-main">
+          <button class="thumb-nav thumb-prev"><i class="fa fa-chevron-left"></i></button>
           <img id="renting-main" src="images/Blog/Rent/office.jpg" alt="Rent office">
+          <button class="thumb-nav thumb-next"><i class="fa fa-chevron-right"></i></button>
         </div>
         <div class="gallery-thumbs">
           <img src="images/Blog/Rent/office.jpg" alt="Rent office" data-target="renting-main">
@@ -80,19 +94,19 @@
           <img src="images/Blog/Rent/car.jpg"    alt="Car inspection" data-target="renting-main">
         </div>
       </div>
-      <p>
+      <p data-i18n="blog.section1.intro">
         Whether you’re arriving at Tirana International Airport or picking up your vehicle in the city center,
         understanding local rental procedures will ensure a smooth start to your journey.
       </p>
-      <p>
+      <p data-i18n="blog.section1.details">
         Most agencies require a valid driver’s license (held for at least one year), a passport or national ID,
         and a credit card for the security deposit. Insurance packages range from basic third-party coverage
         to comprehensive collision damage waivers—choose according to your comfort level and itinerary.
       </p>
       <ul>
-        <li>Book early during summer (June–August) to secure the best rates.</li>
-        <li>Opt for a full-to-full fuel policy—it’s the most transparent option.</li>
-        <li>Inspect the vehicle carefully for any scratches or dents before signing.</li>
+        <li data-i18n="blog.section1.point1">Book early during summer (June–August) to secure the best rates.</li>
+        <li data-i18n="blog.section1.point2">Opt for a full-to-full fuel policy—it’s the most transparent option.</li>
+        <li data-i18n="blog.section1.point3">Inspect the vehicle carefully for any scratches or dents before signing.</li>
       </ul>
     </section>
 
@@ -101,7 +115,9 @@
       <h2 data-i18n="blog.section2.title">Driving in Albania</h2>
       <div class="image-gallery">
         <div class="gallery-main">
+          <button class="thumb-nav thumb-prev"><i class="fa fa-chevron-left"></i></button>
           <img id="driving-main" src="images/Blog/Albania/road.jpg" alt="Scenic road">
+          <button class="thumb-nav thumb-next"><i class="fa fa-chevron-right"></i></button>
         </div>
         <div class="gallery-thumbs">
           <img src="images/Blog/Albania/road.jpg"     alt="Scenic road" data-target="driving-main">
@@ -109,15 +125,15 @@
           <img src="images/Blog/Albania/coast.jpg"    alt="Coastal highway" data-target="driving-main">
         </div>
       </div>
-      <p>
+      <p data-i18n="blog.section2.intro">
         Albania offers a diverse driving experience: coastal highways, mountain passes, and urban traffic.
         Familiarize yourself with the rules and best practices to stay safe.
       </p>
       <ul>
-        <li>Road Conditions: Major routes are paved, but rural roads may be uneven—reduce speed on backcountry stretches.</li>
-        <li>Signage: Most follow European norms, though local directional markers appear in Albanian.</li>
-        <li>Speed Limits: 50 km/h in cities, 80 km/h on open roads, 110 km/h on highways—speed cameras are common near towns.</li>
-        <li>Mountain Safety: Always carry water, blankets, and a physical map; mobile coverage can be spotty.</li>
+        <li data-i18n="blog.section2.point1">Road Conditions: Major routes are paved, but rural roads may be uneven—reduce speed on backcountry stretches.</li>
+        <li data-i18n="blog.section2.point2">Signage: Most follow European norms, though local directional markers appear in Albanian.</li>
+        <li data-i18n="blog.section2.point3">Speed Limits: 50 km/h in cities, 80 km/h on open roads, 110 km/h on highways—speed cameras are common near towns.</li>
+        <li data-i18n="blog.section2.point4">Mountain Safety: Always carry water, blankets, and a physical map; mobile coverage can be spotty.</li>
       </ul>
     </section>
 
@@ -126,7 +142,9 @@
       <h2 data-i18n="blog.section3.title">Discover Albania: History & Curiosities</h2>
       <div class="image-gallery">
         <div class="gallery-main">
+          <button class="thumb-nav thumb-prev"><i class="fa fa-chevron-left"></i></button>
           <img id="history-main" src="images/Blog/History/butrint.jpg" alt="Butrint ruins">
+          <button class="thumb-nav thumb-next"><i class="fa fa-chevron-right"></i></button>
         </div>
         <div class="gallery-thumbs">
           <img src="images/Blog/History/butrint.jpg" alt="Butrint ruins" data-target="history-main">
@@ -134,22 +152,13 @@
           <img src="images/Blog/History/kruja.jpg"   alt="Local market" data-target="history-main">
         </div>
       </div>
-      <p>
+      <p data-i18n="blog.section3.intro">
         Albania blends millennia of history with warm hospitality. From UNESCO World Heritage sites to
         modern urban hubs, there is so much to explore.
       </p>
-      <p>
-        <strong>Ancient Roots:</strong> Visit Butrint, an archaeological site founded by the Greeks in the
-        8th century BC and later expanded by Romans and Byzantines.
-      </p>
-      <p>
-        <strong>Cultural Gems:</strong> Experience a live iso-polyphonic concert in Gjirokastër’s Old Town
-        or enjoy the vibrant cafes of Skanderbeg Square in Tirana.
-      </p>
-      <p>
-        <strong>Local Curiosities:</strong> Albanians observe Besa—an oath of honor that reflects deep-rooted
-        traditions of hospitality and trust.
-      </p>
+      <p data-i18n="blog.section3.text1"><strong>Ancient Roots:</strong> Visit Butrint, an archaeological site founded by the Greeks in the 8th century BC, then expanded by Romans and Byzantines.</p>
+      <p data-i18n="blog.section3.text2"><strong>Cultural Gems:</strong> Experience a live iso-polyphonic concert in the Gjirokastër Old Town or browse Skanderbeg Square’s lively cafes in Tirana.</p>
+      <p data-i18n="blog.section3.text3"><strong>Local Curiosities:</strong> Albanians have a custom called Besa—an oath of honor—reflecting deep-rooted traditions of hospitality and trust.</p>
     </section>
   </main>
 
@@ -170,133 +179,159 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // Gallery thumbnail swapping
-      document.querySelectorAll('.gallery-thumbs').forEach(strip => {
-        const first = strip.querySelector('img');
-        if (first) first.classList.add('active');
-        strip.querySelectorAll('img').forEach(thumb => {
-          thumb.addEventListener('click', () => {
-            const main = document.getElementById(thumb.dataset.target);
-            if (!main) return;
-            main.src = thumb.src;
-            main.alt = thumb.alt;
-            strip.querySelectorAll('img').forEach(i => i.classList.remove('active'));
-            thumb.classList.add('active');
-          });
+      // Wire up each gallery
+      document.querySelectorAll('.image-gallery').forEach(galleryEl => {
+        const mainImg = galleryEl.querySelector('.gallery-main img');
+        const thumbs  = Array.from(galleryEl.querySelectorAll('.gallery-thumbs img'));
+        let idx = 0;
+        function show(i) {
+          idx = (i + thumbs.length) % thumbs.length;
+          const thumb = thumbs[idx];
+          mainImg.src = thumb.src;
+          mainImg.alt = thumb.alt;
+          thumbs.forEach(t => t.classList.remove('active'));
+          thumb.classList.add('active');
+        }
+        show(0);
+        galleryEl.querySelector('.thumb-prev')
+          .addEventListener('click', () => show(idx - 1));
+        galleryEl.querySelector('.thumb-next')
+          .addEventListener('click', () => show(idx + 1));
+        thumbs.forEach((thumb, i) => {
+          thumb.addEventListener('click', () => show(i));
         });
       });
 
-      // Translations (English only shown here)
-    const translations = {
-      en: {
-        "meta.blogTitle": "Albania Travel & Car Rentals Blog | Forb Autorental",
-        "nav.home": "Home","nav.about": "About","nav.blog": "Blog","nav.contact": "Contact",
-        "blog.heroTitle": "Explore Albania: Cars, Driving & Culture",
-        "blog.heroSub": "Your go-to source for detailed guides on renting cars, navigating Albanian roads safely, and uncovering the rich history and unique curiosities of Albania—from Tirana’s bustling streets to the ancient ruins of Butrint.",
-        "blog.section1.title": "Renting Cars in Albania",
-        "blog.section1.intro": "Whether you’re touching down at Tirana International Airport or picking up in the city center, understanding local rental practices ensures a smooth start to your journey.",
-        "blog.section1.details": "Most agencies require a valid driver’s license (issued at least one year prior), passport or ID card, and a credit card for the security deposit. Optional insurance packages range from basic third-party coverage to comprehensive collision damage waivers—choose based on your comfort level and itinerary.",
-        "blog.section1.point1": "Book early during summer (June–August) to secure best rates.","blog.section1.point2": "Check fuel policy: full-to-full is most transparent.","blog.section1.point3": "Inspect vehicle for scratches or dents before signing.",
-        "blog.section2.title": "Driving in Albania",
-        "blog.section2.intro": "Albania offers a diverse driving experience: coastal highways, mountain passes, and urban traffic. Know the rules and best practices to stay safe.",
-        "blog.section2.point1": "Road Conditions: Major routes are paved but rural roads can be uneven—drive slower on backcountry roads.",
-        "blog.section2.point2": "Signage: Most signs follow European norms but watch for local directional markers in Albanian.",
-        "blog.section2.point3": "Speed Limits: 50 km/h in cities, 80 km/h on open roads, 110 km/h on highways—speed cameras are common near towns.",
-        "blog.section2.point4": "Mountain Safety: Always carry water, blankets, and a physical map; network coverage can be spotty.",
-        "blog.section3.title": "Discover Albania: History & Curiosities",
-        "blog.section3.intro": "Albania blends millennia of history with warm hospitality. From UNESCO World Heritage sites to modern urban hubs, there’s so much to explore.",
-        "blog.section3.text1": "Ancient Roots: Visit Butrint, an archaeological site founded by the Greeks in the 8th century BC, then expanded by Romans and Byzantines.",
-        "blog.section3.text2": "Cultural Gems: Experience a live iso-polyphonic concert in the Gjirokastër Old Town or browse Skanderbeg Square’s lively cafes in Tirana.",
-        "blog.section3.text3": "Local Curiosities: Albanians have a custom called Besa—an oath of honor—reflecting deep-rooted traditions of hospitality and trust.",
-        "footer.copy": "© 2025 Forb Autorental. All rights reserved."
-      },
-      sq: {
-        "meta.blogTitle": "Blog Udhëtimi & Qira Makinash në Shqipëri | Forb Autorental","nav.home": "Hyrje","nav.about": "Rreth Nesh","nav.blog": "Blog","nav.contact": "Kontakt",
-        "blog.heroTitle": "Zbulo Shqipërinë: Makinat, Ngasja & Kultura",
-        "blog.heroSub": "Burimi juaj i plotë për udhëzime të detajuara mbi qiranë e makinave, drejtimin e sigurt në rrugët shqiptare dhe zbulimin e historisë së pasur dhe kurioziteteve unike të Shqipërisë—nga rrugët e zhurmshme të Tiranës te rrënojat e lashta të Butrintit.",
-        "blog.section1.title": "Qira Makinash në Shqipëri","blog.section1.intro": "Qoftë në Aeroportin Ndërkombëtar të Tiranës ose në qendër të qytetit, kuptimi i praktikave lokale të qirasë garanton një fillim të qetë të udhëtimit tuaj.",
-        "blog.section1.details": "Shumica e agjencive kërkojnë patentë valide (lëshuar të paktën një vit më parë), pasaportë ose letërnjoftim dhe kartë krediti për depozitë. Paketat opsionale të sigurimit variojnë nga mbulimi bazë i palës së tretë deri te sigurimi gjithëpërfshirës—zgjidhni sipas rehatisë dhe itinerarit tuaj.",
-        "blog.section1.point1": "Rezervoni herët gjatë verës (Qershor–Gusht) për të siguruar çmimet më të mira.","blog.section1.point2": "Kontrolloni politikën e karburantit: ‘plotë për plotë’ është më transparente.","blog.section1.point3": "Inspektoni makinën për gërvishtje ose dëmtime para nënshkrimit.",
-        "blog.section2.title": "Ngasja në Shqipëri","blog.section2.intro": "Shqipëria ofron një përvojë të larmishme drejtimi: autostrada bregdetare, kalime malore dhe trafik urban. Njihni rregullat dhe praktikat më të mira për t'u mbajtur të sigurt.",
-        "blog.section2.point1": "Kushtet e Rrugëve: Rrugët kryesore janë të asfaltuara, por ato rurale mund të jenë të papërshtatshme—ngisni më ngadalë në rrugët rurale.",
-        "blog.section2.point2": "Sinjalistika: Shumica e shenjave ndjekin standardet evropiane, por kini kujdes për shenjat lokale në gjuhën shqipe.",
-        "blog.section2.point3": "Kufijtë e Shpejtësisë: 50 km/h në qytete, 80 km/h në rrugë të hapura, 110 km/h në autostrada—kamerat e shpejtësisë janë të zakonshme pranë zonave urbane.",
-        "blog.section2.point4": "Siguria në Malësi: Gjithmonë mbani ujë, batanije dhe hartë fizike; mbulimi i rrjetit mund të jetë i papërmbajtshëm.",
-        "blog.section3.title": "Zbulo Shqipërinë: Histori & Kuriozitete","blog.section3.intro": "Shqipëria përzien mijëvjeçarë historie me mikpritje të ngrohtë. Nga vendet e trashëgimisë UNESCO te qendrat moderne urbane, ka shumë për të eksploruar.",
-        "blog.section3.text1": "Rrënjët Antike: Vizitoni Butrintin, një sit arkeologjik i themeluar nga grekët në shekullin VIII p.K., më pas i zgjeruar nga romakët dhe bizantinët.",
-        "blog.section3.text2": "Thesare Kulturore: Përjetoni koncertin iso-policëfonik në Qytetin e Vjetër të Gjirokastrës ose shëtisni nëpër kafenetë e gjalla të Sheshit Skënderbej në Tiranë.",
-        "blog.section3.text3": "Kuriozitete Lokale: Shqiptarët praktikojnë Besën—një betim nderi—që reflekton tradita të thella mikpritjeje dhe besimi.",
-        "footer.copy": "© 2025 Forb Autorental. Të gjitha të drejtat e rezervuara."
-      },
-      it: {
-        "meta.blogTitle": "Blog Viaggi & Noleggio Auto in Albania | Forb Autorental","nav.home": "Home","nav.about": "Chi Siamo","nav.blog": "Blog","nav.contact": "Contatti",
-        "blog.heroTitle": "Esplora l'Albania: Auto, Guida & Cultura","blog.heroSub": "La tua fonte completa per guide dettagliate sul noleggio auto, la sicurezza sulle strade albanesi e la scoperta della ricca storia e delle curiosità uniche dell'Albania—dalle vivaci vie di Tirana alle antiche rovine di Butrint.",
-        "blog.section1.title": "Noleggio Auto in Albania","blog.section1.intro": "Che tu arrivi all'Aeroporto Internazionale di Tirana o ritiri in centro città, comprendere le pratiche di noleggio locali garantisce un inizio di viaggio senza intoppi.",
-        "blog.section1.details": "La maggior parte delle agenzie richiede patente valida (rilasciata da almeno un anno), passaporto o carta d'identità e carta di credito per il deposito cauzionale. I pacchetti assicurativi opzionali vanno dalla copertura di base a esoneri completi per danni—scegli in base al tuo itinerario.",
-        "blog.section1.point1": "Prenota in anticipo durante l'estate (giugno–agosto) per tariffe migliori.","blog.section1.point2": "Controlla la politica del carburante: pieno a pieno è la più trasparente.","blog.section1.point3": "Verifica graffi o ammaccature prima di firmare il contratto.",
-        "blog.section2.title": "Guida in Albania","blog.section2.intro": "L'Albania offre un'esperienza di guida diversificata: autostrade costiere, passi montani e traffico urbano. Conosci le regole per viaggiare in sicurezza.",
-        "blog.section2.point1": "Condizioni Stradali: Le principali sono asfaltate, ma le strade rurali potrebbero essere dissestate—guida con cautela.",
-        "blog.section2.point2": "Segnaletica: Segue gli standard europei, ma fai attenzione ai cartelli in albanese.",
-        "blog.section2.point3": "Limiti di Velocità: 50 km/h in città, 80 km/h su strade extraurbane, 110 km/h in autostrada—autovelox frequenti vicino ai centri abitati.",
-        "blog.section2.point4": "Sicurezza Montagna: Porta con te acqua, coperte e una mappa cartacea; la copertura mobile può essere intermittente.",
-        "blog.section3.title": "Scopri l'Albania: Storia & Curiosità","blog.section3.intro": "L'Albania mescola millenni di storia con un'ospitalità calorosa. Dai siti UNESCO ai centri urbani moderni, c'è molto da esplorare.",
-        "blog.section3.text1": "Radici Antiche: Visita Butrint, un sito archeologico fondato dai Greci nell'VIII secolo a.C., poi ampliato da Romani e Bizantini.",
-        "blog.section3.text2": "Gemme Culturali: Goditi un concerto iso-polifonico nella Città Vecchia di Gjirokastër o passeggia tra i caffè vivaci di Piazza Skënderbej a Tirana.",
-        "blog.section3.text3": "Curiosità Locali: Gli albanesi praticano la Besa—un giuramento d'onore—che riflette profonde tradizioni di ospitalità e fiducia.",
-        "footer.copy": "© 2025 Forb Autorental. Tutti i diritti riservati."
-      },
-      es: {
-        "meta.blogTitle": "Blog Viajes & Alquiler de Coches en Albania | Forb Autorental","nav.home": "Inicio","nav.about": "Nosotros","nav.blog": "Blog","nav.contact": "Contacto",
-        "blog.heroTitle": "Explora Albania: Coches, Conducción & Cultura","blog.heroSub": "Tu fuente esencial para guías detalladas sobre alquiler de coches, cómo conducir con seguridad en las carreteras albanesas y descubrir la rica historia y curiosidades únicas de Albania—desde las bulliciosas calles de Tirana hasta las antiguas ruinas de Butrint.",
-        "blog.section1.title": "Alquiler de Coches en Albania","blog.section1.intro": "Ya sea que aterrices en el Aeropuerto Internacional de Tirana o recojas en el centro de la ciudad, comprender las prácticas locales de alquiler garantiza un comienzo sin contratiempos.",
-        "blog.section1.details": "La mayoría de las agencias requieren licencia de conducir válida (emitida hace al menos un año), pasaporte o DNI y tarjeta de crédito para el depósito de seguridad. Los paquetes de seguro opcionales van desde cobertura básica hasta exenciones completas por daños—elige según tu itinerario.",
-        "blog.section1.point1": "Reserva con anticipación durante el verano (junio–agosto) para obtener mejores tarifas.","blog.section1.point2": "Verifica la política de combustible: lleno a lleno es lo más transparente.","blog.section1.point3": "Inspecciona el coche en busca de arañazos o abolladuras antes de firmar.",
-        "blog.section2.title": "Conducción en Albania","blog.section2.intro": "Albania ofrece una experiencia de conducción diversa: autopistas costeras, pasos montañosos y tráfico urbano. Conoce las reglas para mantenerte seguro.",
-        "blog.section2.point1": "Condiciones de la carretera: las principales están pavimentadas, pero las rurales pueden ser irregulares—conduce con precaución.",
-        "blog.section2.point2": "Señalización: Sigue las normas europeas, pero presta atención a los carteles en albanés.",
-        "blog.section2.point3": "Límites de Velocidad: 50 km/h en ciudades, 80 km/h en carreteras secundarias, 110 km/h en autopistas—cámaras frecuentes cerca de zonas pobladas.",
-        "blog.section2.point4": "Seguridad en Montaña: Lleva agua, mantas y un mapa impreso; la cobertura móvil puede ser inestable.",
-        "blog.section3.title": "Descubre Albania: Historia & Curiosidades","blog.section3.intro": "Albania combina milenios de historia con una hospitalidad cálida. Desde sitios UNESCO hasta ciudades modernas, hay mucho por explorar.",
-        "blog.section3.text1": "Raíces Antiguas: Visita Butrint, un yacimiento arqueológico fundado por los griegos en el siglo VIII a.C. y ampliado por romanos y bizantinos.",
-        "blog.section3.text2": "Joyas Culturales: Disfruta de un concierto iso-polifónico en la Ciudad Vieja de Gjirokastër o pasea por los animados cafés de la Plaza Skanderbeg en Tirana.",
-        "blog.section3.text3": "Curiosidades Locales: Los albaneses practican la Besa—un juramento de honor—que refleja profundas tradiciones de hospitalidad y confianza.",
-        "footer.copy": "© 2025 Forb Autorental. Todos los derechos reservados."
-      },
-
-      de: {
-        "meta.blogTitle": "Blog Reisen & Auto mieten in Albanien | Forb Autorental",
-        "nav.home": "Startseite",
-        "nav.blog": "Blog",
-        "nav.about": "Über Uns",
-        "nav.contact": "Kontakt",
-        "blog.heroTitle": "Entdecke Albanien: Autos, Fahren & Kultur",
-        "blog.heroSub": "Deine Anlaufstelle für ausführliche Anleitungen zum Auto mieten, sichere Fahrt auf albanischen Straßen und Entdeckung der reichen Geschichte und einzigartigen Kuriositäten Albaniens—von den geschäftigen Straßen Tiranas bis zu den antiken Ruinen von Butrint.",
-        "blog.section1.title": "Auto mieten in Albanien",
-        "blog.section1.intro": "Egal ob du am internationalen Flughafen Tirana landest oder im Stadtzentrum abholst—lokale Mietpraktiken zu kennen, garantiert einen reibungslosen Start.",
-        "blog.section1.details": "Die meisten Anbieter verlangen einen gültigen Führerschein (seit mindestens einem Jahr), Reisepass oder Personalausweis und eine Kreditkarte als Kaution. Optionale Versicherungen reichen von Basis-Haftpflicht bis Vollkaskoschutz—wähle nach deinem Komfort und deiner Reiseroute.",
-        "blog.section1.point1": "Buche früh in der Sommerzeit (Juni–August), um die besten Preise zu sichern.",
-        "blog.section1.point2": "Prüfe die Kraftstoffregelung: Voll/Voll ist am transparentesten.",
-        "blog.section1.point3": "Kontrolliere das Fahrzeug auf Kratzer oder Dellen vor Vertragsabschluss.",
-        "blog.section2.title": "Fahren in Albanien",
-        "blog.section2.intro": "Albanien bietet eine vielfältige Fahrerfahrung: Küstenstraßen, Gebirgspässe und innerstädtischer Verkehr. Kenne die Regeln für eine sichere Fahrt.",
-        "blog.section2.point1": "Straßenzustand: Hauptstrecken sind asphaltiert, ländliche Straßen können holprig sein—fahr vorsichtig.",
-        "blog.section2.point2": "Beschilderung: Folgt europäischen Standards, aber achte auf lokale Schilder in albanischer Sprache.",
-        "blog.section2.point3": "Geschwindigkeitsbegrenzung: 50 km/h in Städten, 80 km/h auf Landstraßen, 110 km/h auf Autobahnen—Blitzanlagen häufig in Ortsnähe.",
-        "blog.section2.point4": "Bergsicherheit: Immer Wasser, Decken und eine physische Karte dabei haben; Mobilfunknetz kann lückenhaft sein.",
-        "blog.section3.title": "Albanien entdecken: Geschichte & Kuriositäten",
-        "blog.section3.intro": "Albanien verbindet Jahrtausende Geschichte mit herzlicher Gastfreundschaft. Von UNESCO-Stätten bis modernen Städten—entdecke es selbst.",
-        "blog.section3.text1": "Antike Wurzeln: Besuche Butrint, eine von Griechen im 8. Jh. v. Chr. gegründete Ausgrabungsstätte, später von Römern und Byzantinern erweitert.",
-        "blog.section3.text2": "Kulturelle Schätze: Erlebe ein Iso-Polyphonie-Konzert in der Altstadt von Gjirokastër oder schlendere durch die belebten Cafés am Skanderbeg-Platz in Tirana.",
-        "blog.section3.text3": "Lokale Kuriositäten: Die Albaner pflegen die Besa—einen Ehrenkodex—der tief verwurzelte Traditionen von Gastfreundschaft und Vertrauen widerspiegelt.",
-        "footer.copy": "© 2025 Forb Autorental. Alle Rechte vorbehalten."
-      }
-    };
+      // Full translations object
+      const translations = {
+        en: {
+          "meta.blogTitle":"Albania Travel & Car Rentals Blog | Forb Autorental",
+          "nav.home":"Home","nav.about":"About","nav.blog":"Blog","nav.contact":"Contact",
+          "blog.heroTitle":"Explore Albania: Cars, Driving & Culture",
+          "blog.heroSub":"Your go-to source for detailed guides on renting cars, navigating Albanian roads safely, and uncovering the rich history and unique curiosities of Albania—from Tirana’s bustling streets to the ancient ruins of Butrint.",
+          "blog.section1.title":"Renting Cars in Albania",
+          "blog.section1.intro":"Whether you’re arriving at Tirana International Airport or picking up your vehicle in the city center, understanding local rental procedures will ensure a smooth start to your journey.",
+          "blog.section1.details":"Most agencies require a valid driver’s license (held for at least one year), a passport or national ID, and a credit card for the security deposit. Insurance packages range from basic third-party coverage to comprehensive collision damage waivers—choose according to your comfort level and itinerary.",
+          "blog.section1.point1":"Book early during summer (June–August) to secure the best rates.",
+          "blog.section1.point2":"Opt for a full-to-full fuel policy—it’s the most transparent option.",
+          "blog.section1.point3":"Inspect the vehicle carefully for any scratches or dents before signing.",
+          "blog.section2.title":"Driving in Albania",
+          "blog.section2.intro":"Albania offers a diverse driving experience: coastal highways, mountain passes, and urban traffic. Familiarize yourself with the rules and best practices to stay safe.",
+          "blog.section2.point1":"Road Conditions: Major routes are paved, but rural roads may be uneven—reduce speed on backcountry stretches.",
+          "blog.section2.point2":"Signage: Most follow European norms, though local directional markers appear in Albanian.",
+          "blog.section2.point3":"Speed Limits: 50 km/h in cities, 80 km/h on open roads, 110 km/h on highways—speed cameras are common near towns.",
+          "blog.section2.point4":"Mountain Safety: Always carry water, blankets, and a physical map; mobile coverage can be spotty.",
+          "blog.section3.title":"Discover Albania: History & Curiosities",
+          "blog.section3.intro":"Albania blends millennia of history with warm hospitality. From UNESCO World Heritage sites to modern urban hubs, there is so much to explore.",
+          "blog.section3.text1":"Ancient Roots: Visit Butrint, an archaeological site founded by the Greeks in the 8th century BC, then expanded by Romans and Byzantines.",
+          "blog.section3.text2":"Cultural Gems: Experience a live iso-polyphonic concert in the Gjirokastër Old Town or browse Skanderbeg Square’s lively cafes in Tirana.",
+          "blog.section3.text3":"Local Curiosities: Albanians have a custom called Besa—an oath of honor—reflecting deep-rooted traditions of hospitality and trust.",
+          "footer.copy":"© 2025 Forb Autorental. All rights reserved."
+        },
+        sq: {
+          "meta.blogTitle":"Blog Udhëtimi & Qira Makinash në Shqipëri | Forb Autorental",
+          "nav.home":"Hyrje","nav.about":"Rreth Nesh","nav.blog":"Blog","nav.contact":"Kontakt",
+          "blog.heroTitle":"Zbulo Shqipërinë: Makinat, Ngasja & Kultura",
+          "blog.heroSub":"Burimi juaj i plotë për udhëzime të detajuara mbi qiranë e makinave, drejtimin e sigurt në rrugët shqiptare dhe zbulimin e historisë së pasur dhe kurioziteteve unike të Shqipërisë—nga rrugët e zhurmshme të Tiranës te rrënojat e lashta të Butrintit.",
+          "blog.section1.title":"Qira Makinash në Shqipëri",
+          "blog.section1.intro":"Qoftë në Aeroportin Ndërkombëtar të Tiranës ose në qendër të qytetit, kuptimi i praktikave lokale të qirasë garanton një fillim të qetë të udhëtimit tuaj.",
+          "blog.section1.details":"Shumica e agjencive kërkojnë patentë valide (lëshuar të paktën një vit më parë), pasaportë ose letërnjoftim dhe kartë krediti për depozitë. Paketat opsionale të sigurimit variojnë nga mbulimi bazë i palës së tretë deri te sigurimi gjithëpërfshirës—zgjidhni sipas rehatisë dhe itinerarit tuaj.",
+          "blog.section1.point1":"Rezervoni herët gjatë verës (Qershor–Gusht) për të siguruar çmimet më të mira.",
+          "blog.section1.point2":"Kontrolloni politikën e karburantit: ‘plotë për plotë’ është më transparente.",
+          "blog.section1.point3":"Inspektoni makinën për gërvishtje ose dëmtime para nënshkrimit.",
+          "blog.section2.title":"Ngasja në Shqipëri",
+          "blog.section2.intro":"Shqipëria ofron një përvojë të larmishme drejtimi: autostrada bregdetare, kalime malore dhe trafik urban. Njihni rregullat dhe praktikat më të mira për t'u mbajtur të sigurt.",
+          "blog.section2.point1":"Kushtet e Rrugëve: Rrugët kryesore janë të asfaltuara, por ato rurale mund të jenë të papërshtatshme—ngisni më ngadalë në rrugët rurale.",
+          "blog.section2.point2":"Sinjalistika: Shumica e shenjave ndjekin standardet evropiane, por kini kujdes për shenjat lokale në gjuhën shqipe.",
+          "blog.section2.point3":"Kufijtë e Shpejtësisë: 50 km/h në qytete, 80 km/h në rrugë të hapura, 110 km/h në autostrada—kamerat e shpejtësisë janë të zakonshme pranë zonave urbane.",
+          "blog.section2.point4":"Siguria në Malësi: Gjithmonë mbani ujë, batanije dhe hartë fizike; mbulimi i rrjetit mund të jetë i papërmbajtshëm.",
+          "blog.section3.title":"Zbulo Shqipërinë: Histori & Kuriozitete",
+          "blog.section3.intro":"Shqipëria përzien mijëvjeçarë historie me mikpritje të ngrohtë. Nga vendet e trashëgimisë UNESCO te qendrat moderne urbane, ka shumë për të eksploruar.",
+          "blog.section3.text1":"Rrënjët Antike: Vizitoni Butrintin, një sit arkeologjik i themeluar nga grekët në shekullin VIII p.K., më pas i zgjeruar nga romakët dhe bizantinët.",
+          "blog.section3.text2":"Thesare Kulturore: Përjetoni koncertin iso-policëfonik në Qytetin e Vjetër të Gjirokastrës ose shëtisni nëpër kafenetë e gjalla të Sheshit Skënderbej në Tiranë.",
+          "blog.section3.text3":"Kuriozitete Lokale: Shqiptarët praktikojnë Besën—një betim nderi—që reflekton tradita të thella mikpritjeje dhe besimi.",
+          "footer.copy":"© 2025 Forb Autorental. Të gjitha të drejtat e rezervuara."
+        },
+        it: {
+          "meta.blogTitle":"Blog Viaggi & Noleggio Auto in Albania | Forb Autorental",
+          "nav.home":"Home","nav.about":"Chi Siamo","nav.blog":"Blog","nav.contact":"Contatti",
+          "blog.heroTitle":"Esplora l'Albania: Auto, Guida & Cultura",
+          "blog.heroSub":"La tua fonte completa per guide dettagliate sul noleggio auto, la sicurezza sulle strade albanesi e la scoperta della ricca storia e delle curiosità uniche dell'Albania—dalle vivaci vie di Tirana alle antiche rovine di Butrint.",
+          "blog.section1.title":"Noleggio Auto in Albania",
+          "blog.section1.intro":"Che tu arrivi all'Aeroporto Internazionale di Tirana o ritiri in centro città, comprendere le pratiche di noleggio locali garantisce un inizio di viaggio senza intoppi.",
+          "blog.section1.details":"La maggior parte delle agenzie richiede patente valida (rilasciata da almeno un anno), passaporto o carta d'identità e carta di credito per il deposito cauzionale. I pacchetti assicurativi opzionali vanno dalla copertura di base a esoneri completi per danni—scegli in base al tuo itinerario.",
+          "blog.section1.point1":"Prenota in anticipo durante l'estate (giugno–agosto) per tariffe migliori.",
+          "blog.section1.point2":"Controlla la politica del carburante: pieno a pieno è la più trasparente.",
+          "blog.section1.point3":"Verifica graffi o ammaccature prima di firmare il contratto.",
+          "blog.section2.title":"Guida in Albania",
+          "blog.section2.intro":"L'Albania offre un'esperienza di guida diversificata: autostrade costiere, passi montani e traffico urbano. Conosci le regole per viaggiare in sicurezza.",
+          "blog.section2.point1":"Condizioni Stradali: Le principali sono asfaltate, ma le strade rurali potrebbero essere dissestate—guida con cautela.",
+          "blog.section2.point2":"Segnaletica: Segue gli standard europei, ma fai attenzione ai cartelli in albanese.",
+          "blog.section2.point3":"Limiti di Velocità: 50 km/h in città, 80 km/h su strade extraurbane, 110 km/h in autostrada—autovelox frequenti vicino ai centri abitati.",
+          "blog.section2.point4":"Sicurezza Montagna: Porta con te acqua, coperte e una mappa cartacea; la copertura mobile può essere intermittente.",
+          "blog.section3.title":"Scopri l'Albania: Storia & Curiosità",
+          "blog.section3.intro":"L'Albania mescola millenni di storia con un'ospitalità calorosa. Dai siti UNESCO ai centri urbani moderni, c'è molto da esplorare.",
+          "blog.section3.text1":"Radici Antiche: Visita Butrint, un sito archeologico fondato dai Greci nell'VIII secolo a.C., poi ampliato da Romani e Bizantini.",
+          "blog.section3.text2":"Gemme Culturali: Goditi un concerto iso-polifonico nella Città Vecchia di Gjirokastër o passeggia tra i caffè vivaci di Piazza Skënderbej a Tirana.",
+          "blog.section3.text3":"Curiosità Locali: Gli albanesi praticano la Besa—un giuramento d'onore—che riflette profonde tradizioni di ospitalità e fiducia.",
+          "footer.copy":"© 2025 Forb Autorental. Tutti i diritti riservati."
+        },
+        es: {
+          "meta.blogTitle":"Blog Viajes & Alquiler de Coches en Albania | Forb Autorental",
+          "nav.home":"Inicio","nav.about":"Nosotros","nav.blog":"Blog","nav.contact":"Contacto",
+          "blog.heroTitle":"Explora Albania: Coches, Conducción & Cultura",
+          "blog.heroSub":"Tu fuente esencial para guías detalladas sobre alquiler de coches, cómo conducir con seguridad en las carreteras albanesas y descubrir la rica historia y curiosidades únicas de Albania—desde las bulliciosas calles de Tirana hasta las antiguas ruinas de Butrint.",
+          "blog.section1.title":"Alquiler de Coches en Albania",
+          "blog.section1.intro":"Ya sea que aterrices en el Aeropuerto Internacional de Tirana o recojas en el centro de la ciudad, comprender las prácticas locales de alquiler garantiza un comienzo sin contratiempos.",
+          "blog.section1.details":"La mayoría de las agencias requieren licencia de conducir válida (emitida hace al menos un año), pasaporte o DNI y tarjeta de crédito para el depósito de seguridad. Los paquetes de seguro opcionales van desde cobertura básica hasta exenciones completas por daños—elige según tu itinerario.",
+          "blog.section1.point1":"Reserva con anticipación durante el verano (junio–agosto) para obtener mejores tarifas.",
+          "blog.section1.point2":"Verifica la política de combustible: lleno a lleno es lo más transparente.",
+          "blog.section1.point3":"Inspecciona el coche en busca de arañazos o abolladuras antes de firmar.",
+          "blog.section2.title":"Conducción en Albania",
+          "blog.section2.intro":"Albania ofrece una experiencia de conducción diversa: autopistas costeras, pasos montañosos y tráfico urbano. Conoce las reglas para mantenerte seguro.",
+          "blog.section2.point1":"Condiciones de la carretera: las principales están pavimentadas, pero las rurales pueden ser irregulares—conduce con precaución.",
+          "blog.section2.point2":"Señalización: Sigue las normas europeas, pero presta atención a los carteles en albanés.",
+          "blog.section2.point3":"Límites de Velocidad: 50 km/h en ciudades, 80 km/h en carreteras secundarias, 110 km/h en autopistas—cámaras frecuentes cerca de zonas pobladas.",
+          "blog.section2.point4":"Seguridad en Montaña: Lleva agua, mantas y un mapa impreso; la cobertura móvil puede ser inestable.",
+          "blog.section3.title":"Descubre Albania: Historia & Curiosidades",
+          "blog.section3.intro":"Albania combina milenios de historia con una hospitalidad cálida. Desde sitios UNESCO hasta ciudades modernas, hay mucho por explorar.",
+          "blog.section3.text1":"Raíces Antiguas: Visita Butrint, un yacimiento arqueológico fundado por los griegos en el siglo VIII a.C. y ampliado por romanos y bizantinos.",
+          "blog.section3.text2":"Joyas Culturales: Disfruta de un concerto iso-polifónico en la Ciudad Vieja de Gjirokastër o pasea por los animados cafés de la Plaza Skanderbeg en Tirana.",
+          "blog.section3.text3":"Curiosidades Locales: Los albaneses practican la Besa—un juramento de honor—que refleja profundas tradiciones de hospitalidad y confianza.",
+          "footer.copy":"© 2025 Forb Autorental. Todos los derechos reservados."
+        },
+        de: {
+          "meta.blogTitle":"Blog Reisen & Auto mieten in Albanien | Forb Autorental",
+          "nav.home":"Startseite","nav.blog":"Blog","nav.about":"Über Uns","nav.contact":"Kontakt",
+          "blog.heroTitle":"Entdecke Albanien: Autos, Fahren & Kultur",
+          "blog.heroSub":"Deine Anlaufstelle für ausführliche Anleitungen zum Auto mieten, sichere Fahrt auf albanischen Straßen und Entdeckung der reichen Geschichte und einzigartigen Kuriositäten Albaniens—von den geschäftigen Straßen Tiranas bis zu den antiken Ruinen von Butrint.",
+          "blog.section1.title":"Auto mieten in Albanien",
+          "blog.section1.intro":"Egal ob du am internationalen Flughafen Tirana landest oder im Stadtzentrum abholst—lokale Mietpraktiken zu kennen, garantiert einen reibungslosen Start.",
+          "blog.section1.details":"Die meisten Anbieter verlangen einen gültigen Führerschein (seit mindestens einem Jahr), Reisepass oder Personalausweis und eine Kreditkarte als Kaution. Optionale Versicherungen reichen von Basis-Haftpflicht bis Vollkaskoschutz—wähle nach deinem Komfort und deiner Reiseroute.",
+          "blog.section1.point1":"Buche früh in der Sommerzeit (Juni–August), um die besten Preise zu sichern.",
+          "blog.section1.point2":"Prüfe die Kraftstoffregelung: Voll/Voll ist am transparentesten.",
+          "blog.section1.point3":"Kontrolliere das Fahrzeug auf Kratzer oder Dellen vor Vertragsabschluss.",
+          "blog.section2.title":"Fahren in Albanien",
+          "blog.section2.intro":"Albanien bietet eine vielfältige Fahrerfahrung: Küstenstraßen, Gebirgspässe und innerstädtischer Verkehr. Kenne die Regeln für eine sichere Fahrt.",
+          "blog.section2.point1":"Straßenzustand: Hauptstrecken sind asphaltiert, ländliche Straßen können holperig sein—fahr vorsichtig.",
+          "blog.section2.point2":"Beschilderung: Folgt europäischen Standards, aber achte auf lokale Schilder in albanischer Sprache.",
+          "blog.section2.point3":"Geschwindigkeitsbegrenzung: 50 km/h in Städten, 80 km/h auf Landstraßen, 110 km/h auf Autobahnen—Blitzanlagen häufig in Ortsnähe.",
+          "blog.section2.point4":"Bergsicherheit: Immer Wasser, Decken und eine physische Karte dabei haben; Mobilfunknetz kann lückenhaft sein.",
+          "blog.section3.title":"Albanien entdecken: Geschichte & Kuriositäten",
+          "blog.section3.intro":"Albanien verbindet Jahrtausende Geschichte mit herzlicher Gastfreundschaft. Von UNESCO-Stätten bis modernen Städten—entdecke es selbst.",
+          "blog.section3.text1":"Antike Wurzeln: Besuche Butrint, eine von Griechen im 8. Jh. v. Chr. gegründete Ausgrabungsstätte, später von Römern und Byzantinern erweitert.",
+          "blog.section3.text2":"Kulturelle Schätze: Erlebe ein Iso-Polyphonie-Konzert in der Altstadt von Gjirokastër oder schlendere durch die belebten Cafés am Skanderbeg-Platz in Tirana.",
+          "blog.section3.text3":"Lokale Kuriositäten: Die Albaner pflegen die Besa—einen Ehrenkodex—der tief verwurzelte Traditionen von Gastfreundschaft und Vertrauen widerspiegelt.",
+          "footer.copy":"© 2025 Forb Autorental. Alle Rechte vorbehalten."
+        }
+      };
 
       function setLanguage(lang) {
         document.querySelectorAll('[data-i18n]').forEach(el => {
           const key = el.getAttribute('data-i18n');
-          const txt = translations[lang] && translations[lang][key];
-          if (txt) el.innerText = txt;
+          if (translations[lang] && translations[lang][key]) {
+            el.innerText = translations[lang][key];
+          }
         });
       }
 
