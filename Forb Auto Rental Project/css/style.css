@@ -527,9 +527,9 @@ textarea:focus {
 }
 
 .social-icon {
-  width: 32px;
-  height: auto; /* keeps the SVG’s aspect ratio */
-  display: block;
+  width: 32px !important;
+  height: auto  !important;
+  display: inline-block !important;
 }
 
 .whatsapp-chat {
