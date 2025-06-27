@@ -519,6 +519,18 @@ textarea:focus {
   background-color: #e25500;
 }
 
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 1.5em 0;
+}
+
+.social-icon {
+  width: 32px;
+  height: auto; /* keeps the SVG’s aspect ratio */
+  display: block;
+}
 /* Responsive Fixes */
 @media (max-width: 768px) {
   .car-details {
