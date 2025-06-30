@@ -582,54 +582,26 @@
 }
   </script>      <!-- <-- THIS line was missing -->
 <!-- define initMap first -->
-<script>
-  window.initMap = function() {
-    console.log('✅ initMap called');
-    // now `google` will be available
-    const placeId = 'ChIJW3kMHIe7GhMRur71RPOFOMM';
-    const container = document.getElementById('reviews-container');
-    container.innerHTML = '<p>Loading reviews…</p>';
-
-    const service = new google.maps.places.PlacesService(
-      document.createElement('div')
-    );
-    service.getDetails(
-      { placeId, fields: ['reviews'] },
-      (place, status) => {
-        container.innerHTML = '';
-        if (
-          status ===
-            google.maps.places.PlacesServiceStatus.OK &&
-          place.reviews
-        ) {
-          place.reviews.slice(0, 5).forEach((r) => {
-            const div = document.createElement('div');
-            div.className = 'review';
-            div.innerHTML = `
-              <p>"${r.text}"</p>
-              <span>– ${r.author_name}</span>
-              <div class="rating">${
-                '★'.repeat(r.rating) +
-                '☆'.repeat(5 - r.rating)
-              }</div>
-            `;
-            container.appendChild(div);
-          });
-        } else {
-          container.innerHTML =
-            '<p>No reviews available.</p>';
-          console.error('PlacesService failed:', status);
-        }
-      }
-    );
-  };
-</script>
-
-<!-- then load the API; no line breaks in the URL, and only `defer` -->
-<script
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&libraries=places&callback=initMap&v=weekly"
-  defer
-></script>
+    <section class="reviews">
+      <h2>Customer Reviews</h2>
+      <div class="review-grid">
+        <div class="review">
+          <img src="images/reviewer1.jpg" alt="Alex J." />
+          <p>"Fantastic service and clean vehicles!"</p>
+          <span>- Alex J.</span>
+        </div>
+        <div class="review">
+          <img src="images/reviewer2.jpg" alt="Maria T." />
+          <p>"Great selection of cars and easy booking process."</p>
+          <span>- Maria T.</span>
+        </div>
+        <div class="review">
+          <img src="images/reviewer3.jpg" alt="David S." />
+          <p>"Affordable rates and friendly staff. Highly recommend!"</p>
+          <span>- David S.</span>
+        </div>
+      </div>
+    </section>
 
   <!-- 3) Finally, your page-ready scripts -->
   <script>
